@@ -36,6 +36,7 @@
 	border: 1px solid #d1d2d3;
 	border-radius: 8px;
 	padding: 16px;
+	cursor: pointer;
 }
 .unitDetails .cartDetailsPlace {
 	font-weight: 600;

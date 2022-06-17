@@ -41,3 +41,7 @@ body {
 		transform: translate(-50%, -50%) scale(0.8) !important;
 	}
 }
+.BeansGoogle {
+	width: 100% !important;
+	height: 100% !important;
+}
