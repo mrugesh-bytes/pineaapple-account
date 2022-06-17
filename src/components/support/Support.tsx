@@ -8,51 +8,60 @@ import axios from "axios";
 import { getChatList } from "../../redux/chat/actions/chatList.action";
 import { useDispatch, useSelector } from "react-redux";
 const Support = () => {
-	const [chatTab, setChatTab] = useState("Active Visit");
+  const [chatTab, setChatTab] = useState("Active Visit");
+  const [userId, setUserId] = useState();
+  console.log(userId);
 
-	const chatListData = useSelector(
-		(state: any) => state?.chatList?.data?.result?.visitorList
-	);
+  const chatListData = useSelector(
+    (state: any) => state?.chatList?.data?.result?.visitorList
+  );
 
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-	useEffect(() => {
-		dispatch(getChatList());
-	}, []);
+  useEffect(() => {
+    dispatch(getChatList());
+  }, []);
 
-	return (
-		<div className="outletConainer">
-			<div className={styles.flexWrapper}>
-				<div className={styles.contacts}>
-					<div className={styles.tab}>
-						<ul className={styles.tabHead}>
-							<Link
-								to={""}
-								onClick={() => setChatTab("Active Visit")}
-								style={{ textDecoration: "none" }}
-							>
-								<li className={chatTab === "Active Visit" ? styles.active : ""}>
-									Active Visit
-								</li>
-							</Link>
-							<Link to={""} onClick={() => setChatTab("Recent Visits")}>
-								<li
-									className={chatTab === "Recent Visits" ? styles.active : ""}
-								>
-									Recent Visits
-								</li>
-							</Link>
-						</ul>
-					</div>
-					<SearchUser />
-					<ChatUser chatData={chatListData} />
-				</div>
-				<div className={styles.chatContainer}>
-					<Chat />
-				</div>
-			</div>
-		</div>
-	);
+  // useEffect(() => {
+  //   axios.get("https://dev.tourwithpineapple.com/account/unit");
+  // });
+  return (
+    <div className="outletConainer">
+      <div className={styles.flexWrapper}>
+        <div className={styles.contacts}>
+          <div className={styles.tab}>
+            <ul className={styles.tabHead}>
+              <Link
+                to={""}
+                onClick={() => setChatTab("Active Visit")}
+                style={{ textDecoration: "none" }}
+              >
+                <li className={chatTab === "Active Visit" ? styles.active : ""}>
+                  Active Visit
+                </li>
+              </Link>
+              <Link to={""} onClick={() => setChatTab("Recent Visits")}>
+                <li
+                  className={chatTab === "Recent Visits" ? styles.active : ""}
+                >
+                  Recent Visits
+                </li>
+              </Link>
+            </ul>
+          </div>
+          <SearchUser />
+          <ChatUser
+            chatData={chatListData}
+            userId={userId}
+            setUserId={setUserId}
+          />
+        </div>
+        <div className={styles.chatContainer}>
+          <Chat />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Support;
