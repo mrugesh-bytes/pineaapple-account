@@ -8,6 +8,7 @@
 .header .search {
 	width: 373px;
 	position: relative;
+	height: 48px;
 }
 .header .search input {
 	position: relative;

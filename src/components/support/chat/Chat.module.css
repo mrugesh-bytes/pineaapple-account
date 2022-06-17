@@ -3,6 +3,8 @@
 	align-items: center;
 	padding-bottom: 24px;
 	border-bottom: 1px solid #d1d2d3;
+	position: relative;
+	padding-right: 100px;
 }
 .chatHeader .userAvatar {
 	display: flex;
@@ -72,10 +74,12 @@
 }
 .chatBody .sender {
 	text-align: right;
+	margin-left: auto;
 }
 .chatBody .sender,
 .chatBody .receiver {
 	margin-bottom: 32px;
+	max-width: 80%;
 }
 .chatBody .sender:last-child,
 .chatBody .receiver:last-child {
@@ -110,21 +114,24 @@
 	display: flex;
 	position: relative;
 	width: calc(100% - 48px);
+	height: 56px;
 }
 .chatFooter input {
 	border: 1px solid #d1d2d3;
 	border-radius: 8px;
-	padding: 10px 18px;
+	padding: 10px 130px 10px 18px;
 	width: 100%;
 	color: #b2b3b5;
 	font-size: 18px;
 	line-height: 28px;
 	outline: none;
+	font-weight: 400;
 }
 .chatFooter input::placeholder {
 	color: #b2b3b5;
 	font-size: 18px;
 	line-height: 28px;
+	font-weight: 400;
 }
 .chatFooter .sendBtn {
 	background: #d1d2d3;
@@ -134,12 +141,17 @@
 	font-size: 16px;
 	line-height: 28px;
 	outline: none;
-	border: 1px solid #8c8d90;
+	border: none;
 	position: absolute;
 	top: 50%;
 	transform: translate(0px, -50%);
-	right: 4px;
+	right: 8px;
 	cursor: pointer;
+	height: 40px;
+}
+.keyContainer {
+	position: absolute;
+	right: 0px;
 }
 .footerMain {
 	position: absolute;

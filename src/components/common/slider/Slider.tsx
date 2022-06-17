@@ -1,7 +1,6 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import styles from "./Slider.module.css";
-import carouselBanner from "../../../images/units-card.png";
 import iconKey from "../../../images/icon-key.svg";
 const Slider = (props: any) => {
 	const images = props.carouselBanner.split(",");
@@ -25,7 +24,7 @@ const Slider = (props: any) => {
 
 							return (
 								<div className={styles.sliderItem} key={index}>
-									<img src={item} />
+									<img className={styles.banner} src={item} />
 									<span className={styles.inUse}>
 										<img src={iconKey} alt="Key" />
 										In use

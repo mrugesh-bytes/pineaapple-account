@@ -1,8 +1,10 @@
 .unitcardMain {
-	width: 31%;
-	padding: 12px;
+	width: 33.33%;
 	display: flex;
 	flex-wrap: wrap;
+}
+.unitcardMain .unitcard {
+	margin: 12px;
 }
 .cardBanner {
 	position: relative;
@@ -51,6 +53,8 @@
 }
 .unitcard .cardBanner img {
 	width: 100%;
+	max-height: 250px;
+	border-radius: 16px;
 }
 .unitcard .cardFacilities {
 	display: flex;

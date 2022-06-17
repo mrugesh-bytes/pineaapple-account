@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Chat.module.css";
 import userAvatarImg from "../../../images/chat-user-1.svg";
+import Key from "../../common/key/Key";
 const Chat = () => {
 	return (
 		<div>
@@ -15,6 +16,9 @@ const Chat = () => {
 					<p>
 						Gustavo Daniels <span className={styles.active}>Active</span>
 					</p>
+				</div>
+				<div className={styles.keyContainer}>
+					<Key />
 				</div>
 			</div>
 			<div className={styles.chatBody}>
