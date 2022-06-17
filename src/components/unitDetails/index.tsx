@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
 import iconActionMsg from '../../../src/images//icon-action-message.svg';
 import iconActionBell from '../../../src/images/icon-action-bell.svg';
@@ -13,6 +14,7 @@ import iconFt from '../../../src/images/icon-ft.svg';
 import { getUnitById } from '../../redux/units/actions/unitById.action';
 import CustModal from '../common/custmodal/CustModal';
 import Slider from '../common/slider/Slider';
+import Map from '../map/Map';
 import styles from './index.module.css';
 
 const UnitDetails = () => {
@@ -21,6 +23,7 @@ const UnitDetails = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const unitByIdData = useSelector((state: any) => state?.unitById?.data?.result?.unit);
 
@@ -36,7 +39,7 @@ const UnitDetails = () => {
           <div className={styles.unitDetails}>
             <div className={styles.flexContainer}>
               <div className={styles.cartDetailsHeader}>
-                <div className={styles.cartDetailsBack}>
+                <div className={styles.cartDetailsBack} onClick={() => navigate('/units')}>
                   <img src={iconBack} />
                 </div>
                 <div>
@@ -103,12 +106,13 @@ const UnitDetails = () => {
             </div>
           </div>
           <div className={styles.unitsMap}>
-            <iframe
+            {/* <iframe
               src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.8188202846154!2d72.52843751529807!3d23.03042368494914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84d571f08ca9%3A0xfd811e730a325cb1!2sBytes%20Technolab%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1655277219391!5m2!1sen!2sin'
               width='600'
               height='450'
               loading='lazy'
-            ></iframe>
+            ></iframe> */}
+            <Map />
           </div>
         </div>
       </div>
