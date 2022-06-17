@@ -1,6 +1,10 @@
-import axios from 'axios';
-import { Dispatch } from 'react';
-import { GET_UNITS_FAILURE, GET_UNITS_REQUEST, GET_UNITS_SUCCESS } from '../constants/units.constants';
+import axios from "axios";
+import { Dispatch } from "react";
+import {
+  GET_UNITS_FAILURE,
+  GET_UNITS_REQUEST,
+  GET_UNITS_SUCCESS,
+} from "../constants/units.constants";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const ACCESS_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
