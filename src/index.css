@@ -30,3 +30,14 @@ body {
 	width: 18px;
 	border-radius: 10px;
 }
+
+.carousel.carousel-slider {
+	border-radius: 16px;
+}
+
+/* Responsive Start */
+@media screen and (max-width: 1600px) {
+	.ReactModal__Content {
+		transform: translate(-50%, -50%) scale(0.8) !important;
+	}
+}

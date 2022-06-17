@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../template/outerlayout/outerlayout.module.css";
-import "react-dropdown/style.css";
 
 function Onboarding() {
 	return (
