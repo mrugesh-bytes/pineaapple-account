@@ -1,0 +1,68 @@
+/* Notification Modal Start */
+.modalNotification {
+	width: 740px;
+}
+.modalHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 24px 37px;
+	border-bottom: 1px solid #d1d2d3;
+}
+.modalHeader .close {
+	cursor: pointer;
+}
+.modalHeader .modalTitle {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 32px;
+	color: #191c21;
+}
+.modalNotification .modalBody {
+	padding: 24px 27px;
+}
+.modalNotification .card {
+	display: flex;
+	border: 1px solid #d1d2d3;
+	border-radius: 8px;
+	padding: 20px;
+	margin-bottom: 24px;
+	align-items: center;
+}
+.modalNotification .card:last-child {
+	margin-bottom: 0px;
+}
+.modalNotification .card .content {
+	margin-left: 12px;
+	font-size: 16px;
+	line-height: 28px;
+}
+.modalFooter {
+	text-align: right;
+	padding: 8px 32px 32px;
+}
+.modalFooter .cancelBtn {
+	background: #ffffff;
+	border: 1px solid #191c21;
+	border-radius: 8px;
+	padding: 6px 21px;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 28px;
+	text-transform: capitalize;
+	color: #191c21;
+	cursor: pointer;
+}
+.modalFooter .sendBtn {
+	background: #51ab86;
+	border-radius: 8px;
+	padding: 6px 21px;
+	border: 1px solid #51ab86;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 28px;
+	text-transform: capitalize;
+	color: #fff;
+	margin-left: 34px;
+	cursor: pointer;
+}
