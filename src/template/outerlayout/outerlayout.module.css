@@ -43,7 +43,8 @@
 	background-position: center right;
 	background-repeat: no-repeat;
 	background-color: transparent;
-	border: none;
+	border: 0;
+	outline: 0;
 }
 .formOuter form select option {
 	font-weight: 300;

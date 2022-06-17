@@ -21,3 +21,12 @@ body {
 .ReactModal__Body--open {
 	overflow: hidden !important;
 }
+.carousel .control-dots .dot {
+	box-shadow: none !important;
+	margin: 0px 4px !important;
+	opacity: 1 !important;
+}
+.carousel .control-dots .dot.selected {
+	width: 18px;
+	border-radius: 10px;
+}

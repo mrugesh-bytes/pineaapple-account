@@ -25,7 +25,7 @@ const Slider = (props: any) => {
 
 							return (
 								<div className={styles.sliderItem} key={index}>
-									<img src={item} />
+									<img className={styles.banner} src={item} />
 									<span className={styles.inUse}>
 										<img src={iconKey} alt="Key" />
 										In use

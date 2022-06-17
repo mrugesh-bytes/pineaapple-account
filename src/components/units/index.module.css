@@ -11,7 +11,7 @@
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 28px;
-	margin: 0px 12px;
+	margin-right: 24px;
 }
 .unitsContainer .btnContainer .outline {
 	border: 1px solid #51ab86;
@@ -64,7 +64,6 @@
 .unitcards {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 0px 20px;
 	margin-left: -12px;
 	margin-right: -12px;
 }

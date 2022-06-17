@@ -45,11 +45,6 @@ const Unitscard = ({ unit }: any) => {
 								carouselBanner={unit.imageUrl ? unit.imageUrl : cardImg}
 								price={`$ ${unit?.price}`}
 							/>
-							{/* <img src={unit.imageUrl ? unit.imageUrl : cardImg} /> */}
-							{/* <span className={styles.inUse}>
-							<img src={iconKey} alt="Key" />
-							In use
-						</span> */}
 							<span className={styles.cost}>{`$ ${unit.price}`}</span>
 						</Link>
 					</div>

@@ -1,8 +1,14 @@
 .sliderContainer {
 	width: 100%;
+	border-radius: 16px;
+}
+.banner {
+	height: 250px;
+	object-fit: cover;
 }
 .sliderContainer .sliderItem {
 	position: relative;
+	border-radius: 16px;
 }
 .sliderContainer .inUse,
 .sliderContainer .inReturn,
