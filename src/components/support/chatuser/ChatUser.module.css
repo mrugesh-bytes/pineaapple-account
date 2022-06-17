@@ -23,6 +23,7 @@
 .userAvatar img {
 	max-width: 64px;
 	max-height: 64px;
+	border-radius: 8px;
 }
 .userCard:last-child {
 	border-bottom: 0px;

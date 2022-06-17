@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../template/outerlayout/outerlayout.module.css";
+import "react-dropdown/style.css";
 
 function Onboarding() {
 	return (
@@ -10,10 +11,11 @@ function Onboarding() {
 				</div>
 				<div className={styles.field}>
 					<select>
-						<option>Engineer</option>
-						<option>Doctor</option>
-						<option>Teacher</option>
-						<option>Musician</option>
+						<option>Admin</option>
+						<option>General Manager</option>
+						<option>Property Manager</option>
+						<option>Leasing Agent</option>
+						<option>Maintenence</option>
 					</select>
 				</div>
 			</div>
