@@ -9,10 +9,12 @@ declare global {
 const Map = () => {
   useEffect(() => {
     window.addEventListener("load", scriptLoaded);
+    window.onload = scriptLoaded();
   }, []);
 
   const scriptLoaded: any = () => {
-    const be: any = new window.BeansMap();
+    const be = new window.BeansMap();
+
     be.render(
       "beans-maps-1",
       "0baf0b44e30a49b:3538663834623937633062333465323062343930",

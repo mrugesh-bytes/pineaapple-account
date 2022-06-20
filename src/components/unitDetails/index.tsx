@@ -73,25 +73,19 @@ const UnitDetails = () => {
                 <div className={styles.facilityicon}>
                   <img src={iconFt} alt="Ft" />
                 </div>
-                <div
-                  className={styles.facilityName}
-                >{`${unitByIdData?.size} Ft`}</div>
+                <div className={styles.facilityName}>80 ft</div>
               </div>
               <div className={styles.facility}>
                 <div className={styles.facilityicon}>
                   <img src={iconBed} alt="Beds" />
                 </div>
-                <div
-                  className={styles.facilityName}
-                >{`${unitByIdData?.rooms} Beds`}</div>
+                <div className={styles.facilityName}>2 Beds</div>
               </div>
               <div className={styles.facility}>
                 <div className={styles.facilityicon}>
                   <img src={iconBathtub} alt="Bathtubs" />
                 </div>
-                <div
-                  className={styles.facilityName}
-                >{`${unitByIdData?.baths} Bath`}</div>
+                <div className={styles.facilityName}>1 Bath</div>
               </div>
             </div>
             <div className={styles.btnContainer}>
