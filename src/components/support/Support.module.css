@@ -1,56 +1,86 @@
 .contacts {
-  width: 100%;
-  max-width: 416px;
-  background: #ffffff;
-  box-shadow: 5px 10px 32px rgb(65 65 65 / 9%);
-  border-radius: 16px;
-  overflow: auto;
+	width: 100%;
+	max-width: 416px;
+	background: #ffffff;
+	box-shadow: 5px 10px 32px rgb(65 65 65 / 9%);
+	border-radius: 16px;
+	overflow: auto;
 }
 .contacts::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 .tab .tabHead {
-  list-style: none;
-  padding: 24px 24px 8px;
-  margin: 0px;
-  display: flex;
-  border-bottom: 1px solid #d1d2d3;
+	list-style: none;
+	padding: 24px 24px 8px;
+	margin: 0px;
+	display: flex;
+	border-bottom: 1px solid #d1d2d3;
 }
 .tab .tabHead li {
-  margin-right: 27px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 32px;
-  text-transform: capitalize;
-  color: #191c21;
-  position: relative;
-  cursor: pointer;
+	margin-right: 27px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 32px;
+	text-transform: capitalize;
+	color: #191c21;
+	position: relative;
+	cursor: pointer;
 }
 .tab .tabHead li.active:before {
-  content: "";
-  position: absolute;
-  background: #51ab86;
-  border-radius: 8px;
-  height: 4px;
-  width: 100%;
-  bottom: -10.4px;
+	content: "";
+	position: absolute;
+	background: #51ab86;
+	border-radius: 8px;
+	height: 4px;
+	width: 100%;
+	bottom: -10.4px;
 }
 .tab .tabHead li.active {
-  color: #51ab86;
+	color: #51ab86;
 }
 .tab .tabHead a {
-  text-decoration: none;
+	text-decoration: none;
 }
 .flexWrapper {
-  display: flex;
-  height: calc(100vh - 170px);
+	display: flex;
+	height: calc(100vh - 170px);
 }
 .chatContainer {
-  flex: 1 1 100%;
-  margin-left: 24px;
-  background: #ffffff;
-  box-shadow: 5px 10px 32px rgba(65, 65, 65, 0.09);
-  border-radius: 16px;
-  padding: 24px 24px 100px;
-  position: relative;
+	flex: 1 1 100%;
+	margin-left: 24px;
+	background: #ffffff;
+	box-shadow: 5px 10px 32px rgba(65, 65, 65, 0.09);
+	border-radius: 16px;
+	padding: 24px 24px 100px;
+	position: relative;
+}
+
+/* Responsive Start */
+@media screen and (max-width: 1445px) {
+	.contacts {
+		max-width: 355px;
+	}
+}
+
+@media screen and (max-width: 1445px) {
+	.contacts {
+		max-width: 355px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.tab .tabHead li {
+		font-size: 16px;
+		line-height: 32px;
+	}
+	.flexWrapper {
+		flex-wrap: wrap;
+	}
+	.contacts {
+		max-width: 100%;
+	}
+	.chatContainer {
+		margin-left: 0px;
+		margin-top: 20px;
+	}
 }
