@@ -1,0 +1,111 @@
+.loginWrapper {
+	width: 100%;
+	max-width: 373px;
+}
+.loginWrapper .loginTitle {
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 48px;
+	text-transform: capitalize;
+	color: #191c21;
+	margin: 0px 0px 16px;
+}
+.loginWrapper .loginInfo {
+	font-size: 16px;
+	line-height: 28px;
+	text-transform: capitalize;
+	color: #191c21;
+	margin: 0px;
+	max-width: 314px;
+}
+.loginWrapper .loginForm {
+	margin-top: 50px;
+}
+.loginForm .formWrapper {
+	margin-bottom: 24px;
+}
+.loginForm .formWrapper label {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 28px;
+	text-transform: capitalize;
+	color: #191c21;
+	display: block;
+	margin-bottom: 16px;
+}
+.loginForm .formWrapper input {
+	width: 100%;
+	background: #ffffff;
+	border: 1px solid #d1d2d3;
+	border-radius: 8px;
+	height: 48px;
+	padding: 10px 14px;
+	outline: none;
+}
+.loginForm .formWrapper .passwordWrapper {
+	position: relative;
+}
+.passwordWrapper .eyeToggler {
+	position: absolute;
+	top: 50%;
+	transform: translate(0px, -50%);
+	right: 16px;
+}
+.passwordWrapper .eyeToggler img {
+	height: 16px;
+	width: 16px;
+	object-fit: contain;
+	cursor: pointer;
+}
+.loginForm .formWrapper input:focus {
+	border: 1px solid #51ab86;
+}
+.loginForm .formWrapper a {
+	font-size: 14px;
+	line-height: 28px;
+	text-transform: capitalize;
+	color: #191c21;
+	display: inline-block;
+	text-decoration: none !important;
+	margin-top: 8px;
+}
+.loginForm .formSubmit {
+	margin-top: 24px;
+}
+.loginForm .formSubmit button {
+	height: 48px;
+	background: #51ab86;
+	border-radius: 8px;
+	border: none;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 28px;
+	color: #ffffff;
+	padding: 10px 25px;
+	width: 100%;
+	outline: none;
+}
+.leadSignup {
+	margin-top: 16px;
+}
+.leadSignup p {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 28px;
+	color: #191c21;
+	text-align: center;
+}
+.leadSignup p a {
+	color: #51ab86;
+	margin-left: 5px;
+	display: inline-block;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+	.loginWrapper {
+		width: 100%;
+		max-width: 100%;
+	}
+}

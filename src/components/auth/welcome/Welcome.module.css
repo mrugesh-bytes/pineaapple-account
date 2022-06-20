@@ -1,0 +1,28 @@
+.field {
+	width: 65%;
+	position: relative;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #d1d2d3;
+}
+form select {
+	color: #191c21;
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 52px;
+	border: none;
+	outline: none;
+	width: 100%;
+	position: relative;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: url("../../../images/icon-down-chivron.svg");
+	background-size: 12.8;
+	background-position: center right;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+}
+form select option {
+	font-weight: 300;
+}

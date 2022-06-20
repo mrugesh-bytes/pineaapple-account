@@ -1,22 +1,12 @@
 import React from "react";
 import styles from "../template/outerlayout/outerlayout.module.css";
-
+import Welcome from "../components/auth/welcome/Welcome";
+import Login from "../components/auth/login/Login";
 function Onboarding() {
 	return (
-		<form>
+		<form className={styles.loginForm}>
 			<div className={styles.fieldWrapper}>
-				<div>
-					<label>Hi! I’m A</label>
-				</div>
-				<div className={styles.field}>
-					<select>
-						<option>Admin</option>
-						<option>General Manager</option>
-						<option>Property Manager</option>
-						<option>Leasing Agent</option>
-						<option>Maintenence</option>
-					</select>
-				</div>
+				<Login />
 			</div>
 		</form>
 	);
