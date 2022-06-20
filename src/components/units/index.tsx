@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUnits } from '../../redux/units/actions/units.action';
-import styles from './index.module.css';
-import Unitscard from './unitscard/Unitscard';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUnits } from "../../redux/units/actions/units.action";
+import styles from "./index.module.css";
+import Unitscard from "./unitscard/Unitscard";
 
 const index = () => {
-  const unitsData = useSelector((state: any) => state?.units?.data?.result?.units);
+  const unitsData = useSelector(
+    (state: any) => state?.units?.data?.result?.units
+  );
 
   const dispatch = useDispatch();
 
@@ -14,7 +16,7 @@ const index = () => {
   }, []);
 
   return (
-    <div className='outletConainer'>
+    <div className="outletConainer">
       <div className={styles.unitsContainer}>
         <div className={styles.unitsHead}>
           <div className={styles.userGreet}>

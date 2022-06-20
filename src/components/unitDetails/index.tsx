@@ -27,6 +27,7 @@ const UnitDetails = () => {
   const unitByIdData = useSelector(
     (state: any) => state?.unitById?.data?.result?.unit
   );
+  console.log(unitByIdData);
 
   useEffect(() => {
     dispatch(getUnitById(id));
@@ -72,19 +73,25 @@ const UnitDetails = () => {
                 <div className={styles.facilityicon}>
                   <img src={iconFt} alt="Ft" />
                 </div>
-                <div className={styles.facilityName}>80 ft</div>
+                <div
+                  className={styles.facilityName}
+                >{`${unitByIdData?.size} Ft`}</div>
               </div>
               <div className={styles.facility}>
                 <div className={styles.facilityicon}>
                   <img src={iconBed} alt="Beds" />
                 </div>
-                <div className={styles.facilityName}>2 Beds</div>
+                <div
+                  className={styles.facilityName}
+                >{`${unitByIdData?.rooms} Beds`}</div>
               </div>
               <div className={styles.facility}>
                 <div className={styles.facilityicon}>
                   <img src={iconBathtub} alt="Bathtubs" />
                 </div>
-                <div className={styles.facilityName}>1 Bath</div>
+                <div
+                  className={styles.facilityName}
+                >{`${unitByIdData?.baths} Bath`}</div>
               </div>
             </div>
             <div className={styles.btnContainer}>
