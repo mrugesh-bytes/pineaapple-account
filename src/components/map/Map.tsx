@@ -7,32 +7,32 @@ declare global {
 }
 
 const Map = () => {
-  useEffect(() => {
-    window.addEventListener('load', scriptLoaded);
-    window.onload = scriptLoaded();
-  }, []);
+	useEffect(() => {
+		window.addEventListener("load", scriptLoaded);
+		window.onload = scriptLoaded();
+	}, []);
 
-  const scriptLoaded: any = () => {
-    const be = new window.BeansMap();
+	const scriptLoaded: any = () => {
+		const be = new window.BeansMap();
 
-    be.render(
-      'beans-maps-1',
-      '0baf0b44e30a49b:3538663834623937633062333465323062343930',
-      [
-        {
-          address: '1200 Dale Ave, Mountain View, CA',
-          unit: '43',
-          options: {
-            links: {
-              // [Optional] Set display to true to show the distance bar at the top. Default false.
-              display: true,
-            },
-            tiles: {
-              // [Optional] Set display to false to hide the address and tiles card. Default true.
-              display: true,
-              keybox: {
-                // [Optional] Set the text to show on the tiles.
-                text: '#9112',
+		be.render(
+			"beans-maps-1",
+			"0baf0b44e30a49b:3538663834623937633062333465323062343930",
+			[
+				{
+					address: "1200 Dale Ave, Mountain View, CA",
+					unit: "43",
+					options: {
+						links: {
+							// [Optional] Set display to true to show the distance bar at the top. Default false.
+							display: true,
+						},
+						tiles: {
+							// [Optional] Set display to false to hide the address and tiles card. Default true.
+							display: true,
+							keybox: {
+								// [Optional] Set the text to show on the tiles.
+								text: "#9112",
 
 								// [Optional] Set the icon for the tile. See
 								// https://storage.googleapis.com/beans-mobile-resources/marker-note-icons/parking_0.png
@@ -124,10 +124,8 @@ const Map = () => {
 	};
 
 	return (
-		<div>
-			<div id="beans-maps-1" style={{ width: "50vw", height: "100vh" }}>
-				{scriptLoaded}
-			</div>
+		<div id="beans-maps-1" style={{ width: "50vw", height: "100vh" }}>
+			{scriptLoaded}
 		</div>
 	);
 };

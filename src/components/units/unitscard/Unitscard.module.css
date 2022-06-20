@@ -50,6 +50,7 @@
 	background: #ffffff;
 	box-shadow: 5px 10px 32px rgb(65 65 65 / 9%);
 	border-radius: 16px;
+	width: 100%;
 }
 .unitcard .cardBanner img {
 	width: 100%;
@@ -64,6 +65,9 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 30px;
 }
 .cardTitle h4 {
 	text-transform: capitalize;
@@ -111,4 +115,26 @@
 .cardBody .facility img {
 	display: inline-block;
 	margin-right: 11.2px;
+}
+
+/* Responsive Start */
+@media screen and (max-width: 1445px) {
+	.unitcard .cardBanner img {
+		max-height: 176px;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.unitcardMain {
+		width: 50%;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.cardBody .facility img {
+		width: 12px;
+	}
+	.cardBody .facility span {
+		font-size: 14px;
+		line-height: 26px;
+	}
 }

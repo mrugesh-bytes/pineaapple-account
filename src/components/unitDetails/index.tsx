@@ -16,6 +16,7 @@ import CustModal from "../common/custmodal/CustModal";
 import Slider from "../common/slider/Slider";
 import Map from "../map/Map";
 import styles from "./index.module.css";
+
 const UnitDetails = () => {
 	const [open, setOpen] = useState(false);
 
@@ -27,6 +28,7 @@ const UnitDetails = () => {
 	const unitByIdData = useSelector(
 		(state: any) => state?.unitById?.data?.result?.unit
 	);
+	console.log(unitByIdData);
 
 	useEffect(() => {
 		dispatch(getUnitById(id));

@@ -67,3 +67,18 @@
 	margin-left: -12px;
 	margin-right: -12px;
 }
+
+/* Responsive Start */
+@media screen and (max-width: 1024px) {
+	.unitsContainer .btnContainer {
+		display: none;
+	}
+	.unitsHead .userGreet p {
+		font-size: 14px;
+		margin-bottom: 8px;
+	}
+	.unitsHead .userGreet h2 {
+		font-size: 16px;
+		line-height: 26px;
+	}
+}

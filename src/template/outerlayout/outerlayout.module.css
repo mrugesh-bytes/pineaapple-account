@@ -21,34 +21,6 @@
 .formOuter .fieldWrapper {
 	display: flex;
 }
-.formOuter .fieldWrapper .field {
-	width: 65%;
-	position: relative;
-	padding-bottom: 15px;
-	border-bottom: 1px solid #d1d2d3;
-}
-.formOuter form select {
-	color: #191c21;
-	font-weight: 300;
-	font-size: 40px;
-	line-height: 52px;
-	border: none;
-	outline: none;
-	width: 100%;
-	position: relative;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	background: url("../../images/icon-down-chivron.svg");
-	background-size: 12.8;
-	background-position: center right;
-	background-repeat: no-repeat;
-	background-color: transparent;
-	border: 0;
-	outline: 0;
-}
-.formOuter form select option {
-	font-weight: 300;
-}
 .logo {
 	width: 100%;
 	max-width: 209.45px;
@@ -69,4 +41,29 @@
 	font-size: 14px;
 	line-height: 32px;
 	margin: 0px;
+}
+form.loginForm {
+	padding-top: 146px;
+}
+
+/* Responsive Start */
+@media screen and (max-width: 1600px) {
+	form.loginForm {
+		padding-top: 100px;
+	}
+	.formOuter {
+		min-width: 50%;
+	}
+}
+
+@media screen and (max-width: 1445px) {
+	form.loginForm {
+		padding-top: 50px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.formOuter {
+		padding: 26px 25px;
+	}
 }

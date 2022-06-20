@@ -76,3 +76,38 @@
 	margin-left: 34px;
 	cursor: pointer;
 }
+
+/* Responsive Start */
+@media screen and (max-width: 1600px) {
+	.modalNotification .modalBody {
+		max-height: 488px;
+		overflow: auto;
+	}
+	.modalNotification .modalBody::-webkit-scrollbar {
+		display: none;
+	}
+	.modalNotification .card {
+		margin-bottom: 22px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.modalNotification {
+		width: 629px;
+	}
+	.modalFooter .cancelBtn,
+	.modalFooter .sendBtn {
+		font-size: 14px;
+	}
+	.modalFooter .sendBtn {
+		margin-left: 16px;
+	}
+	.modalHeader {
+		padding: 24px 30px;
+	}
+}
+@media screen and (max-width: 767px) {
+	.modalNotification {
+		width: 100%;
+	}
+}

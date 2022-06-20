@@ -45,4 +45,8 @@
 	text-transform: capitalize;
 	color: #3f4246;
 	margin: 0px;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }

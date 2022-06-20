@@ -160,3 +160,13 @@
 	width: 100%;
 	padding-top: 15px;
 }
+
+/* Responsive Start */
+@media screen and (max-width: 1024px) {
+	.userDetails {
+		margin-left: 16px;
+	}
+	.chatHeader .userAvatar img {
+		max-width: 61px;
+	}
+}
