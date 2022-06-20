@@ -18,7 +18,6 @@ const CustModal = (props: any) => {
 			transform: "translate(-50%, -50%)",
 		},
 	};
-	console.log(props.cssStyle);
 
 	function closeModal() {
 		props.setOpen(false);

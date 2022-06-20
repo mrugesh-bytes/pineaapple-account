@@ -16,9 +16,9 @@ const Support = () => {
 
 	const dispatch = useDispatch();
 
-	useEffect(() => {
-		dispatch(getChatList());
-	}, []);
+  useEffect(() => {
+    dispatch(getChatList());
+  }, []);
 
 	return (
 		<div className="outletConainer">
