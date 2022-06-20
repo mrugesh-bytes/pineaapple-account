@@ -30,7 +30,18 @@ body {
 	width: 18px;
 	border-radius: 10px;
 }
-.BeansGoogle{
+
+.carousel.carousel-slider {
+	border-radius: 16px;
+}
+
+/* Responsive Start */
+@media screen and (max-width: 1600px) {
+	.ReactModal__Content {
+		transform: translate(-50%, -50%) scale(0.8) !important;
+	}
+}
+.BeansGoogle {
 	width: 100% !important;
-    height: 100% !important;
+	height: 100% !important;
 }

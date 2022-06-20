@@ -1,35 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { useNavigate } from 'react-router';
-import { useParams } from 'react-router-dom';
-import iconActionMsg from '../../../src/images//icon-action-message.svg';
-import iconActionBell from '../../../src/images/icon-action-bell.svg';
-import iconBathtub from '../../../src/images/icon-bathtub.svg';
-import iconBed from '../../../src/images/icon-bed.svg';
-import iconBack from '../../../src/images/icon-chevron-left.svg';
-import iconDelete from '../../../src/images/icon-delete.svg';
-import iconEdit from '../../../src/images/icon-edit.svg';
-import iconFt from '../../../src/images/icon-ft.svg';
-import { getUnitById } from '../../redux/units/actions/unitById.action';
-import CustModal from '../common/custmodal/CustModal';
-import Slider from '../common/slider/Slider';
-import Map from '../map/Map';
-import styles from './index.module.css';
-
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { useNavigate } from "react-router";
+import { useParams } from "react-router-dom";
+import iconActionMsg from "../../../src/images//icon-action-message.svg";
+import iconActionBell from "../../../src/images/icon-action-bell.svg";
+import iconBathtub from "../../../src/images/icon-bathtub.svg";
+import iconBed from "../../../src/images/icon-bed.svg";
+import iconBack from "../../../src/images/icon-chevron-left.svg";
+import iconDelete from "../../../src/images/icon-delete.svg";
+import iconEdit from "../../../src/images/icon-edit.svg";
+import iconFt from "../../../src/images/icon-ft.svg";
+import { getUnitById } from "../../redux/units/actions/unitById.action";
+import CustModal from "../common/custmodal/CustModal";
+import Slider from "../common/slider/Slider";
+import Map from "../map/Map";
+import styles from "./index.module.css";
 const UnitDetails = () => {
-  const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState(false);
 
-  const { id } = useParams();
+	const { id } = useParams();
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
-  const unitByIdData = useSelector((state: any) => state?.unitById?.data?.result?.unit);
+	const unitByIdData = useSelector(
+		(state: any) => state?.unitById?.data?.result?.unit
+	);
 
-  useEffect(() => {
-    dispatch(getUnitById(id));
-  }, []);
+	useEffect(() => {
+		dispatch(getUnitById(id));
+	}, []);
 
   return (
     <>

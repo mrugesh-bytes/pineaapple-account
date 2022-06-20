@@ -49,6 +49,9 @@ const CustModal = (props: any) => {
 									You are checked in. We received your photo ID & CC as a
 									courtesy hold. Please begin your tour,
 								</div>
+								<div className={styles.radioContainer}>
+									<input type="radio" name="radio" />
+								</div>
 							</div>
 							<div className={styles.card}>
 								<div className={styles.icon}>
@@ -56,6 +59,9 @@ const CustModal = (props: any) => {
 								</div>
 								<div className={styles.content}>
 									A key has not been returned to the locker
+								</div>
+								<div className={styles.radioContainer}>
+									<input type="radio" name="radio" />
 								</div>
 							</div>
 							<div className={styles.card}>
@@ -66,6 +72,9 @@ const CustModal = (props: any) => {
 									A key has not been returned to the locker. Please return the
 									key.
 								</div>
+								<div className={styles.radioContainer}>
+									<input type="radio" name="radio" />
+								</div>
 							</div>
 							<div className={styles.card}>
 								<div className={styles.icon}>
@@ -75,6 +84,9 @@ const CustModal = (props: any) => {
 									Your tour is ending in 5 min, please return the key to a
 									locker.
 								</div>
+								<div className={styles.radioContainer}>
+									<input type="radio" name="radio" />
+								</div>
 							</div>
 							<div className={styles.card}>
 								<div className={styles.icon}>
@@ -83,6 +95,9 @@ const CustModal = (props: any) => {
 								<div className={styles.content}>
 									We did not see you return the (Name of the property) by
 									DD/MM//YYYY, your CC was charged $xxx. xx.
+								</div>
+								<div className={styles.radioContainer}>
+									<input type="radio" name="radio" />
 								</div>
 							</div>
 						</div>

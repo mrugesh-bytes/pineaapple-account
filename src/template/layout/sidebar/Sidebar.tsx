@@ -11,11 +11,15 @@ import iconCog from "../../../images/icon-cog.svg";
 import iconLocation from "../../../images/icon-location.svg";
 import iconMap from "../../../images/icon-map.svg";
 import iconLogout from "../../../images/icon-logout.svg";
+import { useNavigate } from "react-router-dom";
+
 const sidebar = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className={styles.sidebar}>
 			<ul>
-				<li className={styles.logo}>
+				<li onClick={() => navigate("/")} className={styles.logo}>
 					<img src={logoSm} alt="logo"></img>
 				</li>
 				<li>
