@@ -99,7 +99,7 @@ const UnitDetails = () => {
                   <td>13:45</td>
                   <td>
                     <img onClick={() => setOpen(true)} src={iconActionBell} alt='Bell' />
-                    <img src={iconActionMsg} alt='Message' />
+                    <img onClick={() => navigate('/support')} src={iconActionMsg} alt='Message' />
                   </td>
                 </tr>
               </table>

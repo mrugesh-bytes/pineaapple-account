@@ -19,8 +19,7 @@ const Support = () => {
 
   useEffect(() => {
     dispatch(getChatList());
-    setChatData(chatListData);
-  }, [chatListData]);
+  }, []);
 
   return (
     <div className="outletConainer">
