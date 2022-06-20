@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { useNavigate } from 'react-router';
-import { useParams } from 'react-router-dom';
-import iconActionMsg from '../../../src/images//icon-action-message.svg';
-import iconActionBell from '../../../src/images/icon-action-bell.svg';
-import iconBathtub from '../../../src/images/icon-bathtub.svg';
-import iconBed from '../../../src/images/icon-bed.svg';
-import iconBack from '../../../src/images/icon-chevron-left.svg';
-import iconDelete from '../../../src/images/icon-delete.svg';
-import iconEdit from '../../../src/images/icon-edit.svg';
-import iconFt from '../../../src/images/icon-ft.svg';
-import { getUnitById } from '../../redux/units/actions/unitById.action';
-import CustModal from '../common/custmodal/CustModal';
-import Slider from '../common/slider/Slider';
-import Map from '../map/Map';
-import styles from './index.module.css';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { useNavigate } from "react-router";
+import { useParams } from "react-router-dom";
+import iconActionMsg from "../../../src/images//icon-action-message.svg";
+import iconActionBell from "../../../src/images/icon-action-bell.svg";
+import iconBathtub from "../../../src/images/icon-bathtub.svg";
+import iconBed from "../../../src/images/icon-bed.svg";
+import iconBack from "../../../src/images/icon-chevron-left.svg";
+import iconDelete from "../../../src/images/icon-delete.svg";
+import iconEdit from "../../../src/images/icon-edit.svg";
+import iconFt from "../../../src/images/icon-ft.svg";
+import { getUnitById } from "../../redux/units/actions/unitById.action";
+import CustModal from "../common/custmodal/CustModal";
+import Slider from "../common/slider/Slider";
+import Map from "../map/Map";
+import styles from "./index.module.css";
 
 const UnitDetails = () => {
   const [open, setOpen] = useState(false);
@@ -25,7 +25,9 @@ const UnitDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const unitByIdData = useSelector((state: any) => state?.unitById?.data?.result?.unit);
+  const unitByIdData = useSelector(
+    (state: any) => state?.unitById?.data?.result?.unit
+  );
 
   useEffect(() => {
     dispatch(getUnitById(id));
@@ -33,13 +35,20 @@ const UnitDetails = () => {
 
   return (
     <>
-      <CustModal cssStyle={styles.notificationModal} open={open} setOpen={setOpen} />
+      <CustModal
+        cssStyle={styles.notificationModal}
+        open={open}
+        setOpen={setOpen}
+      />
       <div className={styles.outletConainer}>
         <div className={styles.flexWrapper}>
           <div className={styles.unitDetails}>
             <div className={styles.flexContainer}>
               <div className={styles.cartDetailsHeader}>
-                <div className={styles.cartDetailsBack} onClick={() => navigate('/units')}>
+                <div
+                  className={styles.cartDetailsBack}
+                  onClick={() => navigate("/units")}
+                >
                   <img src={iconBack} />
                 </div>
                 <div>
@@ -51,10 +60,10 @@ const UnitDetails = () => {
               </div>
               <div className={styles.unitDetailsAction}>
                 <div className={styles.iconedit}>
-                  <img src={iconEdit} alt='Edit' />
+                  <img src={iconEdit} alt="Edit" />
                 </div>
                 <div className={styles.icondelete}>
-                  <img src={iconDelete} alt='Delete' />
+                  <img src={iconDelete} alt="Delete" />
                 </div>
               </div>
             </div>
@@ -62,19 +71,19 @@ const UnitDetails = () => {
             <div className={styles.facilities}>
               <div className={styles.facility}>
                 <div className={styles.facilityicon}>
-                  <img src={iconFt} alt='Ft' />
+                  <img src={iconFt} alt="Ft" />
                 </div>
                 <div className={styles.facilityName}>80 ft</div>
               </div>
               <div className={styles.facility}>
                 <div className={styles.facilityicon}>
-                  <img src={iconBed} alt='Beds' />
+                  <img src={iconBed} alt="Beds" />
                 </div>
                 <div className={styles.facilityName}>2 Beds</div>
               </div>
               <div className={styles.facility}>
                 <div className={styles.facilityicon}>
-                  <img src={iconBathtub} alt='Bathtubs' />
+                  <img src={iconBathtub} alt="Bathtubs" />
                 </div>
                 <div className={styles.facilityName}>1 Bath</div>
               </div>
@@ -98,8 +107,12 @@ const UnitDetails = () => {
                   <td>13:00</td>
                   <td>13:45</td>
                   <td>
-                    <img onClick={() => setOpen(true)} src={iconActionBell} alt='Bell' />
-                    <img src={iconActionMsg} alt='Message' />
+                    <img
+                      onClick={() => setOpen(true)}
+                      src={iconActionBell}
+                      alt="Bell"
+                    />
+                    <img src={iconActionMsg} alt="Message" />
                   </td>
                 </tr>
               </table>

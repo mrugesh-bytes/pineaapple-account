@@ -1,51 +1,58 @@
 .sidebar {
-	background: #ffffff;
-	box-shadow: 5px 10px 32px rgba(0, 0, 0, 0.04);
-	border-radius: 0px 24px 24px 0px;
-	min-height: 100vh;
-	width: 100%;
-	max-width: 80px;
-	position: fixed;
-	top: 0px;
+  background: #ffffff;
+  box-shadow: 5px 10px 32px rgba(0, 0, 0, 0.04);
+  border-radius: 0px 24px 24px 0px;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 80px;
+  position: fixed;
+  top: 0px;
 }
 .sidebar ul {
-	list-style: none;
-	padding: 0px;
-	margin: 0px;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
 }
 .sidebar .logo {
-	height: 94px;
-	border-bottom: 1px solid #d1d2d3;
+  height: 94px;
+  border-bottom: 1px solid #d1d2d3;
 }
 .sidebar .logo:hover {
-	background-color: transparent;
+  background-color: transparent;
 }
 .sidebar .logo:hover img {
-	filter: none;
+  filter: none;
 }
 .sidebar ul li {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 72px;
-	transition: ease all 0.3s;
-	cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  transition: ease all 0.3s;
+  cursor: pointer;
 }
-.sidebar ul li:hover {
-	background-color: #191c21;
-	transition: ease all 0.3s;
+.sidebar ul li:hover,
+.sidebar ul .active {
+  background-color: #191c21;
+  transition: ease all 0.3s;
 }
-.sidebar ul li:hover img {
-	filter: brightness(0) invert(1);
-	transition: ease all 0.3s;
+.sidebar ul li .active img {
+  filter: brightness(0) invert(1);
+  transition: ease all 0.3s;
+}
+
+.sidebar ul li:hover img,
+.sidebar ul .active img {
+  filter: brightness(0) invert(1);
+  transition: ease all 0.3s;
 }
 .sidebar ul li img {
-	transition: ease all 0.3s;
+  transition: ease all 0.3s;
 }
 .sidebar ul li.iconLogout {
-	background-color: #191c21;
-	position: absolute;
-	bottom: 0px;
-	width: 100%;
-	border-bottom-right-radius: 24px;
+  background-color: #191c21;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  border-bottom-right-radius: 24px;
 }

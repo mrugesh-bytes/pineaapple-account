@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 declare global {
   interface Window {
@@ -8,19 +8,18 @@ declare global {
 
 const Map = () => {
   useEffect(() => {
-    window.addEventListener('load', scriptLoaded);
+    window.addEventListener("load", scriptLoaded);
   }, []);
 
   const scriptLoaded: any = () => {
     const be: any = new window.BeansMap();
-    console.log(be);
     be.render(
-      'beans-maps-1',
-      '0baf0b44e30a49b:3538663834623937633062333465323062343930',
+      "beans-maps-1",
+      "0baf0b44e30a49b:3538663834623937633062333465323062343930",
       [
         {
-          address: '1200 Dale Ave, Mountain View, CA',
-          unit: '43',
+          address: "1200 Dale Ave, Mountain View, CA",
+          unit: "43",
           options: {
             links: {
               // [Optional] Set display to true to show the distance bar at the top. Default false.
@@ -31,21 +30,22 @@ const Map = () => {
               display: true,
               keybox: {
                 // [Optional] Set the text to show on the tiles.
-                text: '#9112',
+                text: "#9112",
 
                 // [Optional] Set the icon for the tile. See
                 // https://storage.googleapis.com/beans-mobile-resources/marker-note-icons/parking_0.png
                 // for size and format.
-                iconUrl: 'https://storage.googleapis.com/beans-mobile-resources/marker-note-icons/...',
+                iconUrl:
+                  "https://storage.googleapis.com/beans-mobile-resources/marker-note-icons/...",
               },
               entrance: {
-                text: '#9111',
+                text: "#9111",
               },
               elevation: {
-                text: 'Floor 3',
+                text: "Floor 3",
               },
               parking: {
-                text: 'Street',
+                text: "Street",
               },
             },
             markers: {
@@ -57,21 +57,22 @@ const Map = () => {
                 display: true,
 
                 // [Optional] Set the text to show on the markers.
-                text: '#9112',
+                text: "#9112",
               },
               entrance: {
-                text: '#9111',
+                text: "#9111",
 
                 // [Optional] Set the icon for the marker. See
                 // https://storage.googleapis.com/beans-mobile-resources/marker-note-icons/parking_0.png
                 // for size and format.
-                iconUrl: 'https://storage.googleapis.com/beans-mobile-resources/marker-note-icons/...',
+                iconUrl:
+                  "https://storage.googleapis.com/beans-mobile-resources/marker-note-icons/...",
               },
               elevation: {
-                text: 'Floor 3',
+                text: "Floor 3",
               },
               parking: {
-                text: 'Street',
+                text: "Street",
               },
             },
             poi: [
@@ -83,23 +84,24 @@ const Map = () => {
                 },
 
                 // [Required] Set the POI type.
-                name: 'CARWASH',
+                name: "CARWASH",
 
                 // [Optional] Set the icon for the POI. See
                 // https://storage.googleapis.com/beans-mobile-resources/marker-note-icons/parking_0.png
                 // for size and format.
-                iconUrl: 'https://storage.googleapis.com/beans-mobile-resources/marker-note-icons/...',
+                iconUrl:
+                  "https://storage.googleapis.com/beans-mobile-resources/marker-note-icons/...",
               },
               {
                 // [Optional] Set display to false to hide specific POIs that are a part of the Beans data set.
                 display: false,
 
                 // [Required] Set the POI type.
-                name: 'TRASH',
+                name: "TRASH",
               },
               {
                 display: false,
-                name: 'ALL',
+                name: "ALL",
               },
             ],
           },
@@ -107,21 +109,21 @@ const Map = () => {
       ],
       {
         // [Optional] Set the location of the user to a fixed position for the navigation to work.
-        userLocation: 'LIVE',
+        userLocation: "LIVE",
 
         // [Optional] Set the default maps app to open on clicking the navigate button
-        platform: 'APPLE',
+        platform: "APPLE",
       },
       {
         // [Optional] Set the default view to satellite.
-        initialMap: 'STREET',
+        initialMap: "STREET",
       }
     );
   };
 
   return (
     <div>
-      <div id='beans-maps-1' style={{ width: '50vw', height: '100vh' }}>
+      <div id="beans-maps-1" style={{ width: "50vw", height: "100vh" }}>
         {scriptLoaded}
       </div>
     </div>

@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 const Support = () => {
   const [chatTab, setChatTab] = useState("Active Visit");
   const [userId, setUserId] = useState();
-  console.log(userId);
 
   const chatListData = useSelector(
     (state: any) => state?.chatList?.data?.result?.visitorList

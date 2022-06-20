@@ -1,72 +1,86 @@
 .container {
-	display: flex;
-	height: 100vh;
+  display: flex;
+  height: 100vh;
 }
 .formOuter {
-	padding: 26px 5.5rem;
-	width: 50%;
-	text-align: left;
+  padding: 26px 5.5rem;
+  width: 50%;
+  text-align: left;
 }
 .formOuter form label {
-	color: #191c21;
-	font-weight: 300;
-	font-size: 40px;
-	line-height: 52px;
-	display: inline-block;
-	padding-right: 30px;
+  color: #191c21;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 52px;
+  display: inline-block;
+  padding-right: 30px;
 }
 .formOuter form {
-	padding-top: 231px;
+  padding-top: 231px;
 }
 .formOuter .fieldWrapper {
-	display: flex;
+  display: flex;
 }
 .formOuter .fieldWrapper .field {
-	width: 65%;
-	position: relative;
-	padding-bottom: 15px;
-	border-bottom: 1px solid #d1d2d3;
+  width: 65%;
+  position: relative;
+  /* padding-bottom: 15px; */
+  border-bottom: 1px solid #d1d2d3;
 }
+
+.customSelect > div {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+  /* line-height: 1; */
+  color: #191c21;
+  border: none !important;
+}
+.customSelect > div div:last-child span {
+  background-color: transparent;
+}
+
 .formOuter form select {
-	color: #191c21;
-	font-weight: 300;
-	font-size: 40px;
-	line-height: 52px;
-	border: none;
-	outline: none;
-	width: 100%;
-	position: relative;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	background: url("../../images/icon-down-chivron.svg");
-	background-size: 12.8;
-	background-position: center right;
-	background-repeat: no-repeat;
-	background-color: transparent;
-	border: 0;
-	outline: 0;
+  color: #191c21;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 52px;
+  border: none;
+  outline: none;
+  width: 100%;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("../../images/icon-down-chivron.svg");
+  background-size: 12.8;
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
 }
 .formOuter form select option {
-	font-weight: 300;
+  font-weight: 300;
 }
 .logo {
-	width: 100%;
-	max-width: 209.45px;
+  width: 100%;
+  max-width: 209.45px;
 }
 .banner {
-	min-width: 50%;
-	background-color: #fffcf4;
-	display: flex;
+  min-width: 50%;
+  background-color: #fffcf4;
+  display: flex;
 }
 .w100 {
-	width: 100%;
+  width: 100%;
 }
 .footer {
-	position: absolute;
-	bottom: 25px;
+  position: absolute;
+  bottom: 25px;
 }
 .footer p {
-	font-size: 14px;
-	line-height: 32px;
-	margin: 0px;
+  font-size: 14px;
+  line-height: 32px;
+  margin: 0px;
 }
