@@ -28,6 +28,7 @@ const UnitDetails = () => {
 	const unitByIdData = useSelector(
 		(state: any) => state?.unitById?.data?.result?.unit
 	);
+	console.log(unitByIdData);
 
 	useEffect(() => {
 		dispatch(getUnitById(id));
@@ -112,7 +113,11 @@ const UnitDetails = () => {
 											src={iconActionBell}
 											alt="Bell"
 										/>
-										<img src={iconActionMsg} alt="Message" />
+										<img
+											onClick={() => navigate("/support")}
+											src={iconActionMsg}
+											alt="Message"
+										/>
 									</td>
 								</tr>
 							</table>
