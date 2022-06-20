@@ -34,14 +34,19 @@ body {
 .carousel.carousel-slider {
 	border-radius: 16px;
 }
+.BeansGoogle {
+	width: 100% !important;
+	height: 100% !important;
+}
 
 /* Responsive Start */
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1700px) {
 	.ReactModal__Content {
 		transform: translate(-50%, -50%) scale(0.8) !important;
 	}
 }
-.BeansGoogle {
-	width: 100% !important;
-	height: 100% !important;
+@media screen and (max-width: 1366px) {
+	.ReactModal__Content {
+		transform: translate(-50%, -50%) scale(1) !important;
+	}
 }
