@@ -1,47 +1,55 @@
 .container {
 	display: flex;
 	height: 100vh;
-  }
-  .formOuter {
+}
+.formOuter {
 	padding: 26px 5.5rem;
 	width: 50%;
 	text-align: left;
-  }
-  .formOuter form label {
+}
+.formOuter form label {
 	color: #191c21;
 	font-weight: 300;
 	font-size: 40px;
 	line-height: 52px;
 	display: inline-block;
 	padding-right: 30px;
-  }
-  .formOuter form {
+	margin-bottom: 0px;
+}
+.formOuter form {
 	padding-top: 231px;
-  }
-  .formOuter .fieldWrapper {
+}
+.formOuter .fieldWrapper {
 	display: flex;
-  }
-  .formOuter .fieldWrapper .field {
+	align-items: center;
+}
+.formOuter .fieldWrapper .field {
 	width: 65%;
 	position: relative;
 	/* padding-bottom: 15px; */
 	border-bottom: 1px solid #d1d2d3;
-  }
-  
-  .customSelect > div {
+}
+
+.customSelect > div {
 	font-family: "Rubik";
 	font-style: normal;
 	font-weight: 300;
 	font-size: 40px;
-	/* line-height: 1; */
-	color: #191c21;
+	color: #191c21 !important;
 	border: none !important;
-  }
-  .customSelect > div div:last-child span {
+	box-shadow: none !important;
+}
+.customSelect > div > div {
+	padding: 0px !important;
+}
+.customSelect > div * {
+	color: #191c21 !important;
+}
+.customSelect > div div:last-child span {
 	background-color: transparent;
-  }
-  
-  .formOuter form select {
+}
+
+.formOuter form select {
 	color: #191c21;
 	font-weight: 300;
 	font-size: 40px;
@@ -59,32 +67,32 @@
 	background-color: transparent;
 	border: 0;
 	outline: 0;
-  }
-  .formOuter form select option {
+}
+.formOuter form select option {
 	font-weight: 300;
-  }
-  .logo {
+}
+.logo {
 	width: 100%;
 	max-width: 209.45px;
-  }
-  .banner {
+}
+.banner {
 	min-width: 50%;
 	background-color: #fffcf4;
 	display: flex;
-  }
-  .w100 {
+}
+.w100 {
 	width: 100%;
-  }
-  .footer {
+}
+.footer {
 	position: absolute;
 	bottom: 25px;
-  }
-  .footer p {
+}
+.footer p {
 	font-size: 14px;
 	line-height: 32px;
 	margin: 0px;
-  }
-  
+}
+
 form.loginForm {
 	padding-top: 146px;
 }

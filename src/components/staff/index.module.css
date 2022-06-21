@@ -28,6 +28,7 @@
 	line-height: 28px;
 	text-transform: capitalize;
 	height: 40px;
+	outline: none !important;
 }
 
 .dashboardStaff .btnWrapper .btnGreenOutline {
@@ -48,4 +49,24 @@
 .staffCardConatiner {
 	width: 25%;
 	padding: 16px;
+}
+
+/* Responsive Start */
+@media screen and (max-width: 1280px) {
+	.staffCardConatiner {
+		width: 33.33%;
+		padding: 12px;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.staffCardConatiner {
+		width: 50%;
+		padding: 12px;
+	}
+}
+@media screen and (max-width: 600px) {
+	.staffCardConatiner {
+		width: 100%;
+		padding: 12px;
+	}
 }

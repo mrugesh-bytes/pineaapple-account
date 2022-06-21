@@ -1,5 +1,5 @@
 import React from "react";
-import StaffModule from "../components/staff";
+import StaffModule from "../components/staff/index";
 const Staff = () => {
 	return (
 		<div className="outletConainer">
