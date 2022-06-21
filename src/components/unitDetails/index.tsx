@@ -36,7 +36,11 @@ const UnitDetails = () => {
 
   return (
     <>
-      <CustModal open={open} setOpen={setOpen} />
+      <CustModal
+        open={open}
+        setOpen={setOpen}
+        bodyData={<UnitNotification setOpen={setOpen} />}
+      />
       <div className={styles.outletConainer}>
         <div className={styles.flexWrapper}>
           <div className={styles.unitDetails}>
