@@ -5,17 +5,23 @@ import iconRocket from "../../images/icon-bg-rocket.svg";
 import iconYellowKey from "../../images/icon-bg-yellow-key.svg";
 import iconRedKey from "../../images/icon-bg-yellow-red.svg";
 import iconReverseKey from "../../images/icon-bg-reverse.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { AnyIfEmpty, useDispatch, useSelector } from "react-redux";
 import { getNotificationList } from "../../redux/notification/actions/getNotification.action";
+import { notifyVisitor } from "../../redux/notification/actions/notifyVisitor.action";
+
 
 const UnitNotification = ({ setOpen }: any) => {
   const dispatch = useDispatch();
   const notificationList = useSelector(
     (state: any) => state?.notificationList?.data?.result?.templates
   );
+  const notifyVisitorData = useSelector(
+    (state: AnyIfEmpty<object>) => state.notifyVisitor
+  );
 
   const [notificationListArrayWithIcons, setNotificationListArrayWithIcons] =
     useState([]);
+      const [messageId, setMessageId] = useState("");
 
   const ICONS_ARRAY = [
     { iconsName: iconRocket },
@@ -44,12 +50,18 @@ const UnitNotification = ({ setOpen }: any) => {
     setNotificationListArrayWithIcons(data);
   }, [notificationList]);
 
-  const radioButtonHandler = (id: number) => {
-    console.log(id);
+  const radioButtonHandler = (id: string) => {
+    setMessageId(id);
   };
+
+    const sendNotificationHandler = () => {
+      dispatch(
+        notifyVisitor(messageId, "5f1a2e44-eb1f-4a06-af11-4ffe00a598e4")
+      );
+    };
+
   return (
     <div>
-      {" "}
       <div className={styles.modalNotification}>
         <div className={styles.modalHeader}>
           <div className={styles.modalTitle}>Notification</div>
@@ -59,7 +71,7 @@ const UnitNotification = ({ setOpen }: any) => {
         </div>
         <div className={styles.modalBody}>
           {notificationListArrayWithIcons &&
-            notificationListArrayWithIcons?.map((data: any) => (
+            notificationListArrayWithIcons?.map((data: AnyIfEmpty<object>) => (
               <div key={data.data.id} className={styles.card}>
                 <div className={styles.icon}>
                   <img src={data?.iconsName} />
@@ -78,7 +90,9 @@ const UnitNotification = ({ setOpen }: any) => {
           <button onClick={closeModal} className={styles.cancelBtn}>
             Cancel
           </button>
-          <button className={styles.sendBtn}>Send Notification</button>
+          <button onClick={sendNotificationHandler} className={styles.sendBtn}>
+            Send Notification
+          </button>
         </div>
       </div>
     </div>
