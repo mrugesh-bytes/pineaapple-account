@@ -23,6 +23,8 @@ function Onboarding() {
     navigate("/login");
   };
 
+  const userType = localStorage.getItem("type");
+
   return (
     <form>
       <div className={styles.fieldWrapper}>
