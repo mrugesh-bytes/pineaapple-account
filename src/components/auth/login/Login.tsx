@@ -79,7 +79,7 @@ const Login = () => {
           <div className={styles.leadSignup}>
             <p>
               Don’t have an account?
-              <Link to="/">Sign Up</Link>
+              <Link to="/signup" >Sign Up</Link>
             </p>
           </div>
         </div>
