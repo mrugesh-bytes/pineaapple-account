@@ -16,7 +16,6 @@ import CustModal from "../common/custmodal/CustModal";
 import Slider from "../common/slider/Slider";
 import Map from "../map/Map";
 import styles from "./index.module.css";
-import UnitNotification from "./UnitNotification";
 
 const UnitDetails = () => {
   const [open, setOpen] = useState(false);

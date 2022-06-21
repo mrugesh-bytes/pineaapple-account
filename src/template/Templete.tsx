@@ -11,22 +11,16 @@ import UnitDetails from "../pages/UnitDetails";
 import UnitsPage from "../pages/Units";
 import Layout from "./layout/Layout";
 import OuterLayout from "./outerlayout/OuterLayout";
-import Support from "../components/support/Support";
 import ChatSupport from "../pages/ChatSupport";
 import Login from "../components/auth/login/Login";
+import ProtectedRoutes from "./ProtectedRoutes";
 
-export default function Template(): JSX.Element {
-  const userType = localStorage.getItem("type");
-  const token: any = localStorage.getItem("accessToken");
-
-  const PrivateRoute = () => {
-    return token ? <Outlet /> : <Navigate to="/login" />;
-  };
+const Templete = () => {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PrivateRoute />}>
+        <Route path="/" element={<ProtectedRoutes />}>
           <Route path="/" element={<Layout />}>
             <Route path="units" element={<UnitsPage />} />
             <Route path="unitdetails/:id" element={<UnitDetails />} />
@@ -38,10 +32,12 @@ export default function Template(): JSX.Element {
           <Route index element={<Onboarding />} />
           <Route
             path="/login"
-            element={userType ? <Login /> : <Navigate to="/" />}
+            element={<Login />}
           />
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
+
+export default Templete

@@ -3,7 +3,6 @@ import styles from "./Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import eyeOpen from "../../../images/icon-eye-open.svg";
 import eyeClose from "../../../images/icon-eye-close.svg";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import { getAuth } from "../../../redux/auth/actions/auth.action";
 
@@ -17,6 +16,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userType = localStorage.getItem("type");
+
   const handleLoginDetails = (event: any) => {
     setLoginDetails({
       ...loginDetails,
@@ -31,6 +31,10 @@ const Login = () => {
   const onSuccess = () => {
     navigate("/units");
   };
+
+  useEffect(() => {
+    if (!userType) navigate("/")
+  }, [])
 
   return (
     <>
