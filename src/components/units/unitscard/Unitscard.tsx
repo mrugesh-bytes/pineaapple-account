@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import styles from "./Unitscard.module.css";
-import cardImg from "../../../images/units-card.png";
-import iconEdit from "../../../images/icon-edit.svg";
-import iconDelete from "../../../images/icon-delete.svg";
-import iconFt from "../../../images/icon-ft.svg";
-import iconBed from "../../../images/icon-bed.svg";
-import iconBathtub from "../../../images/icon-bathtub.svg";
-import iconKey from "../../../images/icon-key.svg";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import Slider from "../../common/slider/Slider";
+import React, { useEffect, useState } from 'react';
+import styles from './Unitscard.module.css';
+import cardImg from '../../../images/units-card.png';
+import iconEdit from '../../../images/icon-edit.svg';
+import iconDelete from '../../../images/icon-delete.svg';
+import iconFt from '../../../images/icon-ft.svg';
+import iconBed from '../../../images/icon-bed.svg';
+import iconBathtub from '../../../images/icon-bathtub.svg';
+import iconKey from '../../../images/icon-key.svg';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Slider from '../../common/slider/Slider';
 
 export interface Iunitcards {
   unit: {

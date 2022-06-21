@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { AnyIfEmpty, useDispatch, useSelector } from "react-redux";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useNavigate } from "react-router";
 import { useParams } from "react-router-dom";
@@ -25,9 +25,7 @@ const UnitDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const unitByIdData = useSelector(
-    (state: any) => state?.unitById?.data?.result?.unit
-  );
+  const unitByIdData = useSelector((state: AnyIfEmpty<object>) => state?.unitById?.data?.result?.unit);
 
   useEffect(() => {
     dispatch(getUnitById(id));
@@ -35,7 +33,11 @@ const UnitDetails = () => {
 
   return (
     <>
-      <CustModal open={open} setOpen={setOpen} />
+      <CustModal
+        open={open}
+        setOpen={setOpen}
+        bodyData={<UnitNotification setOpen={setOpen} />}
+      />
       <div className={styles.outletConainer}>
         <div className={styles.flexWrapper}>
           <div className={styles.unitDetails}>
