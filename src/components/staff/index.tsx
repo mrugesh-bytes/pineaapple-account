@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.css";
-import StaffCard from "./staffcard/StaffCard";
+import StaffCard from "./staffcard/staffcard";
 
 const index = (props: any) => {
 	return (
