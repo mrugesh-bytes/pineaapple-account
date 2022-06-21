@@ -7,6 +7,9 @@ import Layout from "./layout/Layout";
 import OuterLayout from "./outerlayout/OuterLayout";
 import Support from "../components/support/Support";
 import ChatSupport from "../pages/ChatSupport";
+import Login from "../components/auth/login/Login";
+import Signup from "../components/auth/signup/Signup";
+
 export default function Template(): JSX.Element {
 	return (
 		<BrowserRouter>
@@ -18,6 +21,8 @@ export default function Template(): JSX.Element {
 				</Route>
 				<Route path="/" element={<OuterLayout />}>
 					<Route index element={<Onboarding />} />
+					<Route path="login" element={<Login />} />
+					<Route path="signup" element={<Signup />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

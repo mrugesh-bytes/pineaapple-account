@@ -9,6 +9,13 @@
 .contacts::-webkit-scrollbar {
 	display: none;
 }
+.tab {
+	position: sticky;
+	top: 0px;
+	z-index: 9;
+	background-color: #fff;
+	padding-bottom: 15px;
+}
 .tab .tabHead {
 	list-style: none;
 	padding: 24px 24px 8px;

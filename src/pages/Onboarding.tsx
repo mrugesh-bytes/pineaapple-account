@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../template/outerlayout/outerlayout.module.css";
 import Select from "react-select";
-
+import Login from "../components/auth/login/Login";
 const options = [
 	{ value: "admin", label: "Admin" },
 	{ value: "general manager", label: "General Manager" },
@@ -13,29 +13,24 @@ const options = [
 function Onboarding() {
 	const [selectedOption, setSelectedOption]: any = useState(null);
 	return (
-		<form>
-			<div className={styles.fieldWrapper}>
-				<div>
-					<label>Hi! I’m A</label>
-				</div>
-				<div className={styles.field}>
-					{/* <select>
-            <option>Admin</option>
-            <option>General Manager</option>
-            <option>Property Manager</option>
-            <option>Leasing Agent</option>
-            <option>Maintenence</option>
-          </select> */}
-					<Select
-						placeholder="Select a role"
-						defaultValue={selectedOption}
-						onChange={setSelectedOption}
-						options={options}
-						className={styles.customSelect}
-					/>
-				</div>
-			</div>
-		</form>
+		// <form>
+		// 	<div className={styles.fieldWrapper}>
+		// 		<div>
+		// 			<label>Hi! I’m A</label>
+		// 		</div>
+		// 		<div className={styles.field}>
+		// 			<Select
+		// 				placeholder="Select a role"
+		// 				defaultValue={selectedOption}
+		// 				onChange={setSelectedOption}
+		// 				options={options}
+		// 				className={styles.customSelect}
+		// 			/>
+		// 		</div>
+		// 	</div>
+		// </form>
+
+		<Login />
 	);
 }
 

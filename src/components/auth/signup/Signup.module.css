@@ -1,9 +1,9 @@
-.loginWrapper {
+.signupWrapper {
 	width: 100%;
 	max-width: 373px;
-	padding-top: 146px;
+	padding-top: 126px;
 }
-.loginWrapper .loginTitle {
+.signupWrapper .signupTitle {
 	font-weight: 600;
 	font-size: 36px;
 	line-height: 48px;
@@ -11,7 +11,7 @@
 	color: #191c21;
 	margin: 0px 0px 16px;
 }
-.loginWrapper .loginInfo {
+.signupWrapper .signupInfo {
 	font-size: 16px;
 	line-height: 28px;
 	text-transform: capitalize;
@@ -19,13 +19,13 @@
 	margin: 0px;
 	max-width: 314px;
 }
-.loginWrapper .loginForm {
+.signupWrapper .signupForm {
 	margin-top: 50px;
 }
-.loginForm .formWrapper {
+.signupForm .formWrapper {
 	margin-bottom: 24px;
 }
-.loginForm .formWrapper label {
+.signupForm .formWrapper label {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 28px;
@@ -34,7 +34,7 @@
 	display: block;
 	margin-bottom: 16px;
 }
-.loginForm .formWrapper input {
+.signupForm .formWrapper input {
 	width: 100%;
 	background: #ffffff;
 	border: 1px solid #d1d2d3;
@@ -43,7 +43,7 @@
 	padding: 10px 14px;
 	outline: none;
 }
-.loginForm .formWrapper .passwordWrapper {
+.signupForm .formWrapper .passwordWrapper {
 	position: relative;
 }
 .passwordWrapper .eyeToggler {
@@ -58,10 +58,10 @@
 	object-fit: contain;
 	cursor: pointer;
 }
-.loginForm .formWrapper input:focus {
+.signupForm .formWrapper input:focus {
 	border: 1px solid #51ab86;
 }
-.loginForm .formWrapper a {
+.signupForm .formWrapper a {
 	font-size: 14px;
 	line-height: 28px;
 	text-transform: capitalize;
@@ -70,10 +70,10 @@
 	text-decoration: none !important;
 	margin-top: 8px;
 }
-.loginForm .formSubmit {
+.signupForm .formSubmit {
 	margin-top: 24px;
 }
-.loginForm .formSubmit button {
+.signupForm .formSubmit button {
 	height: 48px;
 	background: #51ab86;
 	border-radius: 8px;
@@ -105,7 +105,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-	.loginWrapper {
+	.signupWrapper {
 		width: 100%;
 		max-width: 100%;
 	}
