@@ -33,7 +33,7 @@ const index = () => {
         </div>
         <div className={styles.unitcards}>
           {unitsData &&
-            unitsData.map((unit: Element, index: number) => {
+            unitsData.map((unit: any, index: number) => {
               return <Unitscard unit={unit} key={index} />;
             })}
         </div>
