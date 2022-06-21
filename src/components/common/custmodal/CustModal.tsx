@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import iconClose from '../../../images/icon-close.svg';
-import styles from './CustModal.module.css';
+import { AnyIfEmpty, useDispatch, useSelector } from 'react-redux';
+import iconReverseKey from '../../../images/icon-bg-reverse.svg';
 import iconRocket from '../../../images/icon-bg-rocket.svg';
 import iconYellowKey from '../../../images/icon-bg-yellow-key.svg';
 import iconRedKey from '../../../images/icon-bg-yellow-red.svg';
-import iconReverseKey from '../../../images/icon-bg-reverse.svg';
-import { useDispatch, useSelector } from 'react-redux';
+import iconClose from '../../../images/icon-close.svg';
 import { getNotificationList } from '../../../redux/notification/actions/getNotification.action';
+import { notifyVisitor } from '../../../redux/notification/actions/notifyVisitor.action';
+import styles from './CustModal.module.css';
 
 const CustModal = (props: any) => {
   const dispatch = useDispatch();
-  const notificationList = useSelector((state: any) => state?.notificationList?.data?.result?.templates);
+  const notificationList = useSelector((state: AnyIfEmpty<object>) => state?.notificationList?.data?.result?.templates);
+  const notifyVisitorData = useSelector((state: AnyIfEmpty<object>) => state.notifyVisitor);
 
   const [notificationListArrayWithIcons, setNotificationListArrayWithIcons] = useState([]);
+  const [messageId, setMessageId] = useState('');
 
   const customStyles = {
     content: {
@@ -34,7 +36,7 @@ const CustModal = (props: any) => {
   }, []);
 
   useEffect(() => {
-    const data = notificationList && notificationList.map((data: any, index: number) => ({ data, ...ICONS_ARRAY[index] }));
+    const data = notificationList && notificationList.map((data: Element, index: number) => ({ data, ...ICONS_ARRAY[index] }));
 
     setNotificationListArrayWithIcons(data);
   }, [notificationList]);
@@ -43,8 +45,12 @@ const CustModal = (props: any) => {
     props.setOpen(false);
   }
 
-  const radioButtonHandler = (id: number) => {
-    console.log(id);
+  const radioButtonHandler = (id: string) => {
+    setMessageId(id);
+  };
+
+  const sendNotificationHandler = () => {
+    dispatch(notifyVisitor(messageId, '5f1a2e44-eb1f-4a06-af11-4ffe00a598e4'));
   };
 
   return (
@@ -60,7 +66,7 @@ const CustModal = (props: any) => {
             </div>
             <div className={styles.modalBody}>
               {notificationListArrayWithIcons &&
-                notificationListArrayWithIcons?.map((data: any) => (
+                notificationListArrayWithIcons?.map((data: AnyIfEmpty<object>) => (
                   <div key={data.data.id} className={styles.card}>
                     <div className={styles.icon}>
                       <img src={data?.iconsName} />
@@ -76,7 +82,9 @@ const CustModal = (props: any) => {
               <button onClick={closeModal} className={styles.cancelBtn}>
                 Cancel
               </button>
-              <button className={styles.sendBtn}>Send Notification</button>
+              <button onClick={sendNotificationHandler} className={styles.sendBtn}>
+                Send Notification
+              </button>
             </div>
           </div>
         </Modal>

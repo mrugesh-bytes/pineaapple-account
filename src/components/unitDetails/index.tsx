@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { AnyIfEmpty, useDispatch, useSelector } from "react-redux";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useNavigate } from "react-router";
 import { useParams } from "react-router-dom";
@@ -16,7 +16,6 @@ import CustModal from "../common/custmodal/CustModal";
 import Slider from "../common/slider/Slider";
 import Map from "../map/Map";
 import styles from "./index.module.css";
-import UnitNotification from "./UnitNotification";
 
 const UnitDetails = () => {
   const [open, setOpen] = useState(false);
@@ -26,9 +25,7 @@ const UnitDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const unitByIdData = useSelector(
-    (state: any) => state?.unitById?.data?.result?.unit
-  );
+  const unitByIdData = useSelector((state: AnyIfEmpty<object>) => state?.unitById?.data?.result?.unit);
 
   useEffect(() => {
     dispatch(getUnitById(id));
