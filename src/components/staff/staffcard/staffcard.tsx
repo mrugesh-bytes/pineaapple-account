@@ -8,7 +8,7 @@ const staffcard = () => {
 		<div className={styles.staffCard}>
 			<div className={styles.staffPhotoContainer}>
 				<img src={avatarStaff} alt="Staff Avatar" />
-				<p className={`${styles.staffPos} ${styles.staffManagement}`}>Admin</p>
+				<p className={`${styles.staffPos} ${styles.staffLeasing}`}>Admin</p>
 			</div>
 			<h2 className={styles.staffName}>Account Employee</h2>
 			<a href="mailto:employee@acme.apartments" className={styles.staffMail}>
