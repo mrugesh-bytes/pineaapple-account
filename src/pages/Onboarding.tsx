@@ -13,24 +13,22 @@ const options = [
 function Onboarding() {
 	const [selectedOption, setSelectedOption]: any = useState(null);
 	return (
-		// <form>
-		// 	<div className={styles.fieldWrapper}>
-		// 		<div>
-		// 			<label>Hi! I’m A</label>
-		// 		</div>
-		// 		<div className={styles.field}>
-		// 			<Select
-		// 				placeholder="Select a role"
-		// 				defaultValue={selectedOption}
-		// 				onChange={setSelectedOption}
-		// 				options={options}
-		// 				className={styles.customSelect}
-		// 			/>
-		// 		</div>
-		// 	</div>
-		// </form>
-
-		<Login />
+		<form>
+			<div className={styles.fieldWrapper}>
+				<div>
+					<label>Hi! I’m A</label>
+				</div>
+				<div className={styles.field}>
+					<Select
+						placeholder="Select a role"
+						defaultValue={selectedOption}
+						onChange={setSelectedOption}
+						options={options}
+						className={styles.customSelect}
+					/>
+				</div>
+			</div>
+		</form>
 	);
 }
 
