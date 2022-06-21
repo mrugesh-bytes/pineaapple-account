@@ -14,26 +14,28 @@ import OuterLayout from "./outerlayout/OuterLayout";
 import ChatSupport from "../pages/ChatSupport";
 import Login from "../components/auth/login/Login";
 import ProtectedRoutes from "./ProtectedRoutes";
+import Signup from "../components/auth/signup/Signup";
 
 const Templete = () => {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<ProtectedRoutes />}>
-					<Route path="/" element={<Layout />}>
-						<Route path="units" element={<UnitsPage />} />
-						<Route path="unitdetails/:id" element={<UnitDetails />} />
-						<Route path="support" element={<ChatSupport />} />
-					</Route>
-				</Route>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ProtectedRoutes />}>
+          <Route path="/" element={<Layout />}>
+            <Route path="units" element={<UnitsPage />} />
+            <Route path="unitdetails/:id" element={<UnitDetails />} />
+            <Route path="support" element={<ChatSupport />} />
+          </Route>
+        </Route>
 
-				<Route path="/" element={<OuterLayout />}>
-					<Route index element={<Onboarding />} />
-					<Route path="/login" element={<Login />} />
-				</Route>
-			</Routes>
-		</BrowserRouter>
-	);
+        <Route path="/" element={<OuterLayout />}>
+          <Route index element={<Onboarding />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default Templete;
