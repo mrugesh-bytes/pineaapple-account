@@ -4,7 +4,12 @@ import userFirst from "../../../images/chat-user-1.svg";
 import userSecond from "../../../images/chat-user-2.svg";
 import userThird from "../../../images/chat-user-3.svg";
 import moment from "moment";
-const ChatUser = (props: any) => {
+
+interface IchatUser {
+  chatData: [string] | undefined;
+  setUserId: any;
+}
+const ChatUser = (props: IchatUser) => {
   return (
     <>
       <div>

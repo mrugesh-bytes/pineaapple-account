@@ -49,11 +49,7 @@ const Support = () => {
             </ul>
           </div>
           <SearchUser />
-          <ChatUser
-            chatData={chatListData}
-            userId={userId}
-            setUserId={setUserId}
-          />
+          <ChatUser chatData={chatListData} setUserId={setUserId} />
         </div>
         <div className={styles.chatContainer}>
           <Chat />

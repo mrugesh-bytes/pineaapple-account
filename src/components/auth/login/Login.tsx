@@ -1,51 +1,87 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Login.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import eyeOpen from "../../../images/icon-eye-open.svg";
 import eyeClose from "../../../images/icon-eye-close.svg";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { getAuth } from "../../../redux/auth/actions/auth.action";
+
 const Login = () => {
-	return (
-		<div className={styles.loginWrapper}>
-			<h2 className={styles.loginTitle}>I’m Admin!</h2>
-			<p className={styles.loginInfo}>
-				Hey, Enter your details to get sign In your account
-			</p>
-			<div className={styles.loginForm}>
-				<div className={styles.formWrapper}>
-					<label>Email Id</label>
-					<input
-						type="email"
-						name="email"
-						placeholder="Enter your email address"
-					/>
-				</div>
-				<div className={styles.formWrapper}>
-					<label>Password</label>
-					<div className={styles.passwordWrapper}>
-						<input
-							type="password"
-							name="password"
-							placeholder="Enter your password"
-						/>
-						<div className={styles.eyeToggler}>
-							<img src={eyeOpen} alt="Eye Open" />
-							<img src={eyeClose} alt="Eye Close" />
-						</div>
-					</div>
-					<Link to="/">Trouble to get sign in?</Link>
-				</div>
-				<div className={styles.formSubmit}>
-					<button>Sign In</button>
-				</div>
-				<div className={styles.leadSignup}>
-					<p>
-						Don’t have an account?
-						<Link to="/">Sign Up</Link>
-					</p>
-				</div>
-			</div>
-		</div>
-	);
+  const [loginDetails, setLoginDetails]: any = useState({
+    email: "",
+    password: "",
+  });
+  const [showPass, setShowPass] = useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const userType = localStorage.getItem("type");
+  const handleLoginDetails = (event: any) => {
+    setLoginDetails({
+      ...loginDetails,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSignIn = () => {
+    dispatch(getAuth(loginDetails, onSuccess));
+  };
+
+  const onSuccess = () => {
+    navigate("/units");
+  };
+
+  return (
+    <>
+      <div className={styles.loginWrapper}>
+        <h2 className={styles.loginTitle}>I’m {userType}!</h2>
+        <p className={styles.loginInfo}>
+          Hey, Enter your details to get sign In your account
+        </p>
+        <div className={styles.loginForm}>
+          <div className={styles.formWrapper}>
+            <label>Email Id</label>
+            <input
+              type="email"
+              name="email"
+              value={loginDetails.email}
+              onChange={handleLoginDetails}
+              placeholder="Enter your email address"
+            />
+          </div>
+          <div className={styles.formWrapper}>
+            <label>Password</label>
+            <div className={styles.passwordWrapper}>
+              <input
+                type={showPass ? "text" : "password"}
+                name="password"
+                value={loginDetails.password}
+                onChange={handleLoginDetails}
+                placeholder="Enter your password"
+              />
+              <div
+                className={styles.eyeToggler}
+                onClick={() => setShowPass(!showPass)}
+              >
+                <img src={!showPass ? eyeClose : eyeOpen} alt="Eye" />
+              </div>
+            </div>
+            <Link to="/">Trouble to get sign in?</Link>
+          </div>
+          <div className={styles.formSubmit}>
+            <button onClick={handleSignIn}>Sign In</button>
+          </div>
+          <div className={styles.leadSignup}>
+            <p>
+              Don’t have an account?
+              <Link to="/">Sign Up</Link>
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Login;

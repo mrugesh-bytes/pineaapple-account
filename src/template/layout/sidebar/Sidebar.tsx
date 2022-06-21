@@ -23,6 +23,11 @@ const sidebar = () => {
     setPath(location.pathname);
   }, [location]);
 
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
+
   return (
     <div className={styles.sidebar}>
       <ul>
@@ -68,7 +73,7 @@ const sidebar = () => {
         <li>
           <img src={iconMap} alt="Map Icon" />
         </li>
-        <li className={styles.iconLogout}>
+        <li className={styles.iconLogout} onClick={handleLogout}>
           <img src={iconLogout} alt="Icon Logout" />
         </li>
       </ul>
