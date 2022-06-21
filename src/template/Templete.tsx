@@ -9,7 +9,7 @@ import Support from "../components/support/Support";
 import ChatSupport from "../pages/ChatSupport";
 import Login from "../components/auth/login/Login";
 import Signup from "../components/auth/signup/Signup";
-
+import Staff from "../pages/Staff";
 export default function Template(): JSX.Element {
 	return (
 		<BrowserRouter>
@@ -18,6 +18,7 @@ export default function Template(): JSX.Element {
 					<Route path="units" element={<UnitsPage />} />
 					<Route path="unitdetails/:id" element={<UnitDetails />} />
 					<Route path="support" element={<ChatSupport />} />
+					<Route path="staff" element={<Staff />} />
 				</Route>
 				<Route path="/" element={<OuterLayout />}>
 					<Route index element={<Onboarding />} />

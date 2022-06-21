@@ -1,0 +1,67 @@
+.staffCard {
+	width: 100%;
+	background: #ffffff;
+	box-shadow: 5px 10px 32px rgba(65, 65, 65, 0.09);
+	border-radius: 8px;
+	padding: 24px 14px;
+	position: relative;
+}
+
+.staffPhotoContainer {
+	position: relative;
+	text-align: center;
+}
+.staffPhotoContainer img {
+	display: block;
+	margin: auto;
+}
+.staffPos {
+	font-size: 14px;
+	line-height: 28px;
+	color: #ffffff;
+	padding: 2px 20px;
+	border-radius: 25px;
+	text-align: center;
+	display: inline-block;
+	margin: 0px;
+	position: relative;
+	top: -15px;
+}
+.staffPos.staffAdmin {
+	background: #51ab86;
+}
+.staffPos.staffManagement {
+	background: #cca934;
+}
+.staffPos.staffLeasing {
+	background: #f8dc7f;
+}
+.staffName {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 28px;
+	text-transform: capitalize;
+	color: #191c21;
+	margin: 27px 0px 8px;
+	text-align: center;
+}
+.staffMail {
+	color: #b2b3b5 !important;
+	font-size: 14px;
+	line-height: 26px;
+	text-decoration: none !important;
+	text-align: center;
+	display: block;
+}
+.iconEdit,
+.iconDelete {
+	position: absolute;
+	right: 14px;
+	cursor: pointer;
+}
+.iconEdit {
+	top: 24px;
+}
+.iconDelete {
+	top: 56px;
+}

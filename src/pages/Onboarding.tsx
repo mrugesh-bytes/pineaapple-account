@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "../template/outerlayout/outerlayout.module.css";
 import Select from "react-select";
-import Login from "../components/auth/login/Login";
 const options = [
 	{ value: "admin", label: "Admin" },
 	{ value: "general manager", label: "General Manager" },
