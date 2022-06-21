@@ -6,6 +6,9 @@
 	padding: 26px 5.5rem;
 	width: 50%;
 	text-align: left;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 .formOuter form label {
 	color: #191c21;
@@ -16,9 +19,7 @@
 	padding-right: 30px;
 	margin-bottom: 0px;
 }
-.formOuter form {
-	padding-top: 231px;
-}
+
 .formOuter .fieldWrapper {
 	display: flex;
 	align-items: center;
@@ -82,10 +83,6 @@
 }
 .w100 {
 	width: 100%;
-}
-.footer {
-	position: absolute;
-	bottom: 25px;
 }
 .footer p {
 	font-size: 14px;
