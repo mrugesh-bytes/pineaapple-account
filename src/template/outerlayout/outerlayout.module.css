@@ -2,6 +2,7 @@
 	display: flex;
 	height: 100vh;
 }
+
 .formOuter {
 	padding: 26px 5.5rem;
 	width: 50%;
@@ -107,6 +108,9 @@ form.loginForm {
 @media screen and (max-width: 1445px) {
 	form.loginForm {
 		padding-top: 50px;
+	}
+	.logoContainer img{
+		max-width: 164px;
 	}
 }
 

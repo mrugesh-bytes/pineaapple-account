@@ -127,3 +127,55 @@
 		max-width: 100%;
 	}
 }
+
+/* Responsive Start */
+@media screen and (max-width: 1445px) {
+	.loginWrapper .signupForm {
+		margin-top: 20px;
+	}
+	.loginWrapper .loginTitle {
+		font-size: 28px;
+		line-height: 40px;
+		margin: 0px 0px 16px;
+	}
+	.loginWrapper .loginInfo {
+		font-size: 16px;
+		line-height: 24px;
+		max-width: 100%;
+	}
+	.loginWrapper .formWrapper label {
+		font-size: 16px;
+		line-height: 28px;
+		margin-bottom: 16px;
+	}
+	.loginWrapper .formWrapper {
+		margin-bottom: 15px;
+	}
+	.loginWrapper {
+		max-width: 100%;
+	}
+	.leadSignup p {
+		margin-bottom: 0px;
+	}
+	.loginForm .formWrapper input,
+	.loginForm .formSubmit button {
+		height: 48px;
+	}
+	.loginForm .formSubmit button {
+		padding: 6px 20px;
+	}
+}
+
+@media screen and (max-width: 1366px) {
+	.loginWrapper {
+		zoom: 0.8;
+		max-width: 385px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.loginWrapper {
+		width: 100%;
+		max-width: 100%;
+	}
+}

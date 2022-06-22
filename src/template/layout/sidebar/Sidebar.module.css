@@ -60,6 +60,6 @@
 /* Responsive Start */
 @media screen and (max-width: 1445px) {
 	.sidebar ul li {
-		min-height: 55px;
+		min-height: 53px;
 	}
 }
