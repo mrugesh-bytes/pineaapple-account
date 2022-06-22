@@ -12,18 +12,12 @@ const options = [
 ];
 
 function Onboarding() {
-	const [selectedOption, setSelectedOption]: any = useState({
-		value: "admin",
-		label: "Admin",
-	});
 	const navigate = useNavigate();
 
 	const handleChange = (event: any) => {
 		localStorage.setItem("type", event.label);
 		navigate("/login");
 	};
-
-	const userType = localStorage.getItem("type");
 
 	return (
 		<form>
@@ -34,7 +28,6 @@ function Onboarding() {
 				<div className={styles.field}>
 					<Select
 						placeholder="Select a role"
-						// defaultValue={selectedOption}
 						onChange={handleChange}
 						options={options}
 						className={styles.customSelect}

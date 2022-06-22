@@ -52,15 +52,11 @@ const sidebar = () => {
 					<span className={styles.tooltip}>Lockers</span>
 				</li>
 				<li
-          onClick={() => {
-            navigate("/staff");
-          }}
-          className={
-            path === "/staff"
-              ? styles.active
-              : ""
-          }
-        >
+					onClick={() => {
+						navigate("/staff");
+					}}
+					className={path === "/staff" ? styles.active : ""}
+				>
 					<img src={iconStaff} alt="Staff Icon" />
 					<span className={styles.tooltip}>Staff</span>
 				</li>

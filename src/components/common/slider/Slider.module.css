@@ -6,8 +6,6 @@
 	height: 250px;
 	object-fit: cover;
 }
-.sliderBanner {
-}
 .sliderContainer .sliderItem {
 	position: relative;
 	border-radius: 16px;
