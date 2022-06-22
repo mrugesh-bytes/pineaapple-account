@@ -15,6 +15,7 @@ import ChatSupport from "../pages/ChatSupport";
 import Login from "../components/auth/login/Login";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Signup from "../components/auth/signup/Signup";
+import Staff from "../pages/Staff";
 
 const Templete = () => {
 	return (
@@ -25,6 +26,7 @@ const Templete = () => {
 						<Route path="units" element={<UnitsPage />} />
 						<Route path="unitdetails/:id" element={<UnitDetails />} />
 						<Route path="support" element={<ChatSupport />} />
+						<Route path="staff" element={<Staff />} />
 					</Route>
 				</Route>
 

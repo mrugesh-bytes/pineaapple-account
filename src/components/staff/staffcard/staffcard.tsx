@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./StaffCard.module.css";
+import styles from "./staffcard.module.css";
 import avatarStaff from "../../../images/staff-avatar.svg";
 import iconEdit from "../../../images/icon-edit.svg";
 import iconDelete from "../../../images/icon-delete.svg";

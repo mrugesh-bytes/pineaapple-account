@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import CustModal from "../common/custmodal/CustModal";
+import AddStaff from "./addstaff/AddStaff";
 import styles from "./index.module.css";
-import StaffCard from "./staffcard/staffcard";
-
+import Staffcard from "./staffcard/staffcard";
 const index = (props: any) => {
+	const [open, setOpen] = useState(false);
 	return (
 		<>
+			<CustModal
+				open={open}
+				setOpen={setOpen}
+				bodyData={<AddStaff setOpen={setOpen} />}
+			/>
 			<div className={styles.dashboardStaff}>
 				<div className={styles.flexContainer}>
 					<div className={styles.titleInfo}>
@@ -13,23 +20,23 @@ const index = (props: any) => {
 					</div>
 					<div className={styles.btnWrapper}>
 						<button className={styles.btnGreenOutline}>Upload Staff</button>
-						<button onClick={props.openModal} className={styles.btnGreen}>
+						<button onClick={() => setOpen(true)} className={styles.btnGreen}>
 							+ Add Staff
 						</button>
 					</div>
 				</div>
 				<div className={styles.staffCardMain}>
 					<div className={styles.staffCardConatiner}>
-						<StaffCard />
+						<Staffcard />
 					</div>
 					<div className={styles.staffCardConatiner}>
-						<StaffCard />
+						<Staffcard />
 					</div>
 					<div className={styles.staffCardConatiner}>
-						<StaffCard />
+						<Staffcard />
 					</div>
 					<div className={styles.staffCardConatiner}>
-						<StaffCard />
+						<Staffcard />
 					</div>
 				</div>
 			</div>
