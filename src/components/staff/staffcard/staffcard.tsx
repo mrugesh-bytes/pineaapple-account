@@ -17,7 +17,7 @@ const staffcard = ({ staff }: any) => {
   return (
     <div className={styles.staffCard}>
       <div className={styles.staffPhotoContainer}>
-        <img src={staff.imageUrl} alt={avatarStaff} />
+        <img src={staff.imageUrl} alt="Staff Image" />
         <p className={`${styles.staffPos} ${backGC[Roles[staff.role]]}`}>
           {Roles[staff.role]}
         </p>
