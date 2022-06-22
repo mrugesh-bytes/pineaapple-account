@@ -3,7 +3,7 @@ import { Dispatch } from 'react';
 import { GET_UNIT_BY_ID_FAILURE, GET_UNIT_BY_ID_REQUEST, GET_UNIT_BY_ID_SUCCESS } from '../constants/unitById.constant';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-const ACCESS_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
+const ACCESS_TOKEN = localStorage.getItem("accessToken");
 
 const getUnitByIdRequest = () => {
   return {

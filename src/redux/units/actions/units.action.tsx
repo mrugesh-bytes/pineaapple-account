@@ -7,7 +7,7 @@ import {
 } from "../constants/units.constants";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-const ACCESS_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
+const ACCESS_TOKEN = localStorage.getItem("accessToken");
 
 const getUnitsRequest = () => {
   return {

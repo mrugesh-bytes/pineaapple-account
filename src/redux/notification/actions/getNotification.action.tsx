@@ -3,7 +3,7 @@ import { Dispatch } from 'react';
 import { GET_NOTIFICATION_LIST_FAILURE, GET_NOTIFICATION_LIST_REQUEST, GET_NOTIFICATION_LIST_SUCCESS } from '../constants/getNotification.constant';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-const ACCESS_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
+const ACCESS_TOKEN = localStorage.getItem("accessToken");
 
 const getNotificationListRequest = () => {
   return {

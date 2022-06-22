@@ -14,6 +14,10 @@
 .staffPhotoContainer img {
 	display: block;
 	margin: auto;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	object-fit: cover;
 }
 .staffPos {
 	font-size: 14px;
@@ -31,11 +35,17 @@
 .staffPos.staffAdmin {
 	background: #51ab86;
 }
-.staffPos.staffManagement {
+.staffPos.staffGeneral {
 	background: #cca934;
+}
+.staffPos.staffProperty {
+	background: #3674EE;
 }
 .staffPos.staffLeasing {
 	background: #f8dc7f;
+}
+.staffPos.staffMaintenance {
+	background: #E59236;
 }
 .staffName {
 	font-weight: 500;

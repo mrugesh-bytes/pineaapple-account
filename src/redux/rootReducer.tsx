@@ -3,6 +3,7 @@ import authReducer from "./auth/reducers/authReducer";
 import chatListReducer from "./chat/reducers/chatListReducer";
 import getNotificationListReducer from "./notification/reducers/getNotificationListReducer";
 import notifyVisitorReducer from "./notification/reducers/notifyVisitorReducer";
+import staffReducer from "./staff/reducers/staffReducer";
 import unitByIdReducer from "./units/reducers/unitByIdReducer";
 import unitsReducer from "./units/reducers/unitsReducer";
 
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   notificationList: getNotificationListReducer,
   authReducer: authReducer,
   notifyVisitor: notifyVisitorReducer,
+  staff: staffReducer,
 });
 
 export default rootReducer;

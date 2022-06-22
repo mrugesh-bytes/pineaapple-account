@@ -19,7 +19,6 @@ const AddStaff = ({ setOpen }: any) => {
 	});
 	const colourStyles = {
 		option: (styles: any, { data, isDisabled, isFocused, isSelected }: any) => {
-			// const color = chroma(data.color);
 			console.log({ data, isDisabled, isFocused, isSelected });
 			return {
 				...styles,

@@ -49,7 +49,16 @@ const sidebar = () => {
         <li>
           <img src={iconLockers} alt="Lockers Icon" />
         </li>
-        <li>
+        <li
+          onClick={() => {
+            navigate("/staff");
+          }}
+          className={
+            path === "/staff"
+              ? styles.active
+              : ""
+          }
+        >
           <img src={iconStaff} alt="Staff Icon" />
         </li>
         <li>

@@ -3,7 +3,7 @@ import { Dispatch } from 'react';
 import { NOTIFY_VISITOR_FAILURE, NOTIFY_VISITOR_REQUEST, NOTIFY_VISITOR_SUCCESS } from '../constants/notifyVisitor.constant';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-const ACCESS_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
+const ACCESS_TOKEN = localStorage.getItem("accessToken");
 
 const notifyVisitorRequest = () => {
   return {
