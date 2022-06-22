@@ -21,10 +21,20 @@
 .loginWrapper .loginForm {
 	margin-top: 50px;
 }
-.loginForm .formWrapper {
+.loginForm .formWrapper,
+.loginForm .unauthorized {
 	margin-bottom: 24px;
 }
-.loginForm .formWrapper label {
+.loginForm .formWrapper a,
+.loginForm .unauthorized {
+	margin-top: 8px;
+	font-size: 14px;
+	line-height: 28px;
+	text-transform: capitalize;
+	color: #191c21;
+}
+.loginForm .formWrapper label,
+.loginForm .unauthorized label {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 28px;
@@ -33,16 +43,24 @@
 	display: block;
 	margin-bottom: 16px;
 }
-.loginForm .formWrapper input {
+.loginForm .formWrapper input,
+.loginForm .unauthorized input {
 	width: 100%;
 	background: #ffffff;
-	border: 1px solid #d1d2d3;
+
 	border-radius: 8px;
 	height: 48px;
 	padding: 10px 14px;
 	outline: none;
 }
-.loginForm .formWrapper .passwordWrapper {
+.loginForm .formWrapper input {
+	border: 1px solid #d1d2d3;
+}
+.loginForm .unauthorized input,
+.loginForm .unauthorized input:focus {
+	border: 1px solid #ff0000;
+}
+.loginForm .passwordWrapper {
 	position: relative;
 }
 .passwordWrapper .eyeToggler {
@@ -57,7 +75,7 @@
 	object-fit: contain;
 	cursor: pointer;
 }
-.loginForm .formWrapper input:focus {
+.loginForm input:focus {
 	border: 1px solid #51ab86;
 }
 .loginForm .formWrapper a {
