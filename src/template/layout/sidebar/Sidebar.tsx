@@ -14,42 +14,44 @@ import iconLogout from "../../../images/icon-logout.svg";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const sidebar = () => {
-  const [path, setPath] = useState("");
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const location = useLocation();
+	const [path, setPath] = useState("");
+	const { id } = useParams();
+	const navigate = useNavigate();
+	const location = useLocation();
 
-  useEffect(() => {
-    setPath(location.pathname);
-  }, [location]);
+	useEffect(() => {
+		setPath(location.pathname);
+	}, [location]);
 
-  const handleLogout = () => {
-    localStorage.clear();
-    navigate("/");
-  };
+	const handleLogout = () => {
+		localStorage.clear();
+		navigate("/");
+	};
 
-  return (
-    <div className={styles.sidebar}>
-      <ul>
-        <li onClick={() => navigate("/units")} className={styles.logo}>
-          <img src={logoSm} alt="logo"></img>
-        </li>
-        <li
-          onClick={() => {
-            navigate("/units");
-          }}
-          className={
-            path === "/units" || path === `/unitDetails/${id}`
-              ? styles.active
-              : ""
-          }
-        >
-          <img src={iconApartment} alt="Apartment Icon" />
-        </li>
-        <li>
-          <img src={iconLockers} alt="Lockers Icon" />
-        </li>
-        <li
+	return (
+		<div className={styles.sidebar}>
+			<ul>
+				<li onClick={() => navigate("/units")} className={styles.logo}>
+					<img src={logoSm} alt="logo"></img>
+				</li>
+				<li
+					onClick={() => {
+						navigate("/units");
+					}}
+					className={
+						path === "/units" || path === `/unitDetails/${id}`
+							? styles.active
+							: ""
+					}
+				>
+					<span className={styles.tooltip}>Units</span>
+					<img src={iconApartment} alt="Apartment Icon" />
+				</li>
+				<li>
+					<img src={iconLockers} alt="Lockers Icon" />
+					<span className={styles.tooltip}>Lockers</span>
+				</li>
+				<li
           onClick={() => {
             navigate("/staff");
           }}
@@ -59,35 +61,43 @@ const sidebar = () => {
               : ""
           }
         >
-          <img src={iconStaff} alt="Staff Icon" />
-        </li>
-        <li>
-          <img src={iconVisits} alt="Visits Icon" />
-        </li>
-        <li
-          onClick={() => navigate("/support")}
-          className={path === "/support" ? styles.active : ""}
-        >
-          <img src={iconSupports} alt="Supports Icon" />
-        </li>
-        <li>
-          <img src={iconMedia} alt="Media Icon" />
-        </li>
-        <li>
-          <img src={iconCog} alt="Cog Icon" />
-        </li>
-        <li>
-          <img src={iconLocation} alt="Location Icon" />
-        </li>
-        <li>
-          <img src={iconMap} alt="Map Icon" />
-        </li>
-        <li className={styles.iconLogout} onClick={handleLogout}>
-          <img src={iconLogout} alt="Icon Logout" />
-        </li>
-      </ul>
-    </div>
-  );
+					<img src={iconStaff} alt="Staff Icon" />
+					<span className={styles.tooltip}>Staff</span>
+				</li>
+				<li>
+					<img src={iconVisits} alt="Visits Icon" />
+					<span className={styles.tooltip}>Visits</span>
+				</li>
+				<li
+					onClick={() => navigate("/support")}
+					className={path === "/support" ? styles.active : ""}
+				>
+					<img src={iconSupports} alt="Supports Icon" />
+					<span className={styles.tooltip}>Supports</span>
+				</li>
+				<li>
+					<img src={iconMedia} alt="Media Icon" />
+					<span className={styles.tooltip}>Media</span>
+				</li>
+				<li>
+					<img src={iconCog} alt="Cog Icon" />
+					<span className={styles.tooltip}>Settings</span>
+				</li>
+				<li>
+					<img src={iconLocation} alt="Location Icon" />
+					<span className={styles.tooltip}>Locations</span>
+				</li>
+				<li>
+					<img src={iconMap} alt="Map Icon" />
+					<span className={styles.tooltip}>Map</span>
+				</li>
+				<li className={styles.iconLogout} onClick={handleLogout}>
+					<img src={iconLogout} alt="Icon Logout" />
+					<span className={styles.tooltip}>Logout</span>
+				</li>
+			</ul>
+		</div>
+	);
 };
 
 export default sidebar;
