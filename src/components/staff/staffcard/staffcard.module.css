@@ -22,11 +22,12 @@
 	padding: 2px 20px;
 	border-radius: 25px;
 	text-align: center;
-	display: inline-block;
+	display: inline-flex;
 	margin: 0px;
 	position: relative;
 	top: -15px;
 	height: 24px;
+	align-items: center;
 }
 .staffPos.staffAdmin {
 	background: #51ab86;
@@ -43,7 +44,7 @@
 	line-height: 28px;
 	text-transform: capitalize;
 	color: #191c21;
-	margin: 27px 0px 8px;
+	margin: 5px 0px 8px;
 	text-align: center;
 }
 .staffMail {
