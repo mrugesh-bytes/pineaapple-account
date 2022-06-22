@@ -31,7 +31,7 @@ const sidebar = () => {
   return (
     <div className={styles.sidebar}>
       <ul>
-        <li onClick={() => navigate("/")} className={styles.logo}>
+        <li onClick={() => navigate("/units")} className={styles.logo}>
           <img src={logoSm} alt="logo"></img>
         </li>
         <li
