@@ -29,7 +29,7 @@ const AddStaff = ({ staffData, setOpen }: any) => {
 		value: "AdminRole",
 		label: "Admin",
 	});
-	
+
 	const closeModal = () => {
 		setOpen(false);
 	};
@@ -42,7 +42,9 @@ const AddStaff = ({ staffData, setOpen }: any) => {
 		<div>
 			<div className={styles.modalAddStaff}>
 				<div className={styles.modalHeader}>
-					<div className={styles.modalTitle}>Add Staff</div>
+					<div className={styles.modalTitle}>
+						{staffData ? `Edit Staff` : `Add Staff`}
+					</div>
 					<span className={styles.close}>
 						<img src={iconClose} onClick={closeModal} />
 					</span>
@@ -64,7 +66,11 @@ const AddStaff = ({ staffData, setOpen }: any) => {
 					<div className={styles.formStaff}>
 						<div className={styles.field}>
 							<label>Name</label>
-							<input type="text" placeholder="Enter your name" defaultValue={staffData ? staffData.name : ""}></input>
+							<input
+								type="text"
+								placeholder="Enter your name"
+								defaultValue={staffData ? staffData.name : ""}
+							></input>
 						</div>
 						<div className={`${styles.field} ${styles.select}`}>
 							<label>Select a Role</label>
@@ -77,7 +83,10 @@ const AddStaff = ({ staffData, setOpen }: any) => {
 						</div>
 						<div className={styles.field}>
 							<label>Email Id</label>
-							<input type="email" defaultValue={staffData ? staffData.email : ""} />
+							<input
+								type="email"
+								defaultValue={staffData ? staffData.email : ""}
+							/>
 						</div>
 						<div className={styles.field}>
 							<label>Password</label>
@@ -85,7 +94,9 @@ const AddStaff = ({ staffData, setOpen }: any) => {
 						</div>
 					</div>
 					<div className={styles.modalFooter}>
-						<button className={styles.sendBtn}>{staffData ? `Edit Staff` : `Add Staff`}</button>
+						<button className={styles.sendBtn}>
+							{staffData ? `Edit Staff` : `Add Staff`}
+						</button>
 					</div>
 				</div>
 			</div>
