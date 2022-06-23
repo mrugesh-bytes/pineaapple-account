@@ -31,6 +31,17 @@ const UploadStaff = ({ setOpen }: any) => {
 							</a>
 						</div>
 					</div>
+					<div className={styles.modalFooter}>
+						<div className={styles.progressContainer}>
+							<div className={styles.progressPercent}>45%</div>
+							<div className={styles.progressBar}>
+								<span className={styles.progress}></span>
+							</div>
+						</div>
+						<div className={styles.modalCancel}>
+							<button>Cancel</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
