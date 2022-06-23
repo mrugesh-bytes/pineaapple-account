@@ -4,30 +4,32 @@ import iconClose from "../../../images/icon-close.svg";
 import staffDefaultAvatar from "../../../images/add-staff-avatar.png";
 import uploadAvatar from "../../../images/upload-avatar.svg";
 import Select from "react-select";
+
 const options = [
-	{ value: "Admin", label: "Admin" },
-	{ value: "General Manager", label: "General Manager" },
-	{ value: "Property Manager", label: "Property Manager" },
-	{ value: "Leasing Agent", label: "Leasing Agent" },
-	{ value: "Maintenance", label: "Maintenance" },
+	{ value: "AdminRole", label: "Admin" },
+	{ value: "GenralManagerRole", label: "General Manager" },
+	{ value: "PropertyManagerRole", label: "Property Manager" },
+	{ value: "LeasingAgentRole", label: "Leasing Agent" },
+	{ value: "MaintenanceRole", label: "Maintenance" },
 ];
 
-const AddStaff = ({ setOpen }: any) => {
+const colourStyles = {
+	option: (styles: any, { data, isDisabled, isFocused, isSelected }: any) => {
+		return {
+			...styles,
+			backgroundColor: isFocused ? "#E59236" : isSelected ? "#E59236" : null,
+			color: isFocused ? "#fff " : isSelected ? "#fff !important" : null,
+			cursor: "pointer",
+		};
+	},
+};
+
+const AddStaff = ({ staffData, setOpen }: any) => {
 	const [selectedOption, setSelectedOption] = useState({
-		value: "Admin",
+		value: "AdminRole",
 		label: "Admin",
 	});
-	const colourStyles = {
-		option: (styles: any, { data, isDisabled, isFocused, isSelected }: any) => {
-			console.log({ data, isDisabled, isFocused, isSelected });
-			return {
-				...styles,
-				backgroundColor: isFocused ? "#E59236" : isSelected ? "#E59236" : null,
-				color: isFocused ? "#fff " : isSelected ? "#fff !important" : null,
-				cursor: "pointer",
-			};
-		},
-	};
+	
 	const closeModal = () => {
 		setOpen(false);
 	};
@@ -49,7 +51,7 @@ const AddStaff = ({ setOpen }: any) => {
 					<div className={styles.staffPhoto}>
 						<img
 							className={styles.staffAvatar}
-							src={staffDefaultAvatar}
+							src={staffData ? staffData.imageUrl : staffDefaultAvatar}
 							alt="Add Staff"
 						/>
 						<img
@@ -62,7 +64,7 @@ const AddStaff = ({ setOpen }: any) => {
 					<div className={styles.formStaff}>
 						<div className={styles.field}>
 							<label>Name</label>
-							<input type="text" placeholder="Enter your name"></input>
+							<input type="text" placeholder="Enter your name" defaultValue={staffData ? staffData.name : ""}></input>
 						</div>
 						<div className={`${styles.field} ${styles.select}`}>
 							<label>Select a Role</label>
@@ -75,7 +77,7 @@ const AddStaff = ({ setOpen }: any) => {
 						</div>
 						<div className={styles.field}>
 							<label>Email Id</label>
-							<input type="email" />
+							<input type="email" defaultValue={staffData ? staffData.email : ""} />
 						</div>
 						<div className={styles.field}>
 							<label>Password</label>
@@ -83,7 +85,7 @@ const AddStaff = ({ setOpen }: any) => {
 						</div>
 					</div>
 					<div className={styles.modalFooter}>
-						<button className={styles.sendBtn}>Add Staff</button>
+						<button className={styles.sendBtn}>{staffData ? `Edit Staff` : `Add Staff`}</button>
 					</div>
 				</div>
 			</div>

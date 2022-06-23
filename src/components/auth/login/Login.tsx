@@ -19,7 +19,7 @@ const Login = () => {
 	const error = useSelector(
 		(state: any) => state?.authReducer?.error?.response?.statusText
 	);
-	console.log(error);
+
 	const handleLoginDetails = (event: any) => {
 		setLoginDetails({
 			...loginDetails,

@@ -5,20 +5,19 @@ import iconDelete from "../../../images/icon-delete.svg";
 import { Roles } from "../../../constants/staffRole";
 import RemoveStaff from "../removestaff/RemoveStaff";
 import CustModal from "../../common/custmodal/CustModal";
+import AddStaff from "../addstaff/AddStaff";
+
+const backGC: any = {
+	"Admin": styles.staffAdmin,
+	"General Manager": styles.staffGeneral,
+	"Property Manager": styles.staffProperty,
+	"Leasing Agent": styles.staffLeasing,
+	"Maintenance": styles.staffMaintenance,
+};
+
 const staffcard = ({ staff }: any) => {
-	const backGC: any = {
-		Admin: styles.staffAdmin,
-		"General Manager": styles.staffGeneral,
-		"Property Manager": styles.staffProperty,
-		"Leasing Agent": styles.staffLeasing,
-		Maintenance: styles.staffMaintenance,
-	};
-
 	const [deletePopup, setDeletePopup] = useState(false);
-
-	const closeModal = () => {
-		setDeletePopup(true);
-	};
+	const [editModal, setEditModal] = useState(false);
 
 	return (
 		<>
@@ -26,6 +25,11 @@ const staffcard = ({ staff }: any) => {
 				open={deletePopup}
 				setOpen={setDeletePopup}
 				bodyData={<RemoveStaff setDeletePopup={setDeletePopup} />}
+			/>
+			<CustModal
+				open={editModal}
+				setOpen={setEditModal}
+				bodyData={<AddStaff staffData={staff} setOpen={setEditModal} />}
 			/>
 			<div className={styles.staffCard}>
 				<div className={styles.staffPhotoContainer}>
@@ -35,12 +39,17 @@ const staffcard = ({ staff }: any) => {
 					</p>
 				</div>
 				<h2 className={styles.staffName}>{staff.name}</h2>
-				<a href="mailto:employee@acme.apartments" className={styles.staffMail}>
+				<a href={`mailto:${staff.email}`} className={styles.staffMail}>
 					{staff.email}
 				</a>
-				<img className={styles.iconEdit} src={iconEdit} alt="icon Edit" />
 				<img
-					onClick={closeModal}
+					className={styles.iconEdit}
+					src={iconEdit}
+					alt="icon Edit"
+					onClick={() => setEditModal(true)}
+				/>
+				<img
+					onClick={() => setDeletePopup(true)}
 					className={styles.iconDelete}
 					src={iconDelete}
 					alt="icon Delete"
