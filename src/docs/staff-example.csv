@@ -1,0 +1,4 @@
+Name,Email,Password,TimeZone,ImageUrl,Phone,Role
+Vijay Bapodara,vijay.bapodara@bytestechnolab.in,vijay567,"Mumbai, Maharashtra (GMT+5:30)",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG7ZHHUdN_3p6I5EAb0khNR1ESNmRw_z-vLgs-qma5nH4xSxAGC38uSZ9rldLMUTmGkfw&usqp=CAU,9876543210,AdminRole
+Mrugesh Patel,mrugesh.patel@bytestechnolab.in,mrugesh567,"Mumbai, Maharashtra (GMT+5:30)",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6Uyi30Ty2WkMb0ZjuFLoXmkRwrrMObm-X2zztWtGbOgyA-i7mFzuiSKltN14HLAJDVM&usqp=CAU,8765432109,PropertyManagerRole
+Jay Thakkar,jay.thakkar@bytestechnolab.in,jay567,"Mumbai, Maharashtra (GMT+5:30)",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToxtcl-1iO_yF8nszUob_EssatZo8c_aZbuwiH_IxKpHXL3iUI03IRkfkUfX0GPwpzsHg&usqp=CAU,7654321980,LeasingAgentRole
