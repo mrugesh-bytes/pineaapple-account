@@ -81,7 +81,11 @@ const AddStaff = ({ staffData, setOpen }: any) => {
 							<div className={`${styles.field} ${styles.select}`}>
 								<label>Select a Role</label>
 								<Select
-									defaultValue={selectedOption}
+									defaultValue={
+										staffData
+											? options.find((role) => role.value === staffData.role)
+											: selectedOption
+									}
 									onChange={handleChange}
 									options={options}
 									styles={colourStyles}
