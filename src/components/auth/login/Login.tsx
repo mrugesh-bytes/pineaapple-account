@@ -5,6 +5,7 @@ import eyeOpen from "../../../images/icon-eye-open.svg";
 import eyeClose from "../../../images/icon-eye-close.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth } from "../../../redux/auth/actions/auth.action";
+import { Roles } from "../../../constants/staffRole";
 
 const Login = () => {
 	const [loginDetails, setLoginDetails]: any = useState({
@@ -15,7 +16,10 @@ const Login = () => {
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	const userType = localStorage.getItem("type");
+	const userType = Roles.find(
+		(role: any) => role.value === localStorage.getItem("type")
+	)?.label;
+	console.log(userType);
 	const error = useSelector(
 		(state: any) => state?.authReducer?.error?.response?.statusText
 	);

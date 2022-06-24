@@ -29,9 +29,9 @@ const getAuthFailure = (authError: any) => {
 };
 
 export const getAuth: any = (loginDetails: any, onSuccess: any) => {
-	return (dispatch: Dispatch<any>) => {
+	return async (dispatch: Dispatch<any>) => {
 		dispatch(getAuthRequest());
-		return axios
+		await axios
 			.post(`${BASE_URL}/public/login`, loginDetails)
 			.then((response) => {
 				dispatch(getAuthSuccess(response.data));

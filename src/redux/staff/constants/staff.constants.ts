@@ -1,3 +1,9 @@
-export const GET_STAFF_REQUEST = 'GET_STAFF_REQUEST';
-export const GET_STAFF_SUCCESS = 'GET_STAFF_SUCCESS';
-export const GET_STAFF_FAILURE = 'GET_STAFF_FAILURE';
+// Get Staff Constants
+export const GET_STAFF_REQUEST = "GET_STAFF_REQUEST";
+export const GET_STAFF_SUCCESS = "GET_STAFF_SUCCESS";
+export const GET_STAFF_FAILURE = "GET_STAFF_FAILURE";
+
+// Add Staff Constants
+export const ADD_STAFF_REQUEST = "ADD_STAFF_REQUEST";
+export const ADD_STAFF_SUCCESS = "ADD_STAFF_SUCCESS";
+export const ADD_STAFF_FAILURE = "ADD_STAFF_FAILURE";

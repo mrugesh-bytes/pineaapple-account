@@ -12,12 +12,13 @@ const index = (props: any) => {
 	const [upload, setUpload] = useState(false);
 
 	const dispatch = useDispatch();
+	const ACCESS_TOKEN = localStorage.getItem("accessToken");
 
 	const staffData = useSelector(
 		(state: AnyIfEmpty<object>) => state?.staff?.data?.result?.staff
 	);
 	useEffect(() => {
-		dispatch(getStaff());
+		ACCESS_TOKEN && dispatch(getStaff());
 	}, []);
 
 	return (

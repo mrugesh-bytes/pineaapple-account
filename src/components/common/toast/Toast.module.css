@@ -9,14 +9,36 @@
 	align-items: center;
 	position: fixed;
 	right: 0px;
-	transform: translate(-100%, 0px);
 	top: 100px;
-	transition: all ease-in-out 2s;
+	animation-direction: alternate-reverse;
+	animation-name: run;
+	animation-duration: 4s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
 }
-.toastContainer.show {
+@keyframes run {
+	0% {
+		transform: translate(100%, 0px);
+	}
+	10% {
+		opacity: 1;
+	}
+	40% {
+		transform: translate(-10px, 0px);
+	}
+	80% {
+		opacity: 1;
+		transform: translate(-10px, 0px);
+	}
+	100% {
+		transform: translate(100%, 0px);
+		opacity: 0;
+	}
+}
+/* .toastContainer.show {
 	transform: translate(-10px, 0px);
 	transition: all ease-in-out 2s;
-}
+} */
 .toastContainer .toastSuccess {
 	position: relative;
 	margin-right: 16px;

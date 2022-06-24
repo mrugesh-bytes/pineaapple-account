@@ -1,7 +1,7 @@
-export const Roles: any = {
-    1: "Admin",
-    2: 'General Manager',
-    3: 'Property Manager',
-    4: 'Leasing Agent',
-    5: 'Maintenance'
-}
+export const Roles: any = [
+	{ value: "AdminRole", label: "Admin" },
+	{ value: "GenralManagerRole", label: "General Manager" },
+	{ value: "PropertyManagerRole", label: "Property Manager" },
+	{ value: "LeasingAgentRole", label: "Leasing Agent" },
+	{ value: "MaintenanceRole", label: "Maintenence" },
+];

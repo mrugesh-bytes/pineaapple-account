@@ -1,8 +1,8 @@
 import {
-	GET_STAFF_FAILURE,
-	GET_STAFF_REQUEST,
-	GET_STAFF_SUCCESS,
-} from "../constants/staff.constants";
+	GET_SIGNUP_REQUEST,
+	GET_SIGNUP_SUCCESS,
+	GET_SIGNUP_FAILURE,
+} from "../constants/signup.constant";
 
 const initialState = {
 	loading: false,
@@ -10,22 +10,22 @@ const initialState = {
 	error: "",
 };
 
-const staffReducer = (state = initialState, action: any) => {
+const signupReducer = (state = initialState, action: any) => {
 	switch (action.type) {
-		case GET_STAFF_REQUEST:
+		case GET_SIGNUP_REQUEST:
 			return {
 				...state,
 				loading: true,
 			};
 
-		case GET_STAFF_SUCCESS:
+		case GET_SIGNUP_SUCCESS:
 			return {
 				...state,
 				loading: false,
 				data: action.payload,
 				error: "",
 			};
-		case GET_STAFF_FAILURE:
+		case GET_SIGNUP_FAILURE:
 			return {
 				...state,
 				loading: false,
@@ -37,4 +37,4 @@ const staffReducer = (state = initialState, action: any) => {
 	}
 };
 
-export default staffReducer;
+export default signupReducer;

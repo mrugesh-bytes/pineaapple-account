@@ -2,20 +2,13 @@ import React, { useState } from "react";
 import styles from "../template/outerlayout/outerlayout.module.css";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
-
-const options = [
-	{ value: "admin", label: "Admin" },
-	{ value: "general manager", label: "General Manager" },
-	{ value: "property manager", label: "Property Manager" },
-	{ value: "leasing agent", label: "Leasing Agent" },
-	{ value: "maintenence", label: "Maintenence" },
-];
+import { Roles } from "../constants/staffRole";
 
 function Onboarding() {
 	const navigate = useNavigate();
 
 	const handleChange = (event: any) => {
-		localStorage.setItem("type", event.label);
+		localStorage.setItem("type", event.value);
 		navigate("/login");
 	};
 
@@ -29,7 +22,7 @@ function Onboarding() {
 					<Select
 						placeholder="Select a role"
 						onChange={handleChange}
-						options={options}
+						options={Roles}
 						className={styles.customSelect}
 					/>
 				</div>
