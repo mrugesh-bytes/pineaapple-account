@@ -1,10 +1,19 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import iconClose from "../../../images/icon-close.svg";
+import { deleteStaff } from "../../../redux/staff/actions/staff.action";
 import styles from "./RemoveStaff.module.css";
-const RemoveStaff = ({ setDeletePopup }: any) => {
+const RemoveStaff = ({ setDeletePopup, staffId }: any) => {
 	const closeModal = () => {
 		setDeletePopup(false);
 	};
+
+	const dispatch = useDispatch();
+
+	const deleteStaffHandler = () => {
+		dispatch(deleteStaff(staffId));
+	};
+
 	return (
 		<div>
 			<div>
@@ -31,7 +40,10 @@ const RemoveStaff = ({ setDeletePopup }: any) => {
 						>
 							Cancel
 						</button>
-						<button className={`${styles.Modalbtn} ${styles.deleteBtn}`}>
+						<button
+							onClick={deleteStaffHandler}
+							className={`${styles.Modalbtn} ${styles.deleteBtn}`}
+						>
 							Delete Account
 						</button>
 					</div>

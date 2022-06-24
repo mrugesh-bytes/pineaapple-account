@@ -38,6 +38,11 @@ const AddStaff = ({ staffData, setOpen }: any) => {
 		setSelectedOption(event);
 	};
 
+	const submitHandler = (data: any) => {
+		data.preventDefault();
+		console.log("data", data);
+	};
+
 	return (
 		<div>
 			<div className={styles.modalAddStaff}>
@@ -50,54 +55,56 @@ const AddStaff = ({ staffData, setOpen }: any) => {
 					</span>
 				</div>
 				<div className={styles.modalBody}>
-					<div className={styles.staffPhoto}>
-						<img
-							className={styles.staffAvatar}
-							src={staffData ? staffData.imageUrl : staffDefaultAvatar}
-							alt="Add Staff"
-						/>
-						<img
-							className={styles.uploadAvatar}
-							src={uploadAvatar}
-							alt="Upload Avatar"
-						></img>
-						<input type="file" name="upload-avatar" />
-					</div>
-					<div className={styles.formStaff}>
-						<div className={styles.field}>
-							<label>Name</label>
-							<input
-								type="text"
-								placeholder="Enter your name"
-								defaultValue={staffData ? staffData.name : ""}
-							></input>
-						</div>
-						<div className={`${styles.field} ${styles.select}`}>
-							<label>Select a Role</label>
-							<Select
-								defaultValue={selectedOption}
-								onChange={handleChange}
-								options={options}
-								styles={colourStyles}
+					<form onSubmit={submitHandler}>
+						<div className={styles.staffPhoto}>
+							<img
+								className={styles.staffAvatar}
+								src={staffData ? staffData.imageUrl : staffDefaultAvatar}
+								alt="Add Staff"
 							/>
+							<img
+								className={styles.uploadAvatar}
+								src={uploadAvatar}
+								alt="Upload Avatar"
+							></img>
+							<input type="file" name="upload-avatar" />
 						</div>
-						<div className={styles.field}>
-							<label>Email Id</label>
-							<input
-								type="email"
-								defaultValue={staffData ? staffData.email : ""}
-							/>
+						<div className={styles.formStaff}>
+							<div className={styles.field}>
+								<label>Name</label>
+								<input
+									type="text"
+									placeholder="Enter your name"
+									defaultValue={staffData ? staffData.name : ""}
+								></input>
+							</div>
+							<div className={`${styles.field} ${styles.select}`}>
+								<label>Select a Role</label>
+								<Select
+									defaultValue={selectedOption}
+									onChange={handleChange}
+									options={options}
+									styles={colourStyles}
+								/>
+							</div>
+							<div className={styles.field}>
+								<label>Email Id</label>
+								<input
+									type="email"
+									defaultValue={staffData ? staffData.email : ""}
+								/>
+							</div>
+							<div className={styles.field}>
+								<label>Password</label>
+								<input type="password" />
+							</div>
 						</div>
-						<div className={styles.field}>
-							<label>Password</label>
-							<input type="password" />
+						<div className={styles.modalFooter}>
+							<button type="submit" className={styles.sendBtn}>
+								{staffData ? `Edit Staff` : `Add Staff`}
+							</button>
 						</div>
-					</div>
-					<div className={styles.modalFooter}>
-						<button className={styles.sendBtn}>
-							{staffData ? `Edit Staff` : `Add Staff`}
-						</button>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
