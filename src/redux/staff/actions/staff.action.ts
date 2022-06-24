@@ -7,6 +7,9 @@ import {
 	ADD_STAFF_FAILURE,
 	ADD_STAFF_REQUEST,
 	ADD_STAFF_SUCCESS,
+	DELETE_STAFF_FAILURE,
+	DELETE_STAFF_REQUEST,
+	DELETE_STAFF_SUCCESS,
 } from "../constants/staff.constants";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -54,6 +57,25 @@ const addStaffFailure = (staffError: any) => {
 	};
 };
 
+const staffDeleteRequest = () => {
+	return {
+		type: DELETE_STAFF_REQUEST,
+	};
+};
+
+const staffDeleteSuccess = (data: any) => {
+	return {
+		type: DELETE_STAFF_SUCCESS,
+		payload: data,
+	};
+};
+
+const staffDeleteFailure = (errMsg: any) => {
+	return {
+		type: DELETE_STAFF_FAILURE,
+	};
+};
+
 // H Staff Dispatch
 export const getStaff: any = () => {
 	const ACCESS_TOKEN = localStorage.getItem("accessToken");
@@ -91,5 +113,22 @@ export const addStaff: any = (staffData: any) => {
 				dispatch(addStaffSuccess(response.data))
 			})
 			.catch((error) => dispatch(addStaffFailure(error)));
+	};
+};
+
+export const deleteStaff: any = (id: string) => {
+	return async (dispatch: Dispatch<any>) => {
+		dispatch(staffDeleteRequest());
+		await axios
+			.delete(`${BASE_URL}/account/staff/${id}`, {
+				headers: {
+					Authorization: `Bearer ${ACCESS_TOKEN}`,
+				},
+			})
+			.then((response) => {
+				dispatch(getStaff());
+				dispatch(staffDeleteSuccess(response.data));
+			})
+			.catch((error) => dispatch(staffDeleteFailure(error)));
 	};
 };

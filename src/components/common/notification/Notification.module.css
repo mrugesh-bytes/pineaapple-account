@@ -1,0 +1,66 @@
+.notificationWrapper {
+	width: 100%;
+	max-width: 100%;
+	padding: 25px 15px;
+	border: 1px solid #d1d2d3;
+	border-radius: 8px;
+	width: 418px;
+}
+.notificationCard {
+	display: flex;
+	padding: 10px;
+	align-items: center;
+	margin-bottom: 8px;
+}
+.notificationCard:last-child {
+	margin-bottom: 0px;
+}
+.notificationCard.unread {
+	background: #fff9f2;
+}
+.notificationCard .userAvatar img {
+	width: 32px;
+	height: 32px;
+	object-fit: cover;
+}
+.notificationCard .cardInfo .cardTitle {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 18px;
+	color: #191c21;
+	margin: 0px 0px 4px;
+}
+.notificationWrapper .notificationHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 16px;
+}
+.notificationHeader .notificationTitle {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+	color: #000000;
+	margin: 0px;
+}
+.notificationCard .cardInfo {
+	margin-left: 8px;
+}
+.notificationTime {
+	font-size: 12px;
+	line-height: 12px;
+	color: #b2b3b5;
+	margin: 0px;
+}
+.notificationHeader a {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 28px;
+	text-decoration-line: underline;
+	color: #e59236;
+	margin: 0px;
+	display: inline-block;
+	text-decoration: underline;
+}
+.notificationCard {
+}

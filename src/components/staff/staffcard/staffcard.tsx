@@ -25,7 +25,9 @@ const staffcard = ({ staff }: any) => {
 			<CustModal
 				open={deletePopup}
 				setOpen={setDeletePopup}
-				bodyData={<RemoveStaff setDeletePopup={setDeletePopup} />}
+				bodyData={
+					<RemoveStaff setDeletePopup={setDeletePopup} staffId={staff.id} />
+				}
 			/>
 			<CustModal
 				open={editModal}

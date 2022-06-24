@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { AnyIfEmpty, useDispatch, useSelector } from "react-redux";
 import { getUnits } from "../../redux/units/actions/units.action";
-import Toast from "../common/toast/Toast";
 import styles from "./index.module.css";
 import Unitscard from "./unitscard/Unitscard";
 
@@ -19,7 +18,6 @@ const index = () => {
 
 	return (
 		<div className="outletConainer">
-			{/* <Toast /> */}
 			<div className={styles.unitsContainer}>
 				<div className={styles.unitsHead}>
 					<div className={styles.userGreet}>
