@@ -32,6 +32,7 @@
 	top: -15px;
 	height: 24px;
 	align-items: center;
+	border: 1px solid #fff;
 }
 .staffPos.staffAdmin {
 	background: #51ab86;
@@ -40,13 +41,13 @@
 	background: #cca934;
 }
 .staffPos.staffProperty {
-	background: #3674EE;
+	background: #3674ee;
 }
 .staffPos.staffLeasing {
 	background: #f8dc7f;
 }
 .staffPos.staffMaintenance {
-	background: #E59236;
+	background: #e59236;
 }
 .staffName {
 	font-weight: 500;
