@@ -12,6 +12,20 @@ body {
 .outletConainer {
 	padding: 32px 32px 32px 115px;
 }
+/* Scroll Bar */
+select__menu-list::-webkit-scrollbar {
+	width: 4px;
+	height: 0px;
+}
+select__menu-list::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+select__menu-list::-webkit-scrollbar-thumb {
+	background: #888;
+}
+select__menu-list::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
 .ReactModal__Overlay {
 	background: rgba(25, 28, 33, 0.12) !important;
 	backdrop-filter: blur(10px) !important;

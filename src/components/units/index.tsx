@@ -18,7 +18,6 @@ const index = () => {
 
 	return (
 		<div className="outletConainer">
-			{/* <Toast /> */}
 			<div className={styles.unitsContainer}>
 				<div className={styles.unitsHead}>
 					<div className={styles.userGreet}>
