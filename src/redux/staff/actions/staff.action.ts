@@ -71,16 +71,25 @@ export const getStaff: any = () => {
 };
 
 // Add Staff Dispatch
-export const addStaff: any = () => {
+export const addStaff: any = (staffData: any) => {
 	return (dispatch: Dispatch<any>) => {
+		const formData = new FormData()
+		formData.append("email", staffData.email)
+		formData.append("name", staffData.name)
+		formData.append("password", staffData.password)
+		formData.append("file", staffData.photo)
+		formData.append("role", staffData.role)
+		formData.append("phone", "1234567890")
 		dispatch(addStaffRequest());
 		return axios
-			.get(`${BASE_URL}/account/staff`, {
+			.post(`${BASE_URL}/account/staff/create`, formData, {
 				headers: {
 					Authorization: `Bearer ${ACCESS_TOKEN}`,
 				},
 			})
-			.then((response) => dispatch(addStaffSuccess(response.data)))
+			.then((response) => {
+				dispatch(addStaffSuccess(response.data))
+			})
 			.catch((error) => dispatch(addStaffFailure(error)));
 	};
 };

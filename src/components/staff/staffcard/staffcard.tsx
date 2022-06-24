@@ -6,13 +6,14 @@ import { Roles } from "../../../constants/staffRole";
 import RemoveStaff from "../removestaff/RemoveStaff";
 import CustModal from "../../common/custmodal/CustModal";
 import AddStaff from "../addstaff/AddStaff";
+import defaultProfilePic from "../../../images/default_profile_pic.png";
 
 const backGC: any = {
-	"Admin": styles.staffAdmin,
-	"General Manager": styles.staffGeneral,
-	"Property Manager": styles.staffProperty,
-	"Leasing Agent": styles.staffLeasing,
-	"Maintenance": styles.staffMaintenance,
+	"AdminRole": styles.staffAdmin,
+	"GenralManagerRole": styles.staffGeneral,
+	"PropertyManagerRole": styles.staffProperty,
+	"LeasingAgentRole": styles.staffLeasing,
+	"MaintenanceRole": styles.staffMaintenance,
 };
 
 const staffcard = ({ staff }: any) => {
@@ -33,9 +34,9 @@ const staffcard = ({ staff }: any) => {
 			/>
 			<div className={styles.staffCard}>
 				<div className={styles.staffPhotoContainer}>
-					<img src={staff.imageUrl} alt="Staff Image" />
-					<p className={`${styles.staffPos} ${backGC[Roles[staff.role]]}`}>
-						{Roles[staff.role]}
+					<img src={staff.imageUrl || defaultProfilePic} alt="Staff Image" />
+					<p className={`${styles.staffPos} ${backGC[staff.role]}`}>
+						{Roles.find((role: any) => role.value == [staff.role]).label}
 					</p>
 				</div>
 				<h2 className={styles.staffName}>{staff.name}</h2>

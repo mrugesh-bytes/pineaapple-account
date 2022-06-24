@@ -1,107 +1,147 @@
 import React, { useState } from "react";
 import styles from "./AddStaff.module.css";
 import iconClose from "../../../images/icon-close.svg";
-import staffDefaultAvatar from "../../../images/add-staff-avatar.png";
+import defaultProfilePic from "../../../images/default_profile_pic.png";
 import uploadAvatar from "../../../images/upload-avatar.svg";
 import Select from "react-select";
+import { addStaff, getStaff } from "../../../redux/staff/actions/staff.action";
+import { useDispatch } from "react-redux";
 
 const options = [
-	{ value: "AdminRole", label: "Admin" },
-	{ value: "GenralManagerRole", label: "General Manager" },
-	{ value: "PropertyManagerRole", label: "Property Manager" },
-	{ value: "LeasingAgentRole", label: "Leasing Agent" },
-	{ value: "MaintenanceRole", label: "Maintenance" },
+  { value: "AdminRole", label: "Admin" },
+  { value: "GenralManagerRole", label: "General Manager" },
+  { value: "PropertyManagerRole", label: "Property Manager" },
+  { value: "LeasingAgentRole", label: "Leasing Agent" },
+  { value: "MaintenanceRole", label: "Maintenance" },
 ];
 
 const colourStyles = {
-	option: (styles: any, { data, isDisabled, isFocused, isSelected }: any) => {
-		return {
-			...styles,
-			backgroundColor: isFocused ? "#E59236" : isSelected ? "#E59236" : null,
-			color: isFocused ? "#fff " : isSelected ? "#fff !important" : null,
-			cursor: "pointer",
-		};
-	},
+  option: (styles: any, { data, isDisabled, isFocused, isSelected }: any) => {
+    return {
+      ...styles,
+      backgroundColor: isFocused ? "#E59236" : isSelected ? "#E59236" : null,
+      color: isFocused ? "#fff " : isSelected ? "#fff !important" : null,
+      cursor: "pointer",
+    };
+  },
 };
 
 const AddStaff = ({ staffData, setOpen }: any) => {
-	const [selectedOption, setSelectedOption] = useState({
-		value: "AdminRole",
-		label: "Admin",
-	});
+  const dispatch = useDispatch();
+  const [selectedOption, setSelectedOption] = useState({
+    value: "AdminRole",
+    label: "Admin",
+  });
 
-	const closeModal = () => {
-		setOpen(false);
-	};
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [files, setFiles]: any = useState({});
 
-	const handleChange = (event: any) => {
-		setSelectedOption(event);
-	};
+  const closeModal = () => {
+    setOpen(false);
+  };
 
-	return (
-		<div>
-			<div className={styles.modalAddStaff}>
-				<div className={styles.modalHeader}>
-					<div className={styles.modalTitle}>
-						{staffData ? `Edit Staff` : `Add Staff`}
-					</div>
-					<span className={styles.close}>
-						<img src={iconClose} onClick={closeModal} />
-					</span>
-				</div>
-				<div className={styles.modalBody}>
-					<div className={styles.staffPhoto}>
-						<img
-							className={styles.staffAvatar}
-							src={staffData ? staffData.imageUrl : staffDefaultAvatar}
-							alt="Add Staff"
-						/>
-						<img
-							className={styles.uploadAvatar}
-							src={uploadAvatar}
-							alt="Upload Avatar"
-						></img>
-						<input type="file" name="upload-avatar" />
-					</div>
-					<div className={styles.formStaff}>
-						<div className={styles.field}>
-							<label>Name</label>
-							<input
-								type="text"
-								placeholder="Enter your name"
-								defaultValue={staffData ? staffData.name : ""}
-							></input>
-						</div>
-						<div className={`${styles.field} ${styles.select}`}>
-							<label>Select a Role</label>
-							<Select
-								defaultValue={selectedOption}
-								onChange={handleChange}
-								options={options}
-								styles={colourStyles}
-							/>
-						</div>
-						<div className={styles.field}>
-							<label>Email Id</label>
-							<input
-								type="email"
-								defaultValue={staffData ? staffData.email : ""}
-							/>
-						</div>
-						<div className={styles.field}>
-							<label>Password</label>
-							<input type="password" />
-						</div>
-					</div>
-					<div className={styles.modalFooter}>
-						<button className={styles.sendBtn}>
-							{staffData ? `Edit Staff` : `Add Staff`}
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    dispatch(
+      addStaff({
+        email,
+        name,
+        password: staffData ? "" : password,
+        photo: files,
+        role: selectedOption.value,
+      })
+    );
+    setOpen(false)
+  };
+
+  return (
+    <div>
+      <div className={styles.modalAddStaff}>
+        <div className={styles.modalHeader}>
+          <div className={styles.modalTitle}>
+            {staffData ? `Edit Staff` : `Add Staff`}
+          </div>
+          <span className={styles.close}>
+            <img src={iconClose} onClick={closeModal} />
+          </span>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className={styles.modalBody}>
+            <div className={styles.staffPhoto}>
+              <img
+                className={styles.staffAvatar}
+                src={
+                  staffData
+                    ? staffData?.imageUrl
+                    : files && files?.name
+                    ? URL.createObjectURL(files)
+                    : defaultProfilePic
+                }
+                alt="Add Staff"
+              />
+              <img
+                className={styles.uploadAvatar}
+                src={uploadAvatar}
+                alt="Upload Avatar"
+              ></img>
+              <input
+                type="file"
+                name="upload-avatar"
+                accept="image/*"
+                onChange={(e: any) => setFiles(e.target.files[0])}
+              />
+            </div>
+            <div className={styles.formStaff}>
+              <div className={styles.field}>
+                <label>Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  defaultValue={staffData ? staffData.name : ""}
+                  onChange={(e) => setName(e.target.value)}
+                ></input>
+              </div>
+              <div className={`${styles.field} ${styles.select}`}>
+                <label>Select a Role</label>
+                <Select
+                  defaultValue={
+                    staffData
+                      ? options.find((role) => role.value === staffData.role)
+                      : selectedOption
+                  }
+                  onChange={(event: any) => setSelectedOption(event)}
+                  options={options}
+                  styles={colourStyles}
+                />
+              </div>
+              <div className={styles.field}>
+                <label>Email Id</label>
+                <input
+                  type="email"
+                  defaultValue={staffData ? staffData.email : ""}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className={styles.field}>
+                <label>Password</label>
+                <input
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className={styles.modalFooter}>
+              <button className={styles.sendBtn}>
+                {staffData ? `Edit Staff` : `Add Staff`}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default AddStaff;
