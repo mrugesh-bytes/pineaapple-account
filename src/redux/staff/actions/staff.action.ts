@@ -16,7 +16,6 @@ import {
 } from "../constants/staff.constants";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-const ACCESS_TOKEN = localStorage.getItem("accessToken");
 
 // Get Staff
 const getStaffRequest = () => {
@@ -127,7 +126,7 @@ export const addStaff: any = (staffData: any) => {
 		formData.append("password", staffData.password);
 		formData.append("file", staffData.photo);
 		formData.append("role", staffData.role);
-		// formData.append("phone", "");
+		formData.append("phone", "");
 		dispatch(addStaffRequest());
 		return axios
 			.post(`${BASE_URL}/account/staff/create`, formData, {
@@ -148,6 +147,7 @@ export const editStaff: any = (staffData: any) => {
 	const ACCESS_TOKEN = localStorage.getItem("accessToken");
 	return (dispatch: Dispatch<any>) => {
 		const formData = new FormData();
+		formData.append("id", staffData.id);
 		formData.append("email", staffData.email);
 		formData.append("name", staffData.name);
 		if (staffData.password.trim() !== "") {
@@ -161,19 +161,18 @@ export const editStaff: any = (staffData: any) => {
 			formData.append("file", staffData.photo);
 		}
 		formData.append("role", staffData.role);
-		// formData.append("phone", "");
-
-		// 	dispatch(addStaffRequest());
-		// 	return axios
-		// 		.post(`${BASE_URL}/account/staff/modify`, formData, {
-		// 			headers: {
-		// 				Authorization: `Bearer ${ACCESS_TOKEN}`,
-		// 			},
-		// 		})
-		// 		.then((response) => {
-		// 			dispatch(editStaffSuccess(response.data));
-		// 		})
-		// 		.catch((error) => dispatch(editStaffFailure(error)));
+		formData.append("phone", "1234567890");
+		dispatch(editStaffRequest());
+		return axios
+			.put(`${BASE_URL}/account/staff/modify`, formData, {
+				headers: {
+					Authorization: `Bearer ${ACCESS_TOKEN}`,
+				},
+			})
+			.then((response) => {
+				dispatch(editStaffSuccess(response.data));
+			})
+			.catch((error) => dispatch(editStaffFailure(error)));
 	};
 };
 

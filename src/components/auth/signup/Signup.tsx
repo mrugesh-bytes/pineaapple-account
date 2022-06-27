@@ -12,7 +12,6 @@ const Signup = () => {
 		admin: "AdminRole",
 		email: "",
 		password: "",
-		phone: "1234567890",
 	});
 
 	const dispatch = useDispatch();

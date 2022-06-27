@@ -19,7 +19,7 @@ const Login = () => {
 	const userType = Roles.find(
 		(role: any) => role.value === localStorage.getItem("type")
 	)?.label;
-	console.log(userType);
+
 	const error = useSelector(
 		(state: any) => state?.authReducer?.error?.response?.statusText
 	);
