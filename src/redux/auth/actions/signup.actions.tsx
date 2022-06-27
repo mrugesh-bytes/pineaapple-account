@@ -34,9 +34,9 @@ export const getRegister: any = (signupDetails: any, onSuccess: any) => {
 		return axios
 			.post(`${BASE_URL}/account/register`, signupDetails)
 			.then((response) => {
-				console.log(response);
 				dispatch(getSignupSuccess(response.data.result));
 				localStorage.setItem("accessToken", response.data.result.token);
+				localStorage.setItem("email", signupDetails.email);
 				onSuccess();
 			})
 			.catch((error) => dispatch(getSignupFailure(error)));
