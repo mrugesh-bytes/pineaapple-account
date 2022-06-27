@@ -10,6 +10,7 @@ import Login from "../components/auth/login/Login";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Signup from "../components/auth/signup/Signup";
 import Staff from "../pages/Staff";
+import Loggedin from "../components/auth/loggedin/loggedin";
 
 const Templete = () => {
 	return (
@@ -23,11 +24,11 @@ const Templete = () => {
 						<Route path="staff" element={<Staff />} />
 					</Route>
 				</Route>
-
 				<Route path="/" element={<OuterLayout />}>
 					<Route index element={<Onboarding />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/signup" element={<Signup />} />
+					<Route path="/loggedin" element={<Loggedin />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
