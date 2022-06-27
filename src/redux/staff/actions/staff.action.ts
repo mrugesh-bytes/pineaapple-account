@@ -135,6 +135,7 @@ export const addStaff: any = (staffData: any) => {
         },
       })
       .then((response) => {
+        dispatch(getStaff());
         dispatch(addStaffSuccess(response.data));
       })
       .catch((error) => dispatch(addStaffFailure(error)));
@@ -170,6 +171,7 @@ export const editStaff: any = (staffData: any) => {
         },
       })
       .then((response) => {
+        dispatch(getStaff());
         dispatch(editStaffSuccess(response.data));
       })
       .catch((error) => dispatch(editStaffFailure(error)));

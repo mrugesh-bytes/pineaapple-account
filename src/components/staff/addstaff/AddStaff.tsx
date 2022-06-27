@@ -52,7 +52,7 @@ const AddStaff = ({ staffData, setOpen }: any) => {
     staffData
       ? dispatch(
           editStaff({
-			id: staffData.id,
+			      id: staffData.id,
             email,
             name,
             password: staffData ? "" : password,
@@ -91,11 +91,11 @@ const AddStaff = ({ staffData, setOpen }: any) => {
               <img
                 className={styles.staffAvatar}
                 src={
-					staffData?.imageUrl
-                    ? staffData?.imageUrl
-                    : files && files?.name
+                  !(_.isEmpty(files.name))
                     ? URL.createObjectURL(files)
-                    : defaultProfilePic
+                    : staffData?.imageUrl
+                      ? staffData?.imageUrl
+                      : defaultProfilePic
                 }
                 alt="Add Staff"
               />
