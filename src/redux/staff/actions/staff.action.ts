@@ -127,7 +127,7 @@ export const addStaff: any = (staffData: any) => {
 		formData.append("password", staffData.password);
 		formData.append("file", staffData.photo);
 		formData.append("role", staffData.role);
-		formData.append("phone", "1234567890");
+		// formData.append("phone", "");
 		dispatch(addStaffRequest());
 		return axios
 			.post(`${BASE_URL}/account/staff/create`, formData, {
@@ -161,7 +161,8 @@ export const editStaff: any = (staffData: any) => {
 			formData.append("file", staffData.photo);
 		}
 		formData.append("role", staffData.role);
-		formData.append("phone", "1234567890");
+		// formData.append("phone", "");
+
 		// 	dispatch(addStaffRequest());
 		// 	return axios
 		// 		.post(`${BASE_URL}/account/staff/modify`, formData, {

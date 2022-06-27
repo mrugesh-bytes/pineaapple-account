@@ -26,7 +26,11 @@ const UploadStaff = ({ setOpen }: any) => {
 							<img src={iconCsv} alt="icon CSV" />
 							<h2>Select a CSV file to upload</h2>
 							<p>Or drag and drop here</p>
-							<a href={iconCsv} download>
+							<a
+								href="https://demo-files-pineapple.s3.amazonaws.com/staff-demo-1.csv"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								Download
 							</a>
 						</div>
