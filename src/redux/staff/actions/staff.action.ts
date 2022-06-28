@@ -14,6 +14,10 @@ import {
 	DELETE_STAFF_REQUEST,
 	DELETE_STAFF_SUCCESS,
 } from "../constants/staff.constants";
+import {
+	hideStaffToast,
+	showStaffToast,
+} from "../../toast/actions/addStaffToast.action";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -118,63 +122,67 @@ export const getStaff: any = () => {
 
 // Add Staff Dispatch
 export const addStaff: any = (staffData: any) => {
-  const ACCESS_TOKEN = localStorage.getItem("accessToken");
-  return (dispatch: Dispatch<any>) => {
-    const formData = new FormData();
-    formData.append("email", staffData.email);
-    formData.append("name", staffData.name);
-    formData.append("password", staffData.password);
-    formData.append("file", staffData.photo);
-    formData.append("role", staffData.role);
-    formData.append("phone", "");
-    dispatch(addStaffRequest());
-    return axios
-      .post(`${BASE_URL}/account/staff/create`, formData, {
-        headers: {
-          Authorization: `Bearer ${ACCESS_TOKEN}`,
-        },
-      })
-      .then((response) => {
-        dispatch(getStaff());
-        dispatch(addStaffSuccess(response.data));
-      })
-      .catch((error) => dispatch(addStaffFailure(error)));
-  };
+	const ACCESS_TOKEN = localStorage.getItem("accessToken");
+	return (dispatch: Dispatch<any>) => {
+		const formData = new FormData();
+		formData.append("email", staffData.email);
+		formData.append("name", staffData.name);
+		formData.append("password", staffData.password);
+		formData.append("file", staffData.photo);
+		formData.append("role", staffData.role);
+		formData.append("phone", "");
+		dispatch(addStaffRequest());
+		return axios
+			.post(`${BASE_URL}/account/staff/create`, formData, {
+				headers: {
+					Authorization: `Bearer ${ACCESS_TOKEN}`,
+				},
+			})
+			.then((response) => {
+				dispatch(getStaff());
+				dispatch(showStaffToast());
+				dispatch(addStaffSuccess(response.data));
+				setTimeout(() => dispatch(hideStaffToast()), 4000);
+			})
+			.catch((error) => dispatch(addStaffFailure(error)));
+	};
 };
 
 // Edit Staff Dispatch
 export const editStaff: any = (staffData: any) => {
-  const ACCESS_TOKEN = localStorage.getItem("accessToken");
-  return (dispatch: Dispatch<any>) => {
-    const formData = new FormData();
-	formData.append("id", staffData.id)
-    formData.append("email", staffData.email);
-    formData.append("name", staffData.name);
-    if (staffData.password.trim() !== "") {
-      formData.append("password", staffData.password);
-    } else {
-      formData.append("password", "");
-    }
-    formData.append("imageUrl", staffData.imageUrl);
-    formData.append("deleteImageUrl", staffData.deleteImageUrl);
-    if (staffData.photo !== "") {
-      formData.append("file", staffData.photo);
-    }
-    formData.append("role", staffData.role);
-    formData.append("phone", "1234567890");
-    dispatch(editStaffRequest());
-    return axios
-      .put(`${BASE_URL}/account/staff/modify`, formData, {
-        headers: {
-          Authorization: `Bearer ${ACCESS_TOKEN}`,
-        },
-      })
-      .then((response) => {
-        dispatch(getStaff());
-        dispatch(editStaffSuccess(response.data));
-      })
-      .catch((error) => dispatch(editStaffFailure(error)));
-  };
+	const ACCESS_TOKEN = localStorage.getItem("accessToken");
+	return (dispatch: Dispatch<any>) => {
+		const formData = new FormData();
+		formData.append("id", staffData.id);
+		formData.append("email", staffData.email);
+		formData.append("name", staffData.name);
+		if (staffData.password.trim() !== "") {
+			formData.append("password", staffData.password);
+		} else {
+			formData.append("password", "");
+		}
+		formData.append("imageUrl", staffData.imageUrl);
+		formData.append("deleteImageUrl", staffData.deleteImageUrl);
+		if (staffData.photo !== "") {
+			formData.append("file", staffData.photo);
+		}
+		formData.append("role", staffData.role);
+		formData.append("phone", "1234567890");
+		dispatch(editStaffRequest());
+		return axios
+			.put(`${BASE_URL}/account/staff/modify`, formData, {
+				headers: {
+					Authorization: `Bearer ${ACCESS_TOKEN}`,
+				},
+			})
+			.then((response) => {
+				dispatch(getStaff());
+				dispatch(editStaffSuccess(response.data));
+				dispatch(showStaffToast());
+				setTimeout(() => dispatch(hideStaffToast()), 4000);
+			})
+			.catch((error) => dispatch(editStaffFailure(error)));
+	};
 };
 
 // Delete Staff

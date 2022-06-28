@@ -37,6 +37,10 @@ export const getAuth: any = (loginDetails: any, onSuccess: any) => {
 				dispatch(getAuthSuccess(response.data));
 				localStorage.setItem("accessToken", response.data.result.token);
 				localStorage.setItem("email", loginDetails.email);
+				localStorage.setItem(
+					"user",
+					JSON.stringify(response.data.result.staff)
+				);
 				onSuccess();
 			})
 			.catch((error) => dispatch(getAuthFailure(error)));

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import templateStyle from "../../Templete.module.css";
 import bellIcon from "../../../images/icon-bell.svg";
-import userAvatar from "../../../images/user-avatar.svg";
+import UserName from "../../../components/common/user/UserName";
+import UserAvatar from "../../../components/common/user/UserAvatar";
+
 const Header = () => {
 	return (
 		<div className={styles.header}>
@@ -20,9 +22,11 @@ const Header = () => {
 					<img src={bellIcon} alt="Notification"></img>
 				</div>
 				<div className={styles.user}>
-					<div className={styles.userName}>Josue Shultz</div>
+					<div className={styles.userName}>
+						<UserName />
+					</div>
 					<div className={styles.userAvatar}>
-						<img src={userAvatar} alt="User Avatar" />
+						<UserAvatar />
 					</div>
 				</div>
 			</div>

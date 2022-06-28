@@ -6,10 +6,14 @@ import AddStaff from "./addstaff/AddStaff";
 import styles from "./index.module.css";
 import Staffcard from "./staffcard/staffcard";
 import UploadStaff from "./uploadstaff/UploadStaff";
+import UserName from "../common/user/UserName";
+import Toast from "../common/toast/Toast";
 
 const index = (props: any) => {
 	const [open, setOpen] = useState(false);
 	const [upload, setUpload] = useState(false);
+
+	const showToast = useSelector((state: any) => state.addStaffToast.showToast);
 
 	const dispatch = useDispatch();
 	const ACCESS_TOKEN = localStorage.getItem("accessToken");
@@ -23,6 +27,7 @@ const index = (props: any) => {
 
 	return (
 		<>
+			{showToast && <Toast />}
 			<CustModal
 				open={open}
 				setOpen={setOpen}
@@ -36,7 +41,7 @@ const index = (props: any) => {
 			<div className={styles.dashboardStaff}>
 				<div className={styles.flexContainer}>
 					<div className={styles.titleInfo}>
-						<p className={styles.subTitle}>Welcome, Josue!</p>
+						Welcome <UserName />
 						<h2 className={styles.title}>Staff</h2>
 					</div>
 					<div className={styles.btnWrapper}>

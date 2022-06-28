@@ -3,6 +3,7 @@ import { AnyIfEmpty, useDispatch, useSelector } from "react-redux";
 import { getUnits } from "../../redux/units/actions/units.action";
 import styles from "./index.module.css";
 import Unitscard from "./unitscard/Unitscard";
+import UserName from "../common/user/UserName";
 
 const index = () => {
 	const unitsData = useSelector(
@@ -21,7 +22,9 @@ const index = () => {
 			<div className={styles.unitsContainer}>
 				<div className={styles.unitsHead}>
 					<div className={styles.userGreet}>
-						<p>Welcome Josue!</p>
+						<p>
+							Welcome <UserName />
+						</p>
 						<h2>Units</h2>
 					</div>
 					<div className={styles.btnContainer}>
