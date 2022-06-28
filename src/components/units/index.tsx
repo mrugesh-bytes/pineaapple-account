@@ -11,10 +11,9 @@ const index = () => {
 	);
 
 	const dispatch = useDispatch();
-	const ACCESS_TOKEN = localStorage.getItem("accessToken");
 
 	useEffect(() => {
-		ACCESS_TOKEN && dispatch(getUnits(ACCESS_TOKEN));
+		dispatch(getUnits());
 	}, []);
 
 	return (

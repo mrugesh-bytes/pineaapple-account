@@ -30,15 +30,10 @@ const getUnitsFailure = (unitsError: any) => {
 };
 
 export const getUnits: any = () => {
-	const ACCESS_TOKEN = localStorage.getItem("accessToken");
 	return (dispatch: Dispatch<any>) => {
 		dispatch(getUnitsRequest());
 		return axios
-			.get(`${BASE_URL}/account/units`, {
-				headers: {
-					Authorization: `Bearer ${ACCESS_TOKEN}`,
-				},
-			})
+			.get(`/account/units`)
 			.then((response) => dispatch(getUnitsSuccess(response.data)))
 			.catch((error) => dispatch(getUnitsFailure(error)));
 	};

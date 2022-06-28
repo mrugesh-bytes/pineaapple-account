@@ -3,6 +3,7 @@ import './App.css';
 import Template from './template/Templete';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import "./components/core/axios/Interceptor"
 
 function App() {
   return (

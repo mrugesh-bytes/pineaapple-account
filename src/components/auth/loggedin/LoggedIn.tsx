@@ -4,6 +4,7 @@ import styles from "./LoggedIn.module.css";
 
 const LoggedIn = ({email}: any) => {
 	const navigate = useNavigate()
+	
 	return (
 		<div className={styles.loggedinWrapper}>
 			<h2 className={styles.loggedinTitle}>Welcome Back!</h2>
@@ -12,7 +13,7 @@ const LoggedIn = ({email}: any) => {
 				<p className={styles.userEmail}>{email}</p>
 			</div>
 			<p className={styles.linkLogin}>
-				Not you? <Link to="/login">Use another account</Link>
+				Not you? <Link onClick={() => localStorage.clear()} to="/login">Use another account</Link>
 			</p>
 			<div className={styles.btnWrapper}>
 				<button onClick={() => navigate('/units')}>Sign In</button>
