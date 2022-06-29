@@ -29,9 +29,9 @@ const getAuthFailure = (authError: any) => {
 };
 
 export const getAuth: any = (loginDetails: any, onSuccess: any) => {
-	return async (dispatch: Dispatch<any>) => {
+	return (dispatch: Dispatch<any>) => {
 		dispatch(getAuthRequest());
-		await axios
+		axios
 			.post(`${BASE_URL}/public/login`, loginDetails)
 			.then((response) => {
 				dispatch(getAuthSuccess(response.data));
@@ -41,7 +41,7 @@ export const getAuth: any = (loginDetails: any, onSuccess: any) => {
 					"user",
 					JSON.stringify(response.data.result.staff)
 				);
-				onSuccess();
+				onSuccess(response.data.result);
 			})
 			.catch((error) => dispatch(getAuthFailure(error)));
 	};

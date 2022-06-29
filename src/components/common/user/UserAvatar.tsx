@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AppContext } from "../../context/AppContect";
 
-let user: any = localStorage.getItem("user");
-user = JSON.parse(user);
 
 const UserAvatar = () => {
-	return <img src={user.imageUrl} alt="User Avatar" />;
+	const appContect = useContext(AppContext);
+	const [userInfo, serUserInfo] = useState(appContect.userInfo || {})
+	return <img src={userInfo.imageUrl} alt="User Avatar" />;
 };
 
 export default UserAvatar;

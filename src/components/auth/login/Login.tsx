@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import eyeOpen from "../../../images/icon-eye-open.svg";
@@ -6,6 +6,7 @@ import eyeClose from "../../../images/icon-eye-close.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth } from "../../../redux/auth/actions/auth.action";
 import { Roles } from "../../../constants/staffRole";
+import { AppContext } from "../../context/AppContect";
 
 const Login = () => {
 	const [loginDetails, setLoginDetails]: any = useState({
@@ -16,6 +17,7 @@ const Login = () => {
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+	const appContext = useContext(AppContext);
 	const userType = Roles.find(
 		(role: any) => role.value === localStorage.getItem("type")
 	)?.label;
@@ -35,7 +37,9 @@ const Login = () => {
 		dispatch(getAuth(loginDetails, onSuccess));
 	};
 
-	const onSuccess = () => {
+	const onSuccess = (data: any) => {
+		appContext.accessToken = data.token;
+		appContext.userInfo = data.staff;
 		navigate("/units");
 	};
 
