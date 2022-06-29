@@ -13,7 +13,7 @@ const LoggedIn = ({email}: any) => {
 				<p className={styles.userEmail}>{email}</p>
 			</div>
 			<p className={styles.linkLogin}>
-				Not you? <Link onClick={() => localStorage.clear()} to="/login">Use another account</Link>
+				Not you? <Link onClick={() => localStorage.clear()} to="/">Use another account</Link>
 			</p>
 			<div className={styles.btnWrapper}>
 				<button onClick={() => navigate('/units')}>Sign In</button>

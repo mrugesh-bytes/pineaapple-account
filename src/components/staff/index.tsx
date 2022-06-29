@@ -16,13 +16,12 @@ const index = (props: any) => {
 	const showToast = useSelector((state: any) => state.addStaffToast.showToast);
 
 	const dispatch = useDispatch();
-	const ACCESS_TOKEN = localStorage.getItem("accessToken");
 
 	const staffData = useSelector(
 		(state: AnyIfEmpty<object>) => state?.staff?.data?.result?.staff
 	);
 	useEffect(() => {
-		ACCESS_TOKEN && dispatch(getStaff());
+		dispatch(getStaff());
 	}, []);
 
 	return (

@@ -7,7 +7,6 @@ axios.interceptors.request.use((config: any) => {
     const accessToken = localStorage.getItem('accessToken');
 
     // Do something before request is sent
-    // const accessToken: any = localStorage.getItem('accessToken');
     const Authorization = 'Authorization';
     const Accept = 'Accept';
     const ContentType = 'Content-Type';
