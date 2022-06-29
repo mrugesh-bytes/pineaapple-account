@@ -70,6 +70,9 @@ const Login = () => {
 							onChange={handleLoginDetails}
 							placeholder="Enter your email address"
 						/>
+						<span className={styles.requiredInputInfo}>
+							email id is incorrect!{" "}
+						</span>
 					</div>
 					<div
 						className={
@@ -94,6 +97,9 @@ const Login = () => {
 								<img src={!showPass ? eyeClose : eyeOpen} alt="Eye" />
 							</div>
 						</div>
+						<span className={styles.requiredInputInfo}>
+							password is incorrect!{" "}
+						</span>
 						<Link to="/">Trouble to get sign in?</Link>
 					</div>
 					<div className={styles.formSubmit}>

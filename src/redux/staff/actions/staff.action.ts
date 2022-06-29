@@ -13,6 +13,9 @@ import {
 	DELETE_STAFF_FAILURE,
 	DELETE_STAFF_REQUEST,
 	DELETE_STAFF_SUCCESS,
+	ADD_MULTIPLE_STAFF_REQUEST,
+	ADD_MULTIPLE_STAFF_SUCCESS,
+	ADD_MULTIPLE_STAFF_FAILURE,
 } from "../constants/staff.constants";
 import {
 	hideStaffToast,
@@ -48,14 +51,12 @@ const addStaffRequest = () => {
 		type: ADD_STAFF_REQUEST,
 	};
 };
-
 const addStaffSuccess = (staffData: any) => {
 	return {
 		type: ADD_STAFF_SUCCESS,
 		payload: staffData,
 	};
 };
-
 const addStaffFailure = (staffError: any) => {
 	return {
 		type: ADD_STAFF_FAILURE,
@@ -69,14 +70,12 @@ const editStaffRequest = () => {
 		type: EDIT_STAFF_REQUEST,
 	};
 };
-
 const editStaffSuccess = (staffData: any) => {
 	return {
 		type: EDIT_STAFF_SUCCESS,
 		payload: staffData,
 	};
 };
-
 const editStaffFailure = (staffError: any) => {
 	return {
 		type: EDIT_STAFF_FAILURE,
@@ -90,17 +89,33 @@ const staffDeleteRequest = () => {
 		type: DELETE_STAFF_REQUEST,
 	};
 };
-
 const staffDeleteSuccess = (data: any) => {
 	return {
 		type: DELETE_STAFF_SUCCESS,
 		payload: data,
 	};
 };
-
 const staffDeleteFailure = (errMsg: any) => {
 	return {
 		type: DELETE_STAFF_FAILURE,
+	};
+};
+
+// Add Multiple Staff
+const addMultipleStaffRequest = () => {
+	return {
+		type: ADD_MULTIPLE_STAFF_REQUEST,
+	};
+};
+const addMultipleStaffSuccess = (data: any) => {
+	return {
+		type: ADD_MULTIPLE_STAFF_SUCCESS,
+		payload: data,
+	};
+};
+const addMultipleStaffFailure = (errMsg: any) => {
+	return {
+		type: ADD_MULTIPLE_STAFF_FAILURE,
 	};
 };
 
@@ -201,5 +216,29 @@ export const deleteStaff: any = (id: string) => {
 				dispatch(staffDeleteSuccess(response.data));
 			})
 			.catch((error) => dispatch(staffDeleteFailure(error)));
+	};
+};
+
+// Add Multiple Staff Dispatch
+export const addMultipleStaff: any = (csvFile: any) => {
+	console.log(csvFile);
+	const ACCESS_TOKEN = localStorage.getItem("accessToken");
+	return (dispatch: Dispatch<any>) => {
+		const formData = new FormData();
+		formData.append("file", csvFile);
+		dispatch(addMultipleStaffRequest());
+		return axios
+			.post(`${BASE_URL}/account/staff/upload-csv`, formData, {
+				headers: {
+					Authorization: `Bearer ${ACCESS_TOKEN}`,
+				},
+			})
+			.then((response) => {
+				dispatch(getStaff());
+				dispatch(showStaffToast());
+				dispatch(addMultipleStaffSuccess(response.data));
+				setTimeout(() => dispatch(hideStaffToast()), 4000);
+			})
+			.catch((error) => dispatch(addMultipleStaffFailure(error)));
 	};
 };

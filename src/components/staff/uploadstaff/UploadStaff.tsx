@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import styles from "./UploadStaff.module.css";
 import iconClose from "../../../images/icon-close.svg";
 import iconCsv from "../../../images/icon-upload-csv.svg";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addMultipleStaff } from "../../../redux/staff/actions/staff.action";
 
 const UploadStaff = ({ setOpen }: any) => {
+	const dispatch = useDispatch();
+
 	const closeModal = () => {
 		setOpen(false);
+	};
+	const handleDrop = (e: any) => {
+		dispatch(addMultipleStaff(e.target.files[0]));
 	};
 	return (
 		<div>
@@ -20,7 +26,13 @@ const UploadStaff = ({ setOpen }: any) => {
 					</div>
 					<div className={styles.modalBody}>
 						<div className={styles.uploadContainer}>
-							<input type="file" name="upload-staff" />
+							<input
+								type="file"
+								name="upload-staff"
+								accept=".csv"
+								onDrop={handleDrop}
+								onChange={handleDrop}
+							/>
 						</div>
 						<div className={styles.uploadStuff}>
 							<img src={iconCsv} alt="icon CSV" />
