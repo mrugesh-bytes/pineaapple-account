@@ -7,7 +7,7 @@
 	max-width: 80px;
 	position: fixed;
 	top: 0px;
-	z-index: 9;
+	z-index: 99;
 }
 .sidebar ul {
 	list-style: none;
@@ -15,7 +15,7 @@
 	margin: 0px;
 }
 .sidebar .logo {
-	height: 94px;
+	height: 91px;
 	border-bottom: 1px solid #d1d2d3;
 }
 .sidebar .logo:hover {

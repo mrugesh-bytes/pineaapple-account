@@ -4,6 +4,10 @@
 	justify-content: space-between;
 	background: #ffffff;
 	box-shadow: 5px 10px 32px rgba(0, 0, 0, 0.04);
+	z-index: 9;
+	position: fixed;
+	top: 0px;
+	width: 100%;
 }
 .header .search {
 	width: 373px;

@@ -23,7 +23,11 @@
 }
 .loginForm .formWrapper,
 .loginForm .unauthorized {
-	margin-bottom: 24px;
+	margin-bottom: 0px;
+	margin-top: 8px;
+}
+.loginForm .formWrapper:first-child {
+	margin-top: 0px !important;
 }
 .loginForm .formWrapper a,
 .loginForm .unauthorized {
@@ -58,7 +62,7 @@
 }
 .loginForm .unauthorized input,
 .loginForm .unauthorized input:focus {
-	border: 1px solid #ff0000;
+	border: 1px solid #f5004a;
 }
 .loginForm .passwordWrapper {
 	position: relative;
@@ -78,7 +82,23 @@
 .loginForm input:focus {
 	border: 1px solid #51ab86;
 }
-.loginForm .formWrapper a {
+.loginForm .requiredInputInfo {
+	visibility: hidden;
+}
+.loginForm .unauthorized .requiredInputInfo {
+	visibility: visible;
+}
+.requiredInputInfo {
+	color: #f5004a;
+	text-transform: capitalize;
+	font-size: 12px;
+	line-height: 1;
+	display: block;
+	margin-top: 8px;
+	padding-left: 14px;
+}
+.loginForm .formWrapper a,
+.loginForm .unauthorized a {
 	font-size: 14px;
 	line-height: 28px;
 	text-transform: capitalize;
