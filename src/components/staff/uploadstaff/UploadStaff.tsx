@@ -7,12 +7,13 @@ import { addMultipleStaff } from "../../../redux/staff/actions/staff.action";
 
 const UploadStaff = ({ setOpen }: any) => {
 	const dispatch = useDispatch();
+	const [percentage, setPercentage] = useState(0);
 
 	const closeModal = () => {
 		setOpen(false);
 	};
 	const handleDrop = (e: any) => {
-		dispatch(addMultipleStaff(e.target.files[0]));
+		dispatch(addMultipleStaff(setPercentage, e.target.files[0]));
 	};
 	return (
 		<div>
@@ -49,9 +50,17 @@ const UploadStaff = ({ setOpen }: any) => {
 					</div>
 					<div className={styles.modalFooter}>
 						<div className={styles.progressContainer}>
-							<div className={styles.progressPercent}>45%</div>
+							<div className={styles.progressPercent}>{`${percentage}%`}</div>
 							<div className={styles.progressBar}>
-								<span className={styles.progress}></span>
+								<span
+									style={{
+										width: `${percentage}%`,
+										backgroundColor: "#51ab86",
+										display: "block",
+										borderRadius: "8px",
+										transition: "all ease 1s",
+									}}
+								></span>
 							</div>
 						</div>
 						<div className={styles.modalCancel}>
