@@ -1,71 +1,71 @@
 .loggedinWrapper {
-	width: 100%;
-	max-width: 373px;
+    width: 100%;
+    max-width: 373px;
 }
 .loggedinWrapper .loggedinTitle {
-	font-weight: 600;
-	font-size: 36px;
-	line-height: 48px;
-	text-transform: capitalize;
-	color: #191c21;
-	margin: 0px 0px 48px;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 48px;
+    text-transform: capitalize;
+    color: #191c21;
+    margin: 0px 0px 48px;
 }
 .loggedinWrapper .loggedinUser {
-	display: flex;
-	align-items: center;
-	margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 36px;
 }
 .loggedinWrapper .userInitial {
-	width: 48px;
-	height: 48px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0px 8px 0px 0px;
-	background: #dfede7;
-	border-radius: 50%;
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 28px;
-	color: #51ab86;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 8px 0px 0px;
+    background: #dfede7;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+    color: #51ab86;
 }
 .loggedinWrapper .userEmail {
-	font-size: 16px;
-	line-height: 28px;
-	color: #000000;
-	margin: 0px;
+    font-size: 16px;
+    line-height: 28px;
+    color: #000000;
+    margin: 0px;
 }
 .linkLogin {
-	font-size: 16px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #191c21;
-	margin: 0px;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
+    margin: 0px;
 }
 .linkLogin a,
 .linkSignup a {
-	color: #51ab86;
-	font-weight: 500;
+    color: #51ab86;
+    font-weight: 500;
 }
 .btnWrapper {
-	margin-top: 26px;
-	margin-bottom: 16px;
+    margin-top: 26px;
+    margin-bottom: 16px;
 }
 .btnWrapper button {
-	background: #51ab86;
-	border-radius: 8px;
-	height: 48px;
-	font-weight: 600;
-	font-size: 18px;
-	line-height: 28px;
-	color: #fff;
-	width: 100%;
-	border: none;
+    background: #51ab86;
+    border-radius: 8px;
+    height: 48px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #fff;
+    width: 100%;
+    border: none;
 }
 .linkSignup {
-	font-size: 16px;
-	line-height: 28px;
-	color: #191c21;
-	margin: 0px;
-	text-align: center;
+    font-size: 16px;
+    line-height: 28px;
+    color: #191c21;
+    margin: 0px;
+    text-align: center;
 }

@@ -1,74 +1,74 @@
 .sliderContainer {
-	width: 100%;
-	border-radius: 16px;
+    width: 100%;
+    border-radius: 16px;
 }
 .banner {
-	height: 250px;
-	object-fit: cover;
+    height: 250px;
+    object-fit: cover;
 }
 .sliderContainer .sliderItem {
-	position: relative;
-	border-radius: 16px;
+    position: relative;
+    border-radius: 16px;
 }
 .sliderContainer .inUse,
 .sliderContainer .inReturn,
 .sliderContainer .inkiosk {
-	position: absolute;
-	top: 16px;
-	z-index: 9;
-	width: max-content;
-	left: 16px;
-	border-radius: 30px;
-	padding: 0px 9px;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 28px;
-	display: inline-flex;
-	color: #fff;
-	align-items: center;
+    position: absolute;
+    top: 16px;
+    z-index: 9;
+    width: max-content;
+    left: 16px;
+    border-radius: 30px;
+    padding: 0px 9px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    display: inline-flex;
+    color: #fff;
+    align-items: center;
 }
 .carousel .control-dots .selected {
-	width: 18px;
+    width: 18px;
 }
 .sliderContainer .inUse {
-	background: #3674ee;
+    background: #3674ee;
 }
 .sliderContainer .inReturn {
-	background: #f5004a;
+    background: #f5004a;
 }
 .sliderContainer .inkiosk {
-	background: #51ab86;
+    background: #51ab86;
 }
 .sliderContainer .inUse img,
 .sliderContainer .inReturn img,
 .sliderContainer .inkiosk img {
-	width: 8px !important;
-	margin-right: 12px;
+    width: 8px !important;
+    margin-right: 12px;
 }
 .sliderContainer .price {
-	background: #e59236;
-	border-radius: 30px;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 28px;
-	text-transform: capitalize;
-	padding: 0px 9px;
-	z-index: 999;
-	position: absolute;
-	top: 16px;
-	right: 16px;
-	color: #fff;
+    background: #e59236;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    text-transform: capitalize;
+    padding: 0px 9px;
+    z-index: 999;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: #fff;
 }
 .carousel .control-dots .dot.selected {
-	opacity: 1;
-	width: 18px;
-	border-radius: 10px;
+    opacity: 1;
+    width: 18px;
+    border-radius: 10px;
 }
 .carousel .control-dots .dot {
-	opacity: 1 !important;
-	width: 8px;
-	margin: 0 8px 24px 8px !important;
+    opacity: 1 !important;
+    width: 8px;
+    margin: 0 8px 24px 8px !important;
 }
 .carousel.carousel-slider {
-	border-radius: 16px;
+    border-radius: 16px;
 }

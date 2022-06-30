@@ -1,52 +1,52 @@
 .userCard {
-	display: flex;
-	align-items: center;
-	padding: 24px 70px 24px 24px;
-	border-bottom: 1px solid #d1d2d3;
-	transition: all ease 0.3s;
-	position: relative;
-	cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 24px 70px 24px 24px;
+    border-bottom: 1px solid #d1d2d3;
+    transition: all ease 0.3s;
+    position: relative;
+    cursor: pointer;
 }
 .userCard .msgDate {
-	position: absolute;
-	font-size: 14px;
-	line-height: 28px;
-	color: #191c21;
-	top: 24px;
-	right: 24px;
+    position: absolute;
+    font-size: 14px;
+    line-height: 28px;
+    color: #191c21;
+    top: 24px;
+    right: 24px;
 }
 .userCard:hover,
 .userCard.active {
-	background-color: #fff9f2;
-	transition: all ease 0.3s;
+    background-color: #fff9f2;
+    transition: all ease 0.3s;
 }
 .userAvatar img {
-	max-width: 64px;
-	max-height: 64px;
-	border-radius: 8px;
+    max-width: 64px;
+    max-height: 64px;
+    border-radius: 8px;
 }
 .userCard:last-child {
-	border-bottom: 0px;
+    border-bottom: 0px;
 }
 .userCard .userDetails {
-	margin-left: 17px;
+    margin-left: 17px;
 }
 .userCard .userDetails .userName {
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #191c21;
-	margin: 0px 0px 8px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
+    margin: 0px 0px 8px;
 }
 .userCard .userDetails .userMsg {
-	font-size: 14px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #3f4246;
-	margin: 0px;
-	display: -webkit-box;
-	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
+    font-size: 14px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #3f4246;
+    margin: 0px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

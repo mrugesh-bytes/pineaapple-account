@@ -1,166 +1,165 @@
 .signupWrapper {
-	width: 100%;
-	max-width: 373px;
+    width: 100%;
+    max-width: 373px;
 }
 .signupWrapper .signupTitle {
-	font-weight: 600;
-	font-size: 36px;
-	line-height: 48px;
-	text-transform: capitalize;
-	color: #191c21;
-	margin: 0px 0px 16px;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 48px;
+    text-transform: capitalize;
+    color: #191c21;
+    margin: 0px 0px 16px;
 }
 .signupWrapper .signupInfo {
-	font-size: 16px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #191c21;
-	margin: 0px;
-	max-width: 314px;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
+    margin: 0px;
+    max-width: 314px;
 }
 .signupWrapper .signupForm {
-	margin-top: 50px;
+    margin-top: 50px;
 }
 .signupForm .formWrapper {
-	margin-bottom: 24px;
+    margin-bottom: 24px;
 }
 .signupForm .formWrapper label {
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #191c21;
-	display: block;
-	margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
+    display: block;
+    margin-bottom: 16px;
 }
 .signupForm .formWrapper input {
-	width: 100%;
-	background: #ffffff;
-	border: 1px solid #d1d2d3;
-	border-radius: 8px;
-	height: 48px;
-	padding: 10px 14px;
-	outline: none;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #d1d2d3;
+    border-radius: 8px;
+    height: 48px;
+    padding: 10px 14px;
+    outline: none;
 }
 .signupForm .formWrapper .passwordWrapper {
-	position: relative;
+    position: relative;
 }
 .passwordWrapper .eyeToggler {
-	position: absolute;
-	top: 50%;
-	transform: translate(0px, -50%);
-	right: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+    right: 16px;
 }
 .passwordWrapper .eyeToggler img {
-	height: 16px;
-	width: 16px;
-	object-fit: contain;
-	cursor: pointer;
+    height: 16px;
+    width: 16px;
+    object-fit: contain;
+    cursor: pointer;
 }
 .signupForm .formWrapper input:focus {
-	border: 1px solid #51ab86;
+    border: 1px solid #51ab86;
 }
 .signupForm .formWrapper a {
-	font-size: 14px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #191c21;
-	display: inline-block;
-	text-decoration: none !important;
-	margin-top: 8px;
+    font-size: 14px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
+    display: inline-block;
+    text-decoration: none !important;
+    margin-top: 8px;
 }
 .signupForm .formSubmit {
-	margin-top: 24px;
+    margin-top: 24px;
 }
 .signupForm .formSubmit button {
-	height: 48px;
-	background: #51ab86;
-	border-radius: 8px;
-	border: none;
-	font-weight: 600;
-	font-size: 18px;
-	line-height: 28px;
-	color: #ffffff;
-	padding: 10px 25px;
-	width: 100%;
-	outline: none;
+    height: 48px;
+    background: #51ab86;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #ffffff;
+    padding: 10px 25px;
+    width: 100%;
+    outline: none;
 }
 .leadSignup {
-	margin-top: 16px;
+    margin-top: 16px;
 }
 .leadSignup p {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 28px;
-	color: #191c21;
-	text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #191c21;
+    text-align: center;
 }
 .leadSignup p a {
-	color: #51ab86;
-	margin-left: 5px;
-	display: inline-block;
-	font-weight: 600;
-	text-decoration: none;
+    color: #51ab86;
+    margin-left: 5px;
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1024px) {
-	.signupWrapper {
-		width: 100%;
-		max-width: 100%;
-	}
+    .signupWrapper {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 /* Responsive Start */
 @media screen and (max-width: 1445px) {
-	.signupWrapper .signupForm {
-		margin-top: 20px;
-	}
-	.signupWrapper .signupTitle {
-		font-size: 28px;
-		line-height: 40px;
-		margin: 0px 0px 16px;
-	}
-	.signupWrapper .signupInfo {
-		font-size: 16px;
-		line-height: 24px;
-		max-width: 100%;
-	}
-	.signupForm .formWrapper label {
-	    font-size: 16px;
-		line-height: 28px;
-		margin-bottom: 16px;
-	}
-	.signupForm .formWrapper {
-		margin-bottom: 15px;
-	}
-	.loginWrapper {
-		max-width: 100%;
-	}
-	.leadSignup p {
-		margin-bottom: 0px;
-	}
-	.signupForm .formWrapper input,
-	.signupForm .formSubmit button{
-		height: 48px;
-	}
-	.signupForm .formSubmit button{
-		padding: 6px 20px;
-	}
+    .signupWrapper .signupForm {
+        margin-top: 20px;
+    }
+    .signupWrapper .signupTitle {
+        font-size: 28px;
+        line-height: 40px;
+        margin: 0px 0px 16px;
+    }
+    .signupWrapper .signupInfo {
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 100%;
+    }
+    .signupForm .formWrapper label {
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+    .signupForm .formWrapper {
+        margin-bottom: 15px;
+    }
+    .loginWrapper {
+        max-width: 100%;
+    }
+    .leadSignup p {
+        margin-bottom: 0px;
+    }
+    .signupForm .formWrapper input,
+    .signupForm .formSubmit button {
+        height: 48px;
+    }
+    .signupForm .formSubmit button {
+        padding: 6px 20px;
+    }
 }
 
 @media screen and (max-width: 1366px) {
-	.signupWrapper{
-		zoom: .8;
-	}
-	.signupWrapper {
-		max-width: 385px;
-	}
-	
+    .signupWrapper {
+        zoom: 0.8;
+    }
+    .signupWrapper {
+        max-width: 385px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
-	.signupWrapper {
-		width: 100%;
-		max-width: 100%;
-	}
+    .signupWrapper {
+        width: 100%;
+        max-width: 100%;
+    }
 }

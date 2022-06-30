@@ -1,95 +1,95 @@
 .sidebar {
-	background: #ffffff;
-	box-shadow: 5px 10px 32px rgba(0, 0, 0, 0.04);
-	border-radius: 0px 24px 24px 0px;
-	min-height: 100vh;
-	width: 100%;
-	max-width: 80px;
-	position: fixed;
-	top: 0px;
-	z-index: 99;
+    background: #ffffff;
+    box-shadow: 5px 10px 32px rgba(0, 0, 0, 0.04);
+    border-radius: 0px 24px 24px 0px;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 80px;
+    position: fixed;
+    top: 0px;
+    z-index: 99;
 }
 .sidebar ul {
-	list-style: none;
-	padding: 0px;
-	margin: 0px;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
 }
 .sidebar .logo {
-	height: 91px;
-	border-bottom: 1px solid #d1d2d3;
+    height: 91px;
+    border-bottom: 1px solid #d1d2d3;
 }
 .sidebar .logo:hover {
-	background-color: transparent;
+    background-color: transparent;
 }
 .sidebar .logo:hover img {
-	filter: none;
+    filter: none;
 }
 .sidebar ul li {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 72px;
-	transition: ease all 0.3s;
-	cursor: pointer;
-	position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 72px;
+    transition: ease all 0.3s;
+    cursor: pointer;
+    position: relative;
 }
 .sidebar ul li:hover,
 .sidebar ul .active {
-	background-color: #191c21;
-	transition: ease all 0.3s;
+    background-color: #191c21;
+    transition: ease all 0.3s;
 }
 .sidebar ul li .active img {
-	filter: brightness(0) invert(1);
-	transition: ease all 0.3s;
+    filter: brightness(0) invert(1);
+    transition: ease all 0.3s;
 }
 
 .sidebar ul li:hover img,
 .sidebar ul .active img {
-	filter: brightness(0) invert(1);
-	transition: ease all 0.3s;
+    filter: brightness(0) invert(1);
+    transition: ease all 0.3s;
 }
 .sidebar ul li img {
-	transition: ease all 0.3s;
+    transition: ease all 0.3s;
 }
 .sidebar ul li.iconLogout {
-	background-color: #191c21;
-	position: absolute;
-	bottom: 0px;
-	width: 100%;
-	border-bottom-right-radius: 24px;
+    background-color: #191c21;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    border-bottom-right-radius: 24px;
 }
 .tooltip {
-	position: absolute;
-	font-size: 12px;
-	line-height: 16px;
-	background-color: #e59236;
-	font-weight: 600;
-	color: #fff;
-	padding: 5px 8px;
-	border-radius: 5px;
-	right: 0px;
-	transform: translate(100%, 0px);
-	opacity: 0;
-	transition: ease all 0.3s;
+    position: absolute;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #e59236;
+    font-weight: 600;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    right: 0px;
+    transform: translate(100%, 0px);
+    opacity: 0;
+    transition: ease all 0.3s;
 }
 .sidebar ul li:hover .tooltip {
-	opacity: 1;
-	transition: ease all 0.3s;
+    opacity: 1;
+    transition: ease all 0.3s;
 }
 .tooltip:before {
-	content: "";
-	position: absolute;
-	height: 10px;
-	background-color: #e59236;
-	width: 10px;
-	left: -5px;
-	transform: rotate(45deg) translate(-3px, -4px);
-	top: 50%;
+    content: '';
+    position: absolute;
+    height: 10px;
+    background-color: #e59236;
+    width: 10px;
+    left: -5px;
+    transform: rotate(45deg) translate(-3px, -4px);
+    top: 50%;
 }
 
 /* Responsive Start */
 @media screen and (max-width: 1445px) {
-	.sidebar ul li {
-		min-height: 53px;
-	}
+    .sidebar ul li {
+        min-height: 53px;
+    }
 }

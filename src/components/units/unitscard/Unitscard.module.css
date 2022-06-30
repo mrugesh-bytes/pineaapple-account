@@ -1,140 +1,140 @@
 .unitcardMain {
-	width: 33.33%;
-	display: flex;
-	flex-wrap: wrap;
+    width: 33.33%;
+    display: flex;
+    flex-wrap: wrap;
 }
 .unitcardMain .unitcard {
-	margin: 12px;
+    margin: 12px;
 }
 .cardBanner {
-	position: relative;
+    position: relative;
 }
 
 .cardBanner .bannerMain .cardBanner .inUse {
-	background: #3674ee;
-	border-radius: 30px;
-	padding: 0px 9px;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #ffffff;
-	display: inline-flex;
-	position: absolute;
-	width: max-content;
-	left: 16px;
-	top: 16px;
+    background: #3674ee;
+    border-radius: 30px;
+    padding: 0px 9px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #ffffff;
+    display: inline-flex;
+    position: absolute;
+    width: max-content;
+    left: 16px;
+    top: 16px;
 }
 .cardBanner .inUse img {
-	width: 8px !important;
-	display: inline-block;
-	margin-right: 12px;
+    width: 8px !important;
+    display: inline-block;
+    margin-right: 12px;
 }
 
 .cardBanner .cost {
-	background: #e59236;
-	border-radius: 30px;
-	padding: 0px 9px;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #ffffff;
-	display: inline-block;
-	position: absolute;
-	width: max-content;
-	right: 16px;
-	top: 16px;
+    background: #e59236;
+    border-radius: 30px;
+    padding: 0px 9px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #ffffff;
+    display: inline-block;
+    position: absolute;
+    width: max-content;
+    right: 16px;
+    top: 16px;
 }
 .unitcard {
-	background: #ffffff;
-	box-shadow: 5px 10px 32px rgb(65 65 65 / 9%);
-	border-radius: 16px;
-	width: 100%;
+    background: #ffffff;
+    box-shadow: 5px 10px 32px rgb(65 65 65 / 9%);
+    border-radius: 16px;
+    width: 100%;
 }
 .unitcard .cardBanner img {
-	width: 100%;
-	max-height: 250px;
-	border-radius: 16px;
+    width: 100%;
+    max-height: 250px;
+    border-radius: 16px;
 }
 .unitcard .cardFacilities {
-	display: flex;
-	margin-top: 17px;
+    display: flex;
+    margin-top: 17px;
 }
 .cardTitle {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-weight: 600;
-	font-size: 18px;
-	line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
 }
 .cardTitle h4 {
-	text-transform: capitalize;
-	color: #191c21;
-	font-weight: 600;
-	font-size: 18px;
-	line-height: 30px;
-	margin: 0px;
+    text-transform: capitalize;
+    color: #191c21;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0px;
 }
 .cardBody {
-	padding: 16px;
+    padding: 16px;
 }
 .cardBody p {
-	color: #b2b3b5;
-	font-size: 14px;
-	line-height: 26px;
-	margin: 0px;
+    color: #b2b3b5;
+    font-size: 14px;
+    line-height: 26px;
+    margin: 0px;
 }
 .cardBody p span {
-	font-size: 14px;
-	line-height: 26px;
-	color: #51ab86;
-	padding-left: 31px;
-	position: relative;
+    font-size: 14px;
+    line-height: 26px;
+    color: #51ab86;
+    padding-left: 31px;
+    position: relative;
 }
 .cardBody p span:before {
-	content: "";
-	position: absolute;
-	height: 9px;
-	width: 9px;
-	border-radius: 50%;
-	background-color: #51ab86;
-	top: 50%;
-	transform: translate(-15px, -50%);
+    content: '';
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background-color: #51ab86;
+    top: 50%;
+    transform: translate(-15px, -50%);
 }
 .cardTitle span img {
-	display: inline-block;
-	margin-left: 8px;
+    display: inline-block;
+    margin-left: 8px;
 }
 .cardBody .facility {
-	display: flex;
-	align-items: center;
-	margin-right: 16px;
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
 }
 .cardBody .facility img {
-	display: inline-block;
-	margin-right: 11.2px;
+    display: inline-block;
+    margin-right: 11.2px;
 }
 
 /* Responsive Start */
 @media screen and (max-width: 1445px) {
-	.unitcard .cardBanner img {
-		max-height: 176px;
-	}
+    .unitcard .cardBanner img {
+        max-height: 176px;
+    }
 }
 
 @media screen and (max-width: 1280px) {
-	.unitcardMain {
-		width: 50%;
-	}
+    .unitcardMain {
+        width: 50%;
+    }
 }
 @media screen and (max-width: 1024px) {
-	.cardBody .facility img {
-		width: 12px;
-	}
-	.cardBody .facility span {
-		font-size: 14px;
-		line-height: 26px;
-	}
+    .cardBody .facility img {
+        width: 12px;
+    }
+    .cardBody .facility span {
+        font-size: 14px;
+        line-height: 26px;
+    }
 }

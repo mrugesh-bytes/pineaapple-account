@@ -1,12 +1,12 @@
-import React from "react";
-import Support from "../components/support/Support";
+import React from 'react';
+import Support from '../components/support/Support';
 
 const ChatSupport = () => {
-	return (
-		<div>
-			<Support />
-		</div>
-	);
+    return (
+        <div>
+            <Support />
+        </div>
+    );
 };
 
 export default ChatSupport;

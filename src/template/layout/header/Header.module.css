@@ -1,61 +1,61 @@
 .header {
-	padding: 21px;
-	display: flex;
-	justify-content: space-between;
-	background: #ffffff;
-	box-shadow: 5px 10px 32px rgba(0, 0, 0, 0.04);
-	z-index: 9;
-	position: fixed;
-	top: 0px;
-	width: 100%;
+    padding: 21px;
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff;
+    box-shadow: 5px 10px 32px rgba(0, 0, 0, 0.04);
+    z-index: 9;
+    position: fixed;
+    top: 0px;
+    width: 100%;
 }
 .header .search {
-	width: 373px;
-	position: relative;
-	height: 48px;
+    width: 373px;
+    position: relative;
+    height: 48px;
 }
 .header .search input {
-	position: relative;
-	padding-left: 41px;
+    position: relative;
+    padding-left: 41px;
 }
 .header .search:before {
-	content: "";
-	position: absolute;
-	background-image: url("../../../images/icon-search.svg");
-	width: 17px;
-	height: 17px;
-	background-repeat: no-repeat;
-	background-size: contain;
-	top: 50%;
-	transform: translate(0px, -50%);
-	left: 16px;
-	z-index: 999;
+    content: '';
+    position: absolute;
+    background-image: url('../../../images/icon-search.svg');
+    width: 17px;
+    height: 17px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    transform: translate(0px, -50%);
+    left: 16px;
+    z-index: 999;
 }
 .header .userBox {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 .header .userBox .notification img {
-	width: 20px;
+    width: 20px;
 }
 .header .userBox .user {
-	display: flex;
-	align-items: center;
-	margin-left: 27.2px;
+    display: flex;
+    align-items: center;
+    margin-left: 27.2px;
 }
 .header .userBox .userAvatar {
-	margin-left: 8px;
+    margin-left: 8px;
 }
 .header .userBox .userAvatar img {
-	width: 48px;
-	height: 48px;
-	object-fit: cover;
-	border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 .header .userBox .userName {
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #191c21;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
 }

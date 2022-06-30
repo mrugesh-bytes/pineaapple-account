@@ -1,84 +1,84 @@
 .unitsContainer .unitsHead {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
 }
 .unitsContainer .btnContainer button {
-	border-radius: 8px;
-	padding: 6px 21px;
-	height: 40px;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 28px;
-	margin-right: 24px;
+    border-radius: 8px;
+    padding: 6px 21px;
+    height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    margin-right: 24px;
 }
 .unitsContainer .btnContainer .outline {
-	border: 1px solid #51ab86;
-	background: #ffffff;
-	color: #51ab86;
+    border: 1px solid #51ab86;
+    background: #ffffff;
+    color: #51ab86;
 }
 .unitsContainer .btnContainer {
-	display: flex;
+    display: flex;
 }
 .unitsContainer .btnContainer select {
-	background: #ffffff;
-	border: 1px solid #191c21;
-	border-radius: 8px;
-	padding: 5px 36px 5px 12px;
-	height: 40px;
-	outline: none;
-	appearance: none;
-	background-image: url("../../images/icon-down-chivron.svg");
-	background-repeat: no-repeat;
-	background-size: 10px;
-	background-position: center right 15px;
-	max-width: 184px;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 30px;
-	text-transform: capitalize;
-	color: #191c21;
+    background: #ffffff;
+    border: 1px solid #191c21;
+    border-radius: 8px;
+    padding: 5px 36px 5px 12px;
+    height: 40px;
+    outline: none;
+    appearance: none;
+    background-image: url('../../images/icon-down-chivron.svg');
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center right 15px;
+    max-width: 184px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    text-transform: capitalize;
+    color: #191c21;
 }
 .unitsContainer .btnContainer .btnGreen {
-	background: #51ab86;
-	color: #fff;
-	border: 1px solid #51ab86;
+    background: #51ab86;
+    color: #fff;
+    border: 1px solid #51ab86;
 }
 .unitsHead .userGreet p {
-	font-size: 16px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #191c21;
-	margin-bottom: 16px;
-	margin-top: 0px;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
+    margin-bottom: 16px;
+    margin-top: 0px;
 }
 .unitsHead .userGreet h2 {
-	font-weight: 600;
-	font-size: 30px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #191c21;
-	margin: 0px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
+    margin: 0px;
 }
 .unitcards {
-	display: flex;
-	flex-wrap: wrap;
-	margin-left: -12px;
-	margin-right: -12px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
 }
 
 /* Responsive Start */
 @media screen and (max-width: 1024px) {
-	.unitsContainer .btnContainer {
-		display: none;
-	}
-	.unitsHead .userGreet p {
-		font-size: 14px;
-		margin-bottom: 8px;
-	}
-	.unitsHead .userGreet h2 {
-		font-size: 16px;
-		line-height: 26px;
-	}
+    .unitsContainer .btnContainer {
+        display: none;
+    }
+    .unitsHead .userGreet p {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .unitsHead .userGreet h2 {
+        font-size: 16px;
+        line-height: 26px;
+    }
 }

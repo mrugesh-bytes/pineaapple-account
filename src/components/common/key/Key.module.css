@@ -1,28 +1,28 @@
 .key {
-	border-radius: 30px;
-	padding: 0px 9px;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #ffffff;
+    border-radius: 30px;
+    padding: 0px 9px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #ffffff;
 }
 .key.inUse {
-	background: #3674ee;
+    background: #3674ee;
 }
 .key.return {
-	background-color: #f5004a;
+    background-color: #f5004a;
 }
 .key.kiosk {
-	background-color: #51ab86;
+    background-color: #51ab86;
 }
 .key p {
-	margin: 0px;
-	display: flex;
-	align-items: center;
+    margin: 0px;
+    display: flex;
+    align-items: center;
 }
 .iconKey {
-	max-width: 8px;
-	margin-right: 12px;
-	margin-left: 3px;
+    max-width: 8px;
+    margin-right: 12px;
+    margin-left: 3px;
 }

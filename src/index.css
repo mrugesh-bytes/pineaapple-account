@@ -1,69 +1,68 @@
 * {
-	outline: none !important;
+    outline: none !important;
 }
 body {
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-		sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .outletConainer {
-	padding: 125px 32px 32px 115px;
+    padding: 125px 32px 32px 115px;
 }
 /* Scroll Bar */
 select__menu-list::-webkit-scrollbar {
-	width: 4px;
-	height: 0px;
+    width: 4px;
+    height: 0px;
 }
 select__menu-list::-webkit-scrollbar-track {
-	background: #f1f1f1;
+    background: #f1f1f1;
 }
 select__menu-list::-webkit-scrollbar-thumb {
-	background: #888;
+    background: #888;
 }
 select__menu-list::-webkit-scrollbar-thumb:hover {
-	background: #555;
+    background: #555;
 }
 .ReactModal__Overlay {
-	background: rgba(25, 28, 33, 0.12) !important;
-	backdrop-filter: blur(10px) !important;
-	z-index: 999;
+    background: rgba(25, 28, 33, 0.12) !important;
+    backdrop-filter: blur(10px) !important;
+    z-index: 999;
 }
 .ReactModal__Content {
-	padding: 0px !important;
-	border: none !important;
+    padding: 0px !important;
+    border: none !important;
 }
 .ReactModal__Body--open {
-	overflow: hidden !important;
+    overflow: hidden !important;
 }
 .carousel .control-dots .dot {
-	box-shadow: none !important;
-	margin: 0px 4px !important;
-	opacity: 1 !important;
+    box-shadow: none !important;
+    margin: 0px 4px !important;
+    opacity: 1 !important;
 }
 .carousel .control-dots .dot.selected {
-	width: 18px;
-	border-radius: 10px;
+    width: 18px;
+    border-radius: 10px;
 }
 
 .carousel.carousel-slider {
-	border-radius: 16px;
+    border-radius: 16px;
 }
 .BeansGoogle {
-	width: 100% !important;
-	height: 100% !important;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* Responsive Start */
 @media screen and (max-width: 1700px) {
-	.ReactModal__Content {
-		transform: translate(-50%, -50%) scale(0.8) !important;
-	}
+    .ReactModal__Content {
+        transform: translate(-50%, -50%) scale(0.8) !important;
+    }
 }
 @media screen and (max-width: 1366px) {
-	.ReactModal__Content {
-		transform: translate(-50%, -50%) scale(1) !important;
-	}
+    .ReactModal__Content {
+        transform: translate(-50%, -50%) scale(1) !important;
+    }
 }

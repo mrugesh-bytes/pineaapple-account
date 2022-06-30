@@ -1,72 +1,72 @@
 .dashboardStaff .flexContainer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .dashboardStaff .titleInfo .subTitle {
-	font-size: 16px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #191c21;
-	margin: 0px;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
+    margin: 0px;
 }
 .dashboardStaff .titleInfo .title {
-	font-weight: 600;
-	font-size: 30px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #191c21;
-	margin: 16px 0px 0px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
+    margin: 16px 0px 0px;
 }
 .dashboardStaff .btnWrapper .btnGreenOutline,
 .dashboardStaff .btnWrapper .btnGreen {
-	padding: 6px 21px;
-	border: 1px solid #51ab86;
-	border-radius: 8px;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 28px;
-	text-transform: capitalize;
-	height: 40px;
-	outline: none !important;
+    padding: 6px 21px;
+    border: 1px solid #51ab86;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: capitalize;
+    height: 40px;
+    outline: none !important;
 }
 
 .dashboardStaff .btnWrapper .btnGreenOutline {
-	background: #ffffff;
-	color: #51ab86;
+    background: #ffffff;
+    color: #51ab86;
 }
 .dashboardStaff .btnWrapper .btnGreen {
-	color: #ffffff;
-	background: #51ab86;
-	margin-left: 24px;
+    color: #ffffff;
+    background: #51ab86;
+    margin-left: 24px;
 }
 .staffCardMain {
-	display: flex;
-	flex-wrap: wrap;
-	margin: -16px;
-	margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -16px;
+    margin-top: 32px;
 }
 .staffCardConatiner {
-	width: 25%;
-	padding: 16px;
+    width: 25%;
+    padding: 16px;
 }
 
 /* Responsive Start */
 @media screen and (max-width: 1280px) {
-	.staffCardConatiner {
-		width: 33.33%;
-		padding: 12px;
-	}
+    .staffCardConatiner {
+        width: 33.33%;
+        padding: 12px;
+    }
 }
 @media screen and (max-width: 1024px) {
-	.staffCardConatiner {
-		width: 50%;
-		padding: 12px;
-	}
+    .staffCardConatiner {
+        width: 50%;
+        padding: 12px;
+    }
 }
 @media screen and (max-width: 600px) {
-	.staffCardConatiner {
-		width: 100%;
-		padding: 12px;
-	}
+    .staffCardConatiner {
+        width: 100%;
+        padding: 12px;
+    }
 }

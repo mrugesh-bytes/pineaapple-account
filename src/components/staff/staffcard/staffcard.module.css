@@ -1,80 +1,80 @@
 .staffCard {
-	width: 100%;
-	background: #ffffff;
-	box-shadow: 5px 10px 32px rgba(65, 65, 65, 0.09);
-	border-radius: 8px;
-	padding: 24px 14px;
-	position: relative;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 5px 10px 32px rgba(65, 65, 65, 0.09);
+    border-radius: 8px;
+    padding: 24px 14px;
+    position: relative;
 }
 
 .staffPhotoContainer {
-	position: relative;
-	text-align: center;
+    position: relative;
+    text-align: center;
 }
 .staffPhotoContainer img {
-	display: block;
-	margin: auto;
-	height: 100px;
-	width: 100px;
-	border-radius: 50%;
-	object-fit: cover;
+    display: block;
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 .staffPos {
-	font-size: 14px;
-	line-height: 28px;
-	color: #ffffff;
-	padding: 2px 20px;
-	border-radius: 25px;
-	text-align: center;
-	display: inline-flex;
-	margin: 0px;
-	position: relative;
-	top: -15px;
-	height: 24px;
-	align-items: center;
-	border: 1px solid #fff;
+    font-size: 14px;
+    line-height: 28px;
+    color: #ffffff;
+    padding: 2px 20px;
+    border-radius: 25px;
+    text-align: center;
+    display: inline-flex;
+    margin: 0px;
+    position: relative;
+    top: -15px;
+    height: 24px;
+    align-items: center;
+    border: 1px solid #fff;
 }
 .staffPos.staffAdmin {
-	background: #51ab86;
+    background: #51ab86;
 }
 .staffPos.staffGeneral {
-	background: #cca934;
+    background: #cca934;
 }
 .staffPos.staffProperty {
-	background: #3674ee;
+    background: #3674ee;
 }
 .staffPos.staffLeasing {
-	background: #f8dc7f;
+    background: #f8dc7f;
 }
 .staffPos.staffMaintenance {
-	background: #e59236;
+    background: #e59236;
 }
 .staffName {
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 28px;
-	text-transform: capitalize;
-	color: #191c21;
-	margin: 5px 0px 8px;
-	text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
+    margin: 5px 0px 8px;
+    text-align: center;
 }
 .staffMail {
-	color: #b2b3b5 !important;
-	font-size: 14px;
-	line-height: 26px;
-	text-decoration: none !important;
-	text-align: center;
-	display: block;
+    color: #b2b3b5 !important;
+    font-size: 14px;
+    line-height: 26px;
+    text-decoration: none !important;
+    text-align: center;
+    display: block;
 }
 .iconEdit,
 .iconDelete {
-	position: absolute;
-	right: 14px;
-	cursor: pointer;
+    position: absolute;
+    right: 14px;
+    cursor: pointer;
 }
 .iconEdit {
-	top: 24px;
+    top: 24px;
 }
 .iconDelete {
-	top: 56px;
+    top: 56px;
 }
