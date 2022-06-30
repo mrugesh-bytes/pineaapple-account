@@ -36,7 +36,9 @@ const index = () => {
 					</div>
 					<div className={styles.btnContainer}>
 						<button className={styles.outline}>+ Add Unit</button>
-						<button className={styles.btnGreen}>+ Add Location</button>
+						<button className={styles.btnGreen}>
+							+ Add Location
+						</button>
 						<select>
 							<option>park towne Place</option>
 							<option>Place #2</option>

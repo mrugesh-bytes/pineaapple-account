@@ -230,7 +230,9 @@ export const addMultipleStaff: any = (setPercentage: any, csvFile: any) => {
 		return axios
 			.post(`${BASE_URL}/account/staff/upload-csv`, formData, {
 				onUploadProgress: (e: any) => {
-					const percentCompleted = Math.round((e.loaded * 100) / e.total);
+					const percentCompleted = Math.round(
+						(e.loaded * 100) / e.total
+					);
 					setPercentage(percentCompleted);
 				},
 				headers: {
