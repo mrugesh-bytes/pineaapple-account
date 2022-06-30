@@ -1,16 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { AnyIfEmpty, useDispatch, useSelector } from "react-redux";
 import { getUnits } from "../../redux/units/actions/units.action";
 import styles from "./index.module.css";
 import Unitscard from "./unitscard/Unitscard";
 import UserName from "../common/user/UserName";
+import CustModal from "../common/custmodal/CustModal";
+import CompleteProfile from "../staff/completeprofile/CompleteProfile";
 
 const index = () => {
+	const dispatch = useDispatch();
 	const unitsData = useSelector(
 		(state: AnyIfEmpty<object>) => state?.units?.data?.result?.units
 	);
 
-	const dispatch = useDispatch();
+	const [complete, setComplete] = useState(true);
 
 	useEffect(() => {
 		dispatch(getUnits());
@@ -18,6 +21,11 @@ const index = () => {
 
 	return (
 		<div className="outletConainer">
+			<CustModal
+				open={complete}
+				setOpen={setComplete}
+				bodyData={<CompleteProfile setOpen={setComplete} />}
+			/>
 			<div className={styles.unitsContainer}>
 				<div className={styles.unitsHead}>
 					<div className={styles.userGreet}>

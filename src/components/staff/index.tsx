@@ -37,6 +37,7 @@ const index = (props: any) => {
 				setOpen={setUpload}
 				bodyData={<UploadStaff setOpen={setUpload} />}
 			/>
+
 			<div className={styles.dashboardStaff}>
 				<div className={styles.flexContainer}>
 					<div className={styles.titleInfo}>
