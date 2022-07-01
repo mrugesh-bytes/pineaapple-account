@@ -1,16 +1,10 @@
 import React from 'react';
-import iconClose from '../../../images/icon-close.svg';
 import defaultProfilePic from '../../../images/default_profile_pic.png';
 import uploadAvatar from '../../../images/upload-avatar.svg';
-import Select from 'react-select';
 import _ from 'lodash';
 import styles from './CompleteProfile.module.css';
 
 const CompleteProfile = ({ setOpen }: any) => {
-    const closeModal = () => {
-        setOpen(false);
-    };
-
     return (
         <div>
             <div>
@@ -38,7 +32,9 @@ const CompleteProfile = ({ setOpen }: any) => {
                                     <label>Contact No.</label>
                                     <div className={styles.fieldWrapper}>
                                         <input type="number" />
-                                        <button className={styles.fieldBtn}>Get OTP</button>
+                                        <button onClick={(e: any) => e.preventDefault()} className={styles.fieldBtn}>
+                                            Get OTP
+                                        </button>
                                     </div>
                                 </div>
                                 <div className={styles.field}>

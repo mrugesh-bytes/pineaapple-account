@@ -8,6 +8,7 @@ import Staffcard from './staffcard/staffcard';
 import UploadStaff from './uploadstaff/UploadStaff';
 import UserName from '../common/user/UserName';
 import Toast from '../common/toast/Toast';
+import loaderImage from '../../images/output-onlinegiftools.gif';
 
 const index = (props: any) => {
     const [open, setOpen] = useState(false);
@@ -25,6 +26,10 @@ const index = (props: any) => {
     return (
         <>
             {showToast && <Toast />}
+            <div className={styles.pineLoader}>
+                <img src={loaderImage} />
+            </div>
+
             <CustModal open={open} setOpen={setOpen} bodyData={<AddStaff setOpen={setOpen} />} />
             <CustModal open={upload} setOpen={setUpload} bodyData={<UploadStaff setOpen={setUpload} />} />
 

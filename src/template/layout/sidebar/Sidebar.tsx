@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './Sidebar.module.css';
 import logoSm from '../../../images/logo-sm.svg';
 import iconApartment from '../../../images/icon-apartment.svg';
@@ -12,9 +12,11 @@ import iconLocation from '../../../images/icon-location.svg';
 import iconMap from '../../../images/icon-map.svg';
 import iconLogout from '../../../images/icon-logout.svg';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { AppContext } from '../../../components/context/AppContect';
 
 const sidebar = () => {
     const [path, setPath] = useState('');
+    const appContext = useContext(AppContext);
     const { id } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
@@ -25,6 +27,7 @@ const sidebar = () => {
 
     const handleLogout = () => {
         localStorage.clear();
+
         navigate('/');
     };
 
@@ -38,8 +41,7 @@ const sidebar = () => {
                     onClick={() => {
                         navigate('/units');
                     }}
-                    className={path === '/units' || path === `/unitDetails/${id}` ? styles.active : ''}
-                >
+                    className={path === '/units' || path === `/unitDetails/${id}` ? styles.active : ''}>
                     <span className={styles.tooltip}>Units</span>
                     <img src={iconApartment} alt="Apartment Icon" />
                 </li>
@@ -51,8 +53,7 @@ const sidebar = () => {
                     onClick={() => {
                         navigate('/staff');
                     }}
-                    className={path === '/staff' ? styles.active : ''}
-                >
+                    className={path === '/staff' ? styles.active : ''}>
                     <img src={iconStaff} alt="Staff Icon" />
                     <span className={styles.tooltip}>Staff</span>
                 </li>
