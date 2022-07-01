@@ -9,6 +9,7 @@ import CompleteProfile from "../staff/completeprofile/CompleteProfile";
 import Switch from "../common/switch/Switch";
 import Counter from "../common/counter/Counter";
 import AddUnits from "./addunits/AddUnits";
+import AddLocation from "./addlocation/AddLocation";
 
 const index = () => {
 	const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const index = () => {
 
 	const [complete, setComplete] = useState(false);
 	const [addunit, setAddUnit] = useState(false);
+	const [addLocation, setAddLocation] = useState(false);
 
 	useEffect(() => {
 		dispatch(getUnits());
@@ -35,6 +37,11 @@ const index = () => {
 				setOpen={setAddUnit}
 				bodyData={<AddUnits setOpen={setAddUnit} />}
 			/>
+			<CustModal
+				open={addLocation}
+				setOpen={setAddLocation}
+				bodyData={<AddLocation setOpen={setAddLocation} />}
+			/>
 			<div className={styles.unitsContainer}>
 				<div className={styles.unitsHead}>
 					<div className={styles.userGreet}>
@@ -50,7 +57,10 @@ const index = () => {
 						>
 							+ Add Unit
 						</button>
-						<button className={styles.btnGreen}>
+						<button
+							className={styles.btnGreen}
+							onClick={() => setAddLocation(true)}
+						>
 							+ Add Location
 						</button>
 						<select>
