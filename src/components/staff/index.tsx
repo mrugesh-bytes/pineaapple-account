@@ -8,12 +8,15 @@ import Staffcard from "./staffcard/staffcard";
 import UploadStaff from "./uploadstaff/UploadStaff";
 import UserName from "../common/user/UserName";
 import Toast from "../common/toast/Toast";
+import loaderImage from "../../images/output-onlinegiftools.gif";
 
 const index = (props: any) => {
 	const [open, setOpen] = useState(false);
 	const [upload, setUpload] = useState(false);
 
-	const showToast = useSelector((state: any) => state.addStaffToast.showToast);
+	const showToast = useSelector(
+		(state: any) => state.addStaffToast.showToast
+	);
 
 	const dispatch = useDispatch();
 
@@ -27,6 +30,10 @@ const index = (props: any) => {
 	return (
 		<>
 			{showToast && <Toast />}
+			<div className={styles.pineLoader}>
+				<img src={loaderImage} />
+			</div>
+
 			<CustModal
 				open={open}
 				setOpen={setOpen}
@@ -51,7 +58,10 @@ const index = (props: any) => {
 						>
 							Upload Staff
 						</button>
-						<button onClick={() => setOpen(true)} className={styles.btnGreen}>
+						<button
+							onClick={() => setOpen(true)}
+							className={styles.btnGreen}
+						>
 							+ Add Staff
 						</button>
 					</div>
@@ -59,7 +69,10 @@ const index = (props: any) => {
 				<div className={styles.staffCardMain}>
 					{staffData &&
 						staffData.map((staff: any) => (
-							<div className={styles.staffCardConatiner} key={staff.id}>
+							<div
+								className={styles.staffCardConatiner}
+								key={staff.id}
+							>
 								<Staffcard staff={staff} />
 							</div>
 						))}

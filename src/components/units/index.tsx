@@ -6,6 +6,9 @@ import Unitscard from "./unitscard/Unitscard";
 import UserName from "../common/user/UserName";
 import CustModal from "../common/custmodal/CustModal";
 import CompleteProfile from "../staff/completeprofile/CompleteProfile";
+import Switch from "../common/switch/Switch";
+import Counter from "../common/counter/Counter";
+import AddUnits from "./addunits/AddUnits";
 
 const index = () => {
 	const dispatch = useDispatch();
@@ -13,7 +16,8 @@ const index = () => {
 		(state: AnyIfEmpty<object>) => state?.units?.data?.result?.units
 	);
 
-	const [complete, setComplete] = useState(true);
+	const [complete, setComplete] = useState(false);
+	const [addunit, setAddUnit] = useState(false);
 
 	useEffect(() => {
 		dispatch(getUnits());
@@ -26,6 +30,11 @@ const index = () => {
 				setOpen={setComplete}
 				bodyData={<CompleteProfile setOpen={setComplete} />}
 			/>
+			<CustModal
+				open={addunit}
+				setOpen={setAddUnit}
+				bodyData={<AddUnits setOpen={setAddUnit} />}
+			/>
 			<div className={styles.unitsContainer}>
 				<div className={styles.unitsHead}>
 					<div className={styles.userGreet}>
@@ -35,7 +44,12 @@ const index = () => {
 						<h2>Units</h2>
 					</div>
 					<div className={styles.btnContainer}>
-						<button className={styles.outline}>+ Add Unit</button>
+						<button
+							className={styles.outline}
+							onClick={() => setAddUnit(true)}
+						>
+							+ Add Unit
+						</button>
 						<button className={styles.btnGreen}>
 							+ Add Location
 						</button>

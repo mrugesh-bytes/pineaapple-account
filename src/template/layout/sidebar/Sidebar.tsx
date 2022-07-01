@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Sidebar.module.css";
 import logoSm from "../../../images/logo-sm.svg";
 import iconApartment from "../../../images/icon-apartment.svg";
@@ -12,9 +12,11 @@ import iconLocation from "../../../images/icon-location.svg";
 import iconMap from "../../../images/icon-map.svg";
 import iconLogout from "../../../images/icon-logout.svg";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { AppContext } from "../../../components/context/AppContect";
 
 const sidebar = () => {
 	const [path, setPath] = useState("");
+	const appContext = useContext(AppContext);
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -25,6 +27,7 @@ const sidebar = () => {
 
 	const handleLogout = () => {
 		localStorage.clear();
+
 		navigate("/");
 	};
 
