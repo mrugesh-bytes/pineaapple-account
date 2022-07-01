@@ -28,7 +28,7 @@ select__menu-list::-webkit-scrollbar-thumb:hover {
 .ReactModal__Overlay {
     background: rgba(25, 28, 33, 0.12) !important;
     backdrop-filter: blur(10px) !important;
-    z-index: 999;
+    z-index: 999999;
 }
 .ReactModal__Content {
     padding: 0px !important;

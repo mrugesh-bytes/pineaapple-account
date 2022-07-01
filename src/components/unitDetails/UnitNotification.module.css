@@ -20,6 +20,11 @@
 }
 .modalNotification .modalBody {
     padding: 24px 27px;
+    height: 648px;
+    overflow: auto;
+}
+.modalNotification .modalBody::-webkit-scrollbar {
+    display: none;
 }
 .modalNotification .card {
     display: flex;
