@@ -7,7 +7,6 @@ import iconUpload from '../../../images/icon-upload-unit.svg';
 import iconClosePreview from '../../../images/icon-close-preview.svg';
 
 const AddUnits = ({ setOpen }: any) => {
-    const [unitName, setUnitName] = useState('');
     const [unitSize, setUnitSize] = useState(0);
     const [bedSize, setBedSize] = useState(0);
     const [bathSize, setBathSize] = useState(0);
