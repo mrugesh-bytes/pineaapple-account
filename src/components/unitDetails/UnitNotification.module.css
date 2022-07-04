@@ -38,10 +38,11 @@
 .card .radioContainer {
     position: absolute;
     top: 6px;
-    right: 6px;
+    right: 9px;
 }
 .card .radioContainer input[type='radio'] {
     transform: scale(1.5);
+    cursor: pointer;
 }
 .modalNotification .card:last-child {
     margin-bottom: 0px;

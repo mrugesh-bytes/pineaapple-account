@@ -4,7 +4,6 @@ import Counter from '../../common/counter/Counter';
 import Switch from '../../common/switch/Switch';
 import styles from './AddUnits.module.css';
 import iconUpload from '../../../images/icon-upload-unit.svg';
-import previewImg from '../../../images/preview-img-add-unit.png';
 import iconClosePreview from '../../../images/icon-close-preview.svg';
 
 const AddUnits = ({ setOpen }: any) => {
@@ -23,6 +22,11 @@ const AddUnits = ({ setOpen }: any) => {
 
     const closeModal = () => {
         setOpen(false);
+    };
+
+    const handleRemovePreview = (fileIndex: number) => {
+        const remainingImages = uploadFiles.filter((item: any, index: number) => index != fileIndex);
+        setUploadFiles(remainingImages);
     };
 
     return (
@@ -86,7 +90,12 @@ const AddUnits = ({ setOpen }: any) => {
                                     return (
                                         <div className={styles.imgWrapper} key={index}>
                                             <img className={styles.previewImg} src={URL.createObjectURL(file)} alt="Preview Image" />
-                                            <img className={styles.previewClose} src={iconClosePreview} alt="Close Icon" />
+                                            <img
+                                                className={styles.previewClose}
+                                                onClick={() => handleRemovePreview(index)}
+                                                src={iconClosePreview}
+                                                alt="Close Icon"
+                                            />
                                         </div>
                                     );
                                 })}
