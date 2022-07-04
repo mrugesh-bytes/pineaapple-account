@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAuth } from '../../../redux/auth/actions/auth.action';
 import { Roles } from '../../../constants/staffRole';
 import { AppContext } from '../../context/AppContect';
+import Loader from '../../common/loader/Loader';
 
 const Login = () => {
     const [loginDetails, setLoginDetails]: any = useState({
@@ -21,8 +22,7 @@ const Login = () => {
     const userType = Roles.find((role: any) => role.value === localStorage.getItem('type'))?.label;
 
     const error = useSelector((state: any) => state?.authReducer?.error?.response?.statusText);
-    const loading = useSelector((state: any) => console.log(state?.authReducer));
-
+    const loading = useSelector((state: any) => state?.authReducer?.loading);
     const handleLoginDetails = (event: any) => {
         setLoginDetails({
             ...loginDetails,
@@ -46,6 +46,7 @@ const Login = () => {
 
     return (
         <>
+            {loading && <Loader />}
             <div className={styles.loginWrapper}>
                 <h2 className={styles.loginTitle}>I’m {userType}!</h2>
                 <p className={styles.loginInfo}>Hey, Enter your details to get sign In your account</p>

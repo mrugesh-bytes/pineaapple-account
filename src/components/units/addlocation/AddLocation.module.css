@@ -1,0 +1,72 @@
+.modalLocation {
+    width: 828px;
+    height: 579px;
+}
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    border-bottom: 1px solid #d1d2d3;
+}
+.modalHeader .close {
+    cursor: pointer;
+}
+.modalHeader .modalTitle {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: #191c21;
+}
+.modalHeader .close {
+    cursor: pointer;
+}
+.modalBody {
+    padding: 32px 24px;
+}
+.searchWrapper .locationTitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #191c21;
+    display: block;
+    margin-bottom: 16px;
+}
+.searchWrapper input[type='search'] {
+    border: 1px solid #d1d2d3;
+    width: 100%;
+    border-radius: 8px;
+    height: 48px;
+    padding: 10px 14px;
+    transition: all ease 0.3s;
+}
+.searchWrapper input[type='search']:focus {
+    border: 1px solid #51ab86;
+    transition: all ease 0.3s;
+}
+.modalFooter {
+    text-align: center;
+}
+.modalFooter button {
+    background: #d1d2d3;
+    border-radius: 8px;
+    padding: 6px 21px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #8c8d90;
+    border: none;
+    margin-top: 48px;
+    cursor: no-drop;
+}
+.modalFooter button.submit {
+    background: #51ab86;
+    color: #fff;
+    pointer-events: all;
+    cursor: pointer;
+}

@@ -6,8 +6,6 @@ import Unitscard from './unitscard/Unitscard';
 import UserName from '../common/user/UserName';
 import CustModal from '../common/custmodal/CustModal';
 import CompleteProfile from '../staff/completeprofile/CompleteProfile';
-import Switch from '../common/switch/Switch';
-import Counter from '../common/counter/Counter';
 import AddUnits from './addunits/AddUnits';
 import AddLocation from './addlocation/AddLocation';
 
@@ -25,6 +23,7 @@ const index = () => {
 
     return (
         <div className="outletConainer">
+            {/* <Loader /> */}
             <CustModal open={complete} setOpen={setComplete} bodyData={<CompleteProfile setOpen={setComplete} />} />
             <CustModal open={addunit} setOpen={setAddUnit} bodyData={<AddUnits setOpen={setAddUnit} />} />
             <CustModal open={addLocation} setOpen={setAddLocation} bodyData={<AddLocation setOpen={setAddLocation} />} />

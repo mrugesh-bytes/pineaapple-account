@@ -13,6 +13,7 @@ import iconEdit from '../../../src/images/icon-edit.svg';
 import iconFt from '../../../src/images/icon-ft.svg';
 import { getUnitById } from '../../redux/units/actions/unitById.action';
 import CustModal from '../common/custmodal/CustModal';
+import Loader from '../common/loader/Loader';
 import Slider from '../common/slider/Slider';
 import Map from '../map/Map';
 import styles from './index.module.css';

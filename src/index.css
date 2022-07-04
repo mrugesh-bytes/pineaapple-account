@@ -33,6 +33,7 @@ select__menu-list::-webkit-scrollbar-thumb:hover {
 .ReactModal__Content {
     padding: 0px !important;
     border: none !important;
+    border-radius: 8px !important;
 }
 .ReactModal__Body--open {
     overflow: hidden !important;

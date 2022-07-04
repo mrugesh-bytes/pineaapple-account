@@ -26,9 +26,9 @@ const index = (props: any) => {
     return (
         <>
             {showToast && <Toast />}
-            <div className={styles.pineLoader}>
+            {/* <div className={styles.pineLoader}>
                 <img src={loaderImage} />
-            </div>
+            </div> */}
 
             <CustModal open={open} setOpen={setOpen} bodyData={<AddStaff setOpen={setOpen} />} />
             <CustModal open={upload} setOpen={setUpload} bodyData={<UploadStaff setOpen={setUpload} />} />
