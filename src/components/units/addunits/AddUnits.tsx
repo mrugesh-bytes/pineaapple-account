@@ -5,16 +5,26 @@ import Switch from '../../common/switch/Switch';
 import styles from './AddUnits.module.css';
 import iconUpload from '../../../images/icon-upload-unit.svg';
 import iconClosePreview from '../../../images/icon-close-preview.svg';
+import { useDispatch } from 'react-redux';
+import { addUnits, editUnits } from '../../../redux/units/actions/units.action';
 
-const AddUnits = ({ setOpen }: any) => {
-    const [unitSize, setUnitSize] = useState(0);
-    const [bedSize, setBedSize] = useState(0);
-    const [bathSize, setBathSize] = useState(0);
-    const [unitPrice, setUnitPrice] = useState(0);
-    const [unitStatus, setUnitStatus] = useState(true);
+const AddUnits = ({ unitData, setOpen }: any) => {
+    const [unitName, setUnitName] = useState(unitData?.name || '');
+    const [unitSize, setUnitSize] = useState(unitData?.size || 0);
+    const [bedSize, setBedSize] = useState(unitData?.rooms || 0);
+    const [bathSize, setBathSize] = useState(unitData?.baths || 0);
+    const [unitPrice, setUnitPrice] = useState(unitData?.price || 0);
+    const [unitStatus, setUnitStatus] = useState(unitData?.status || true);
+    const [existingImages, setExistingImages]: any = useState([]);
     const [uploadFiles, setUploadFiles]: any = useState([]);
     const [unitFiles, setUnitFiles]: any = useState({});
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+        if (unitData?.imageUrl) {
+            setExistingImages(unitData.imageUrl.split(','));
+        }
+    }, []);
     useEffect(() => {
         setUploadFiles(Object.values(unitFiles));
     }, [unitFiles]);
@@ -28,10 +38,39 @@ const AddUnits = ({ setOpen }: any) => {
         setUploadFiles(remainingImages);
     };
 
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+        unitData
+            ? dispatch(
+                  editUnits({
+                      id: unitData.id,
+                      unitName: unitData ? '' : unitName,
+                      bathSize: unitData ? '' : bathSize,
+                      uploadFiles: unitData ? '' : uploadFiles,
+                      unitPrice: unitData ? '' : unitPrice,
+                      bedSize: unitData ? '' : bedSize,
+                      unitSize: unitData ? '' : unitSize,
+                      unitStatus: unitData ? '' : unitStatus,
+                  }),
+              )
+            : dispatch(
+                  addUnits({
+                      unitName,
+                      bathSize,
+                      uploadFiles,
+                      unitPrice,
+                      bedSize,
+                      unitSize,
+                      unitStatus,
+                  }),
+              );
+        setOpen(false);
+    };
+
     return (
         <div className={styles.modalAddStaff}>
             <div className={styles.modalHeader}>
-                <div className={styles.modalTitle}>Add Unit</div>
+                <div className={styles.modalTitle}>{unitData ? `Edit Unit` : `Add Unit`}</div>
                 <span className={styles.close}>
                     <img src={iconClose} onClick={closeModal} />
                 </span>
@@ -39,7 +78,7 @@ const AddUnits = ({ setOpen }: any) => {
             <div className={styles.modalBody}>
                 <div className={styles.fieldWrapper}>
                     <label>Name</label>
-                    <input placeholder="Enter unit name" name="unit" />
+                    <input placeholder="Enter unit name" name="unit" value={unitName} onChange={(e: any) => setUnitName(e.target.value)} />
                 </div>
                 <div className={styles.unitContainer}>
                     <div className={styles.unitWrapper}>
@@ -81,8 +120,25 @@ const AddUnits = ({ setOpen }: any) => {
                         <div className={styles.iconUnitUpload}>
                             <img src={iconUpload} alt="Icon Upload" />
                         </div>
-                        {!uploadFiles.length ? (
+                        {!uploadFiles.length && !existingImages.length ? (
                             <p>Upload image from here</p>
+                        ) : existingImages.length ? (
+                            <div className={styles.previewImgContainer}>
+                                {existingImages.length > 0 &&
+                                    existingImages.map((image: any, index: any) => {
+                                        return (
+                                            <div className={styles.imgWrapper} key={index}>
+                                                <img className={styles.previewImg} src={image} alt="Preview Image" />
+                                                <img
+                                                    className={styles.previewClose}
+                                                    onClick={() => handleRemovePreview(index)}
+                                                    src={iconClosePreview}
+                                                    alt="Close Icon"
+                                                />
+                                            </div>
+                                        );
+                                    })}
+                            </div>
                         ) : (
                             <div className={styles.previewImgContainer}>
                                 {uploadFiles.map((file: any, index: any) => {
@@ -103,7 +159,9 @@ const AddUnits = ({ setOpen }: any) => {
                     </div>
                 </div>
                 <div className={styles.btnUploadContainer}>
-                    <button className={`${styles.btnUpload} ${styles.success}`}>Add Unit</button>
+                    <button onClick={handleSubmit} className={`${styles.btnUpload} ${styles.success}`}>
+                        {unitData ? `Edit Unit` : `Add Unit`}
+                    </button>
                 </div>
             </div>
         </div>

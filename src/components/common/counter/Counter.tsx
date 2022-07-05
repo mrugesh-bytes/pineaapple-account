@@ -17,7 +17,7 @@ const Counter = ({ value, setValue }: any) => {
             <span className={`${styles.iconCounter} ${styles.decrement}`} onClick={handleDecrement}>
                 -
             </span>
-            <input type="number" name="counter" value={value} placeholder="0" />
+            <input type="number" name="counter" value={value} placeholder="0" onChange={(e: any) => setValue(e.target.value)} />
             <span className={`${styles.iconCounter} ${styles.increment}`} onClick={handleIncrement}>
                 +
             </span>

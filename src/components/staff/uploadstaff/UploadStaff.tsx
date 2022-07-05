@@ -38,8 +38,7 @@ const UploadStaff = ({ setOpen }: any) => {
                             <a
                                 href="https://demo-files-pineapple.s3.amazonaws.com/staff-demo-1.csv"
                                 target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                                rel="noopener noreferrer">
                                 Download
                             </a>
                         </div>
@@ -57,8 +56,7 @@ const UploadStaff = ({ setOpen }: any) => {
                                                 display: 'block',
                                                 borderRadius: '8px',
                                                 transition: 'all ease 1s',
-                                            }}
-                                        ></span>
+                                            }}></span>
                                     </div>
                                 </div>
                                 <div className={styles.modalCancel}>

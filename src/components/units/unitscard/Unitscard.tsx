@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Unitscard.module.css';
 import cardImg from '../../../images/units-card.png';
 import iconEdit from '../../../images/icon-edit.svg';
@@ -8,6 +8,9 @@ import iconBed from '../../../images/icon-bed.svg';
 import iconBathtub from '../../../images/icon-bathtub.svg';
 import { Link } from 'react-router-dom';
 import Slider from '../../common/slider/Slider';
+import CustModal from '../../common/custmodal/CustModal';
+import RemoveUnits from '../removeunits/RemoveUnits';
+import AddUnits from '../addunits/AddUnits';
 
 export interface Iunitcards {
     unit: {
@@ -33,46 +36,58 @@ export interface Iunitcards {
     };
 }
 const Unitscard = ({ unit }: Iunitcards) => {
+    const [deletePopup, setDeletePopup] = useState(false);
+    const [editModal, setEditModal] = useState(false);
     return (
-        <div className={styles.unitcardMain}>
-            <div className={styles.unitcard}>
-                <div className={styles.cardBanner}>
-                    <div className={styles.bannerMain}>
-                        <Link to={`/unitDetails/${unit.id}`}>
-                            <Slider carouselBanner={unit.imageUrl ? unit.imageUrl : cardImg} price={unit?.price} />
-                            <span className={styles.cost}>{`$ ${unit.price}`}</span>
-                        </Link>
-                    </div>
-                </div>
-                <div className={styles.cardBody}>
-                    <div className={styles.cardTitle}>
-                        {unit?.name}
+        <>
+            <CustModal
+                open={deletePopup}
+                setOpen={setDeletePopup}
+                bodyData={<RemoveUnits setDeletePopup={setDeletePopup} unitId={unit.id} />}
+            />
 
-                        <span>
-                            <img src={iconEdit} />
-                            <img src={iconDelete} />
-                        </span>
+            <CustModal open={editModal} setOpen={setEditModal} bodyData={<AddUnits setOpen={setEditModal} unitData={unit} />} />
+
+            <div className={styles.unitcardMain}>
+                <div className={styles.unitcard}>
+                    <div className={styles.cardBanner}>
+                        <div className={styles.bannerMain}>
+                            <Link to={`/unitDetails/${unit.id}`}>
+                                <Slider carouselBanner={unit.imageUrl ? unit.imageUrl : cardImg} price={unit?.price} />
+                                <span className={styles.cost}>{`$ ${unit.price}`}</span>
+                            </Link>
+                        </div>
                     </div>
-                    <p>
-                        Gustavo Daniels <span>{unit.status ? 'Active' : 'Inactive'}</span>
-                    </p>
-                    <div className={styles.cardFacilities}>
-                        <div className={styles.facility}>
-                            <img src={iconFt} />
-                            <span>{`${unit.size} Ft`}</span>
+                    <div className={styles.cardBody}>
+                        <div className={styles.cardTitle}>
+                            {unit?.name}
+
+                            <span>
+                                <img onClick={() => setEditModal(true)} src={iconEdit} />
+                                <img onClick={() => setDeletePopup(true)} src={iconDelete} />
+                            </span>
                         </div>
-                        <div className={styles.facility}>
-                            <img src={iconBed} />
-                            <span>{`${unit.rooms} Beds`}</span>
-                        </div>
-                        <div className={styles.facility}>
-                            <img src={iconBathtub} />
-                            <span>{`${unit.baths} Bath`}</span>
+                        <p>
+                            Gustavo Daniels <span>{unit.status ? 'Active' : 'Inactive'}</span>
+                        </p>
+                        <div className={styles.cardFacilities}>
+                            <div className={styles.facility}>
+                                <img src={iconFt} />
+                                <span>{`${unit.size} Ft`}</span>
+                            </div>
+                            <div className={styles.facility}>
+                                <img src={iconBed} />
+                                <span>{`${unit.rooms} Beds`}</span>
+                            </div>
+                            <div className={styles.facility}>
+                                <img src={iconBathtub} />
+                                <span>{`${unit.baths} Bath`}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

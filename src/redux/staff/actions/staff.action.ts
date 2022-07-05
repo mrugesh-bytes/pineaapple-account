@@ -145,11 +145,7 @@ export const addStaff: any = (staffData: any) => {
         formData.append('phone', '');
         dispatch(addStaffRequest());
         return axios
-            .post(`${BASE_URL}/account/staff/create`, formData, {
-                headers: {
-                    Authorization: `Bearer ${ACCESS_TOKEN}`,
-                },
-            })
+            .post(`${BASE_URL}/account/staff/create`, formData)
             .then((response) => {
                 dispatch(getStaff());
                 dispatch(showStaffToast());
@@ -162,7 +158,6 @@ export const addStaff: any = (staffData: any) => {
 
 // Edit Staff Dispatch
 export const editStaff: any = (staffData: any) => {
-    const ACCESS_TOKEN = localStorage.getItem('accessToken');
     return (dispatch: Dispatch<any>) => {
         const formData = new FormData();
         formData.append('id', staffData.id);
@@ -182,11 +177,7 @@ export const editStaff: any = (staffData: any) => {
         formData.append('phone', '1234567890');
         dispatch(editStaffRequest());
         return axios
-            .put(`${BASE_URL}/account/staff/modify`, formData, {
-                headers: {
-                    Authorization: `Bearer ${ACCESS_TOKEN}`,
-                },
-            })
+            .put(`${BASE_URL}/account/staff/modify`, formData)
             .then((response) => {
                 dispatch(getStaff());
                 dispatch(editStaffSuccess(response.data));
