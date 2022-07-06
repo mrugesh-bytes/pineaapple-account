@@ -8,6 +8,12 @@ import {
     ADD_UNITS_FAILURE,
     ADD_UNITS_REQUEST,
     ADD_UNITS_SUCCESS,
+    DELETE_UNITS_FAILURE,
+    DELETE_UNITS_REQUEST,
+    DELETE_UNITS_SUCCESS,
+    EDIT_UNITS_FAILURE,
+    EDIT_UNITS_REQUEST,
+    EDIT_UNITS_SUCCESS,
 } from '../constants/units.constants';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -55,23 +61,44 @@ const addUnitsFailure = (unitsError: any) => {
     };
 };
 
+// Edit Units
+const editUnitsRequest = () => {
+    return {
+        type: EDIT_UNITS_REQUEST,
+    };
+};
+
+const editUnitsSuccess = (unitsData: any) => {
+    return {
+        type: EDIT_UNITS_SUCCESS,
+        payload: unitsData,
+    };
+};
+
+const editUnitsFailure = (unitsError: any) => {
+    return {
+        type: EDIT_UNITS_FAILURE,
+        payload: unitsError,
+    };
+};
+
 // Delete Units
 const deleteUnitsRequest = () => {
     return {
-        type: ADD_UNITS_REQUEST,
+        type: DELETE_UNITS_REQUEST,
     };
 };
 
 const deleteUnitsSuccess = (unitsData: any) => {
     return {
-        type: ADD_UNITS_SUCCESS,
+        type: DELETE_UNITS_SUCCESS,
         payload: unitsData,
     };
 };
 
 const deleteUnitsFailure = (unitsError: any) => {
     return {
-        type: ADD_UNITS_FAILURE,
+        type: DELETE_UNITS_FAILURE,
         payload: unitsError,
     };
 };
@@ -127,23 +154,23 @@ export const editUnits: any = (unitDetails: any) => {
     formData.append('rooms', unitDetails.bedSize);
     formData.append('size', unitDetails.unitSize);
     formData.append('status', unitDetails.unitStatus);
+    formData.append('imageUrl', unitDetails.imageUrl);
+    formData.append('deleteImageUrls', unitDetails.deleteImageUrls);
     if (unitDetails.uploadFiles.length > 0) {
         unitDetails.uploadFiles.map((file: any) => formData.append('files', file));
     }
     formData.append('building', 'Test');
     formData.append('floor', '1');
     formData.append('locationId', '9fbedaf8-fe22-4c50-97f2-93256d563b4d');
-    formData.append('startAt', moment().format());
-    formData.append('endAt', moment().format());
     return (dispatch: Dispatch<any>) => {
-        dispatch(addUnitsRequest());
+        dispatch(editUnitsRequest());
         return axios
-            .post(`/account/unit`, formData)
+            .put(`/account/unit/${unitDetails.id}`, formData)
             .then((response) => {
                 dispatch(getUnits());
-                dispatch(addUnitsSuccess(response.data.result.unit));
+                dispatch(editUnitsSuccess(response.data.result.unit));
             })
-            .catch((error) => dispatch(addUnitsFailure(error)));
+            .catch((error) => dispatch(editUnitsFailure(error)));
     };
 };
 

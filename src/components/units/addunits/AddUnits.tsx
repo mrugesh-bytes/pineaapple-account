@@ -15,6 +15,7 @@ const AddUnits = ({ unitData, setOpen }: any) => {
     const [bathSize, setBathSize] = useState(unitData?.baths || 0);
     const [unitPrice, setUnitPrice] = useState(unitData?.price || 0);
     const [unitStatus, setUnitStatus] = useState(unitData?.status || true);
+    const [deletedImageUrl, setDeletedImageUrl]: any = useState([]);
     const [existingImages, setExistingImages]: any = useState([]);
     const [uploadFiles, setUploadFiles]: any = useState([]);
     const [unitFiles, setUnitFiles]: any = useState({});
@@ -38,19 +39,28 @@ const AddUnits = ({ unitData, setOpen }: any) => {
         setUploadFiles(remainingImages);
     };
 
+    const handleDeleteExistingImage = (fileIndex: number) => {
+        setDeletedImageUrl([...deletedImageUrl, existingImages[fileIndex]]);
+        const remainingImages = existingImages.splice(fileIndex, 1);
+        console.log(remainingImages);
+        console.log(existingImages);
+    };
+
     const handleSubmit = (e: any) => {
         e.preventDefault();
         unitData
             ? dispatch(
                   editUnits({
                       id: unitData.id,
-                      unitName: unitData ? '' : unitName,
-                      bathSize: unitData ? '' : bathSize,
-                      uploadFiles: unitData ? '' : uploadFiles,
-                      unitPrice: unitData ? '' : unitPrice,
-                      bedSize: unitData ? '' : bedSize,
-                      unitSize: unitData ? '' : unitSize,
-                      unitStatus: unitData ? '' : unitStatus,
+                      unitName: unitName,
+                      bathSize: bathSize,
+                      uploadFiles: uploadFiles,
+                      unitPrice: unitPrice,
+                      bedSize: bedSize,
+                      unitSize: unitSize,
+                      unitStatus: unitStatus,
+                      imageUrl: existingImages.join(','),
+                      deleteImageUrls: deletedImageUrl.join(','),
                   }),
               )
             : dispatch(
@@ -120,9 +130,8 @@ const AddUnits = ({ unitData, setOpen }: any) => {
                         <div className={styles.iconUnitUpload}>
                             <img src={iconUpload} alt="Icon Upload" />
                         </div>
-                        {!uploadFiles.length && !existingImages.length ? (
-                            <p>Upload image from here</p>
-                        ) : existingImages.length ? (
+                        {!uploadFiles.length && !existingImages.length && <p>Upload image from here</p>}
+                        {existingImages.length > 0 && (
                             <div className={styles.previewImgContainer}>
                                 {existingImages.length > 0 &&
                                     existingImages.map((image: any, index: any) => {
@@ -131,7 +140,7 @@ const AddUnits = ({ unitData, setOpen }: any) => {
                                                 <img className={styles.previewImg} src={image} alt="Preview Image" />
                                                 <img
                                                     className={styles.previewClose}
-                                                    onClick={() => handleRemovePreview(index)}
+                                                    onClick={() => handleDeleteExistingImage(index)}
                                                     src={iconClosePreview}
                                                     alt="Close Icon"
                                                 />
@@ -139,7 +148,9 @@ const AddUnits = ({ unitData, setOpen }: any) => {
                                         );
                                     })}
                             </div>
-                        ) : (
+                        )}
+
+                        {uploadFiles.length > 0 && (
                             <div className={styles.previewImgContainer}>
                                 {uploadFiles.map((file: any, index: any) => {
                                     return (
