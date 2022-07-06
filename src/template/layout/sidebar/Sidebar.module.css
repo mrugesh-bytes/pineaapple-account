@@ -17,6 +17,7 @@
 .sidebar .logo {
     height: 91px;
     border-bottom: 1px solid #d1d2d3;
+    margin-bottom: 0px;
 }
 .sidebar .logo:hover {
     background-color: transparent;
@@ -89,7 +90,14 @@
 
 /* Responsive Start */
 @media screen and (max-width: 1445px) {
+    .sidebar {
+        max-width: 60px;
+    }
     .sidebar ul li {
-        min-height: 53px;
+        min-height: 55px;
+        margin-bottom: 8px;
+    }
+    .sidebar ul li img {
+        max-width: 24px;
     }
 }
