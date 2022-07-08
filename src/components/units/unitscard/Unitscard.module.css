@@ -139,6 +139,9 @@
     }
     .cardBody .facility span {
         font-size: 14px;
-        line-height: 26px;
+        line-height: 18px;
+    }
+    .unitcardMain .unitcard {
+        margin: 15px;
     }
 }

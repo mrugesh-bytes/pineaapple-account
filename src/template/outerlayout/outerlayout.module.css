@@ -5,7 +5,7 @@
 
 .formOuter {
     padding: 26px 5.5rem;
-    width: 50%;
+    min-width: 50%;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -46,11 +46,15 @@
 }
 .customSelect > div * {
     color: #191c21 !important;
+    margin: 0px !important;
 }
 .customSelect > div div:last-child span {
     background-color: transparent;
 }
-
+.customSelect > div svg {
+    width: 30px !important;
+    height: 30px !important;
+}
 .formOuter form select {
     color: #191c21;
     font-weight: 300;
@@ -106,19 +110,33 @@ form.loginForm {
 }
 
 @media screen and (max-width: 1445px) {
+    .banner {
+        justify-content: center;
+    }
+
     form.loginForm {
         padding-top: 50px;
     }
     .logoContainer img {
         max-width: 164px;
     }
+
+    .formOuter form label {
+        padding-right: 15px;
+    }
+    .banner {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1336px) {
+    .banner .w100 {
+        max-width: 458px;
+    }
     .formOuter form label,
     .customSelect > div {
         font-size: 24px;
         line-height: 52px;
-    }
-    .formOuter form label {
-        padding-right: 15px;
     }
 }
 
@@ -131,6 +149,72 @@ form.loginForm {
 @media screen and (max-width: 768px) {
     .container {
         display: flex;
-        height: 100vh;
+        height: auto;
+        flex-direction: column;
+        padding-bottom: 92px;
+    }
+    .formOuter {
+        width: 100%;
+    }
+    .logoContainer {
+        text-align: center;
+    }
+    .formOuter .fieldWrapper {
+        justify-content: center;
+    }
+    .formOuter .fieldWrapper .field {
+        width: 100%;
+        max-width: 390px;
+    }
+    .welcomeForm {
+        padding: 95px 15px 195px;
+    }
+    .footer {
+        position: fixed;
+        bottom: 0px;
+        padding: 30px 15px;
+        text-align: center;
+        width: 100%;
+        left: 0px;
+        background-color: #fff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .formOuter form label,
+    .customSelect > div {
+        font-size: 40px;
+        line-height: 52px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .welcomeForm {
+        padding: 50px 15px 50px;
+    }
+    .formOuter form label,
+    .customSelect > div {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+    .footer {
+        padding: 15px;
+    }
+    .container {
+        padding-bottom: 62px;
+    }
+    .banner .w100 {
+        max-width: 440px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .formOuter .fieldWrapper {
+        flex-direction: column;
+    }
+    .formOuter form label {
+        padding-right: 0px;
+        display: block;
+        margin-bottom: 15px;
+    }
+    .banner .w100 {
+        max-width: 390px;
     }
 }

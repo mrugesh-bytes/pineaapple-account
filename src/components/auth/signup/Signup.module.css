@@ -57,6 +57,9 @@
     object-fit: contain;
     cursor: pointer;
 }
+.formWrapper.error input {
+    border: 1px solid #ff0000;
+}
 .signupForm .formWrapper input:focus {
     border: 1px solid #51ab86;
 }
@@ -161,5 +164,11 @@
     .signupWrapper {
         width: 100%;
         max-width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .signupWrapper {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 }

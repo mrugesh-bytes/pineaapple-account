@@ -199,3 +199,9 @@
         max-width: 100%;
     }
 }
+@media screen and (max-width: 768px) {
+    .loginWrapper {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}

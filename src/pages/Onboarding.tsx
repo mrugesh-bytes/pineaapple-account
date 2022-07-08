@@ -13,7 +13,7 @@ function Onboarding() {
     };
 
     return (
-        <form>
+        <form className={styles.welcomeForm}>
             <div className={styles.fieldWrapper}>
                 <div>
                     <label>Hi! I’m A</label>
