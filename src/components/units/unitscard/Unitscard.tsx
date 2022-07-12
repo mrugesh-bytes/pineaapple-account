@@ -65,24 +65,32 @@ const Unitscard = ({ unit }: Iunitcards) => {
                                 <img onClick={() => setDeletePopup(true)} src={iconDelete} />
                             </span>
                         </div>
-                        <p>
-                            Gustavo Daniels{' '}
-                            <span className={unit.status ? `${styles.active}` : `${styles.inactive}`}>
-                                {unit.status ? 'Active' : 'Inactive'}
-                            </span>
-                        </p>
+                        <Link to={`/unitDetails/${unit.id}`}>
+                            <p>
+                                Gustavo Daniels{' '}
+                                <span className={unit.status ? `${styles.active}` : `${styles.inactive}`}>
+                                    {unit.status ? 'Active' : 'Inactive'}
+                                </span>
+                            </p>
+                        </Link>
                         <div className={styles.cardFacilities}>
                             <div className={styles.facility}>
                                 <img src={iconFt} />
-                                <span>{`${unit.size} Ft`}</span>
+                                <Link to={`/unitDetails/${unit.id}`}>
+                                    <span>{`${unit.size} Ft`}</span>
+                                </Link>
                             </div>
                             <div className={styles.facility}>
                                 <img src={iconBed} />
-                                <span>{`${unit.rooms} Beds`}</span>
+                                <Link to={`/unitDetails/${unit.id}`}>
+                                    <span>{`${unit.rooms} Beds`}</span>
+                                </Link>
                             </div>
                             <div className={styles.facility}>
                                 <img src={iconBathtub} />
-                                <span>{`${unit.baths} Bath`}</span>
+                                <Link to={`/unitDetails/${unit.id}`}>
+                                    <span>{`${unit.baths} Bath`}</span>
+                                </Link>
                             </div>
                         </div>
                     </div>

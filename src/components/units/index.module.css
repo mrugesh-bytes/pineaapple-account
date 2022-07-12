@@ -67,6 +67,16 @@
     margin-left: -12px;
     margin-right: -12px;
 }
+.customSelect {
+    width: 180px;
+}
+.customSelect > div {
+    border: 1px solid #191c21 !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    background-color: #fff !important;
+    height: 40px;
+}
 
 /* Responsive Start */
 @media screen and (max-width: 1445px) {

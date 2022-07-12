@@ -84,6 +84,9 @@
 .cardBody {
     padding: 16px;
 }
+.cardBody a {
+    text-decoration: none;
+}
 .cardBody p {
     color: #b2b3b5;
     font-size: 14px;
@@ -117,6 +120,7 @@
 .cardTitle span img {
     display: inline-block;
     margin-left: 8px;
+    cursor: pointer;
 }
 .cardBody .facility {
     display: flex;
@@ -126,6 +130,9 @@
 .cardBody .facility img {
     display: inline-block;
     margin-right: 11.2px;
+}
+.facility a {
+    color: #191c21;
 }
 
 /* Responsive Start */

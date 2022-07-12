@@ -8,6 +8,13 @@ import CustModal from '../common/custmodal/CustModal';
 import CompleteProfile from '../staff/completeprofile/CompleteProfile';
 import AddUnits from './addunits/AddUnits';
 import AddLocation from './addlocation/AddLocation';
+import Select from 'react-select';
+
+const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+];
 
 const index = () => {
     const dispatch = useDispatch();
@@ -16,6 +23,7 @@ const index = () => {
     const [complete, setComplete] = useState(false);
     const [addunit, setAddUnit] = useState(false);
     const [addLocation, setAddLocation] = useState(false);
+    const [selectedOption, setSelectedOption] = useState(null);
 
     useEffect(() => {
         dispatch(getUnits());
