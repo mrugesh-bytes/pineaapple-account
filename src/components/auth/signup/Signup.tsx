@@ -64,6 +64,7 @@ const Signup = () => {
                     <div className={!error.emailError ? styles.formWrapper : `${styles.formWrapper} ${styles.error}`}>
                         <label>Email Id</label>
                         <input type="email" name="email" placeholder="Enter your email address" onChange={handleSignupDetails} />
+                        <p className={styles.errorText}>Please enter valid email.</p>
                     </div>
                     <div className={styles.formWrapper}>
                         <label>Password</label>
@@ -92,6 +93,7 @@ const Signup = () => {
                                 <img src={!confirmShowPass ? eyeClose : eyeOpen} alt="Eye" />
                             </div>
                         </div>
+                        <p className={styles.errorText}>Please enter password.</p>
                     </div>
                     <div className={styles.formSubmit}>
                         <button type="submit">Sign Up</button>

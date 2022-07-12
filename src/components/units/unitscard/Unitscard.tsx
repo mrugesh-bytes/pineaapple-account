@@ -68,7 +68,10 @@ const Unitscard = ({ unit }: Iunitcards) => {
                             </span>
                         </div>
                         <p>
-                            Gustavo Daniels <span>{unit.status ? 'Active' : 'Inactive'}</span>
+                            Gustavo Daniels{' '}
+                            <span className={unit.status ? `${styles.active}` : `${styles.inactive}`}>
+                                {unit.status ? 'Active' : 'Inactive'}
+                            </span>
                         </p>
                         <div className={styles.cardFacilities}>
                             <div className={styles.facility}>

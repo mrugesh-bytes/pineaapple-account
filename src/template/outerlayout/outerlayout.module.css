@@ -88,6 +88,7 @@
 }
 .w100 {
     width: 100%;
+    transform: scale(0.9);
 }
 .footer p {
     font-size: 14px;
@@ -130,9 +131,6 @@ form.loginForm {
 }
 
 @media screen and (max-width: 1336px) {
-    .banner .w100 {
-        max-width: 458px;
-    }
     .formOuter form label,
     .customSelect > div {
         font-size: 24px;
@@ -178,6 +176,7 @@ form.loginForm {
         left: 0px;
         background-color: #fff;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        z-index: 9;
     }
     .formOuter form label,
     .customSelect > div {

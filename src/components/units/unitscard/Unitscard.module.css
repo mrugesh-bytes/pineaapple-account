@@ -92,6 +92,13 @@
     color: #51ab86;
     padding-left: 31px;
     position: relative;
+    font-weight: 500;
+}
+.cardBody p span.inactive {
+    color: #f5004a;
+}
+.cardBody p span.inactive:before {
+    background-color: #f5004a;
 }
 .cardBody p span:before {
     content: '';
@@ -110,7 +117,7 @@
 .cardBody .facility {
     display: flex;
     align-items: center;
-    margin-right: 16px;
+    margin-right: 32px;
 }
 .cardBody .facility img {
     display: inline-block;

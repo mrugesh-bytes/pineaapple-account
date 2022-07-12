@@ -209,8 +209,6 @@ export const deleteStaff: any = (id: string) => {
 
 // Add Multiple Staff Dispatch
 export const addMultipleStaff: any = (setPercentage: any, csvFile: any) => {
-    console.log(csvFile);
-    const ACCESS_TOKEN = localStorage.getItem('accessToken');
     return (dispatch: Dispatch<any>) => {
         const formData = new FormData();
         formData.append('file', csvFile);
@@ -220,9 +218,6 @@ export const addMultipleStaff: any = (setPercentage: any, csvFile: any) => {
                 onUploadProgress: (e: any) => {
                     const percentCompleted = Math.round((e.loaded * 100) / e.total);
                     setPercentage(percentCompleted);
-                },
-                headers: {
-                    Authorization: `Bearer ${ACCESS_TOKEN}`,
                 },
             })
             .then((response) => {

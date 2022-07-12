@@ -116,7 +116,6 @@ export const getUnits: any = () => {
 
 // Add Units Dispatch
 export const addUnits: any = (unitDetails: any) => {
-    console.log(unitDetails);
     const formData = new FormData();
     formData.append('name', unitDetails.unitName);
     formData.append('baths', unitDetails.bathSize);
@@ -146,7 +145,6 @@ export const addUnits: any = (unitDetails: any) => {
 
 // Edit Units Dispatch
 export const editUnits: any = (unitDetails: any) => {
-    console.log(unitDetails);
     const formData = new FormData();
     formData.append('name', unitDetails.unitName);
     formData.append('baths', unitDetails.bathSize);
@@ -167,8 +165,8 @@ export const editUnits: any = (unitDetails: any) => {
         return axios
             .put(`/account/unit/${unitDetails.id}`, formData)
             .then((response) => {
-                dispatch(getUnits());
                 dispatch(editUnitsSuccess(response.data.result.unit));
+                dispatch(getUnits());
             })
             .catch((error) => dispatch(editUnitsFailure(error)));
     };

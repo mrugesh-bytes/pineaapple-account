@@ -21,8 +21,6 @@ const AddUnits = ({ unitData, setOpen }: any) => {
     const [unitFiles, setUnitFiles]: any = useState({});
     const dispatch = useDispatch();
 
-    console.log(uploadFiles);
-
     useEffect(() => {
         if (unitData?.imageUrl) {
             setExistingImages(unitData.imageUrl.split(','));
@@ -43,9 +41,7 @@ const AddUnits = ({ unitData, setOpen }: any) => {
 
     const handleDeleteExistingImage = (fileIndex: number) => {
         setDeletedImageUrl([...deletedImageUrl, existingImages[fileIndex]]);
-        const remainingImages = existingImages.splice(fileIndex, 1);
-        console.log(remainingImages);
-        console.log(existingImages);
+        existingImages.splice(fileIndex, 1);
     };
 
     const handleSubmit = (e: any) => {
@@ -61,7 +57,7 @@ const AddUnits = ({ unitData, setOpen }: any) => {
                       bedSize: bedSize,
                       unitSize: unitSize,
                       unitStatus: unitStatus,
-                      imageUrl: existingImages.join(','),
+                      imageUrl: existingImages.length > 0 ? existingImages.join(',') : '',
                       deleteImageUrls: deletedImageUrl.join(','),
                   }),
               )
