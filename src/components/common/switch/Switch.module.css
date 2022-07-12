@@ -17,11 +17,11 @@ input[type='checkbox'].switch_1 {
     transition: all 0.2s ease-in-out;
 }
 
-input[type='checkbox'].switch_1:checked {
+input[value='true'].switch_1 {
     background: #51ab86;
 }
 
-input[type='checkbox'].switch_1:checked:after {
+input[value='false'] {
     background: #fff;
 }
 
@@ -39,6 +39,7 @@ input[type='checkbox'].switch_1:after {
     transform: translate(0px, -50%) scale(0.7);
 }
 
-input[type='checkbox'].switch_1:checked:after {
-    left: calc(100% - 1.5em);
+input[value='true']:after {
+    left: calc(100% - 1.5em) !important;
+    background-color: #fff !important;
 }

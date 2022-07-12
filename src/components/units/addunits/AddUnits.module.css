@@ -104,6 +104,8 @@
     position: absolute;
     cursor: pointer;
     opacity: 0;
+    width: 100%;
+    max-width: 240px;
 }
 .uploadWrapper p {
     margin: 0px 0px 0px 16px;

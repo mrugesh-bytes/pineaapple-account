@@ -76,65 +76,62 @@ const AddStaff = ({ staffData, setOpen }: any) => {
     };
 
     return (
-        <div>
-            <div className={styles.modalAddStaff}>
-                <div className={styles.modalHeader}>
-                    <div className={styles.modalTitle}>{staffData ? `Edit Staff` : `Add Staff`}</div>
-                    <span className={styles.close}>
-                        <img src={iconClose} onClick={closeModal} />
-                    </span>
-                </div>
-                <form onSubmit={handleSubmit}>
-                    <div className={styles.modalBody}>
-                        <div className={styles.staffPhoto}>
-                            <img
-                                className={styles.staffAvatar}
-                                src={
-                                    !_.isEmpty(files.name)
-                                        ? URL.createObjectURL(files)
-                                        : staffData?.imageUrl
-                                        ? staffData?.imageUrl
-                                        : defaultProfilePic
-                                }
-                                alt="Add Staff"
+        <div className={styles.modalAddStaff}>
+            <div className={styles.modalHeader}>
+                <div className={styles.modalTitle}>{staffData ? `Edit Staff` : `Add Staff`}</div>
+                <span className={styles.close}>
+                    <img src={iconClose} onClick={closeModal} />
+                </span>
+            </div>
+            <form onSubmit={handleSubmit}>
+                <div className={styles.modalBody}>
+                    <div className={styles.staffPhoto}>
+                        <img
+                            className={styles.staffAvatar}
+                            src={
+                                !_.isEmpty(files.name)
+                                    ? URL.createObjectURL(files)
+                                    : staffData?.imageUrl
+                                    ? staffData?.imageUrl
+                                    : defaultProfilePic
+                            }
+                            alt="Add Staff"
+                        />
+                        <img className={styles.uploadAvatar} src={uploadAvatar} alt="Upload Avatar"></img>
+                        <input type="file" name="upload-avatar" accept="image/*" onChange={(e: any) => setFiles(e.target.files[0])} />
+                    </div>
+                    <div className={styles.formStaff}>
+                        <div className={styles.field}>
+                            <label>Name</label>
+                            <input
+                                type="text"
+                                placeholder="Enter your name"
+                                defaultValue={name}
+                                onChange={(e) => setName(e.target.value)}></input>
+                        </div>
+                        <div className={`${styles.field} ${styles.select}`}>
+                            <label>Select a Role</label>
+                            <Select
+                                defaultValue={selectedOption}
+                                onChange={(event: any) => setSelectedOption(event)}
+                                options={options}
+                                styles={colourStyles}
                             />
-                            <img className={styles.uploadAvatar} src={uploadAvatar} alt="Upload Avatar"></img>
-                            <input type="file" name="upload-avatar" accept="image/*" onChange={(e: any) => setFiles(e.target.files[0])} />
                         </div>
-                        <div className={styles.formStaff}>
-                            <div className={styles.field}>
-                                <label>Name</label>
-                                <input
-                                    type="text"
-                                    placeholder="Enter your name"
-                                    defaultValue={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                ></input>
-                            </div>
-                            <div className={`${styles.field} ${styles.select}`}>
-                                <label>Select a Role</label>
-                                <Select
-                                    defaultValue={selectedOption}
-                                    onChange={(event: any) => setSelectedOption(event)}
-                                    options={options}
-                                    styles={colourStyles}
-                                />
-                            </div>
-                            <div className={styles.field}>
-                                <label>Email Id</label>
-                                <input type="email" defaultValue={email} onChange={(e) => setEmail(e.target.value)} />
-                            </div>
-                            <div className={styles.field}>
-                                <label>Password</label>
-                                <input type="password" onChange={(e) => setPassword(e.target.value)} />
-                            </div>
+                        <div className={styles.field}>
+                            <label>Email Id</label>
+                            <input type="email" defaultValue={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
-                        <div className={styles.modalFooter}>
-                            <button className={styles.sendBtn}>{staffData ? `Edit Staff` : `Add Staff`}</button>
+                        <div className={styles.field}>
+                            <label>Password</label>
+                            <input type="password" onChange={(e) => setPassword(e.target.value)} />
                         </div>
                     </div>
-                </form>
-            </div>
+                    <div className={styles.modalFooter}>
+                        <button className={styles.sendBtn}>{staffData ? `Edit Staff` : `Add Staff`}</button>
+                    </div>
+                </div>
+            </form>
         </div>
     );
 };

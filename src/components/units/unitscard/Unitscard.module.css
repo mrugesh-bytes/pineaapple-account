@@ -69,7 +69,11 @@
     font-size: 18px;
     line-height: 30px;
 }
-.cardTitle h4 {
+.cardTitle a {
+    text-decoration: none;
+}
+.cardTitle h4,
+.cardTitle a {
     text-transform: capitalize;
     color: #191c21;
     font-weight: 600;
@@ -79,6 +83,9 @@
 }
 .cardBody {
     padding: 16px;
+}
+.cardBody a {
+    text-decoration: none;
 }
 .cardBody p {
     color: #b2b3b5;
@@ -92,6 +99,13 @@
     color: #51ab86;
     padding-left: 31px;
     position: relative;
+    font-weight: 500;
+}
+.cardBody p span.inactive {
+    color: #f5004a;
+}
+.cardBody p span.inactive:before {
+    background-color: #f5004a;
 }
 .cardBody p span:before {
     content: '';
@@ -106,15 +120,19 @@
 .cardTitle span img {
     display: inline-block;
     margin-left: 8px;
+    cursor: pointer;
 }
 .cardBody .facility {
     display: flex;
     align-items: center;
-    margin-right: 16px;
+    margin-right: 32px;
 }
 .cardBody .facility img {
     display: inline-block;
     margin-right: 11.2px;
+}
+.facility a {
+    color: #191c21;
 }
 
 /* Responsive Start */
@@ -139,6 +157,9 @@
     }
     .cardBody .facility span {
         font-size: 14px;
-        line-height: 26px;
+        line-height: 18px;
+    }
+    .unitcardMain .unitcard {
+        margin: 15px;
     }
 }

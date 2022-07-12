@@ -57,6 +57,21 @@
     object-fit: contain;
     cursor: pointer;
 }
+.formWrapper .errorText {
+    visibility: hidden;
+    margin-bottom: 0px;
+    position: absolute;
+    font-size: 12px;
+    line-height: 28px;
+    color: #f5004a;
+    padding-left: 14px;
+}
+.formWrapper.error .errorText {
+    visibility: visible;
+}
+.formWrapper.error input {
+    border: 1px solid #f5004a;
+}
 .signupForm .formWrapper input:focus {
     border: 1px solid #51ab86;
 }
@@ -131,7 +146,7 @@
         margin-bottom: 16px;
     }
     .signupForm .formWrapper {
-        margin-bottom: 15px;
+        margin-bottom: 34px;
     }
     .loginWrapper {
         max-width: 100%;
@@ -161,5 +176,11 @@
     .signupWrapper {
         width: 100%;
         max-width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .signupWrapper {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 }

@@ -52,36 +52,45 @@ const Unitscard = ({ unit }: Iunitcards) => {
                 <div className={styles.unitcard}>
                     <div className={styles.cardBanner}>
                         <div className={styles.bannerMain}>
-                            <Link to={`/unitDetails/${unit.id}`}>
-                                <Slider carouselBanner={unit.imageUrl ? unit.imageUrl : cardImg} price={unit?.price} />
-                                <span className={styles.cost}>{`$ ${unit.price}`}</span>
-                            </Link>
+                            <Slider carouselBanner={unit.imageUrl ? unit.imageUrl : cardImg} price={unit?.price} />
+                            <span className={styles.cost}>{`$ ${unit.price}`}</span>
                         </div>
                     </div>
                     <div className={styles.cardBody}>
                         <div className={styles.cardTitle}>
-                            {unit?.name}
+                            <Link to={`/unitDetails/${unit.id}`}>{unit?.name}</Link>
 
                             <span>
                                 <img onClick={() => setEditModal(true)} src={iconEdit} />
                                 <img onClick={() => setDeletePopup(true)} src={iconDelete} />
                             </span>
                         </div>
-                        <p>
-                            Gustavo Daniels <span>{unit.status ? 'Active' : 'Inactive'}</span>
-                        </p>
+                        <Link to={`/unitDetails/${unit.id}`}>
+                            <p>
+                                Gustavo Daniels{' '}
+                                <span className={unit.status ? `${styles.active}` : `${styles.inactive}`}>
+                                    {unit.status ? 'Active' : 'Inactive'}
+                                </span>
+                            </p>
+                        </Link>
                         <div className={styles.cardFacilities}>
                             <div className={styles.facility}>
                                 <img src={iconFt} />
-                                <span>{`${unit.size} Ft`}</span>
+                                <Link to={`/unitDetails/${unit.id}`}>
+                                    <span>{`${unit.size} Ft`}</span>
+                                </Link>
                             </div>
                             <div className={styles.facility}>
                                 <img src={iconBed} />
-                                <span>{`${unit.rooms} Beds`}</span>
+                                <Link to={`/unitDetails/${unit.id}`}>
+                                    <span>{`${unit.rooms} Beds`}</span>
+                                </Link>
                             </div>
                             <div className={styles.facility}>
                                 <img src={iconBathtub} />
-                                <span>{`${unit.baths} Bath`}</span>
+                                <Link to={`/unitDetails/${unit.id}`}>
+                                    <span>{`${unit.baths} Bath`}</span>
+                                </Link>
                             </div>
                         </div>
                     </div>

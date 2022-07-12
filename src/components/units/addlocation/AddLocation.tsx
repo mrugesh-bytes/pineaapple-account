@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import styles from './AddLocation.module.css';
 import iconClose from '../../../images/icon-close.svg';
 
 const AddLocation = ({ setOpen }: any) => {
+    const [rows, setRows] = useState([]);
+
     const closeModal = () => {
         setOpen(false);
     };
@@ -17,7 +20,6 @@ const AddLocation = ({ setOpen }: any) => {
             <div className={styles.modalBody}>
                 <div className={styles.searchWrapper}>
                     <span className={styles.locationTitle}>Loaction</span>
-                    <input type="search" name="location-search" placeholder="Enter location" />
                 </div>
                 <div className={styles.modalFooter}>
                     <button className={styles.submit}>Add Location</button>

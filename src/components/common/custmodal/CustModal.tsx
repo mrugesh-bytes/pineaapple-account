@@ -36,13 +36,9 @@ const CustModal = (props: any) => {
     }
 
     return (
-        <div>
-            <div>
-                <Modal isOpen={props.open} onRequestClose={closeModal} style={customStyles} contentLabel="Modal">
-                    {props.bodyData}
-                </Modal>
-            </div>
-        </div>
+        <Modal isOpen={props.open} onRequestClose={closeModal} style={customStyles} contentLabel="Modal">
+            {props.bodyData}
+        </Modal>
     );
 };
 

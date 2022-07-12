@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './outerlayout.module.css';
 import logo from '../../images/pineapple-logo.svg';
-import formImage from '../../images/split-banner.svg';
+import formImage from '../../images/outer-banner.svg';
 import { Outlet } from 'react-router-dom';
 const OuterLayout = () => {
     return (

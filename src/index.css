@@ -11,6 +11,7 @@ body {
 .outletConainer {
     padding: 125px 32px 32px 115px;
 }
+
 /* Scroll Bar */
 select__menu-list::-webkit-scrollbar {
     width: 4px;
@@ -65,5 +66,10 @@ select__menu-list::-webkit-scrollbar-thumb:hover {
 @media screen and (max-width: 1366px) {
     .ReactModal__Content {
         transform: translate(-50%, -50%) scale(1) !important;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .outletConainer {
+        padding: 125px 32px 32px 90px;
     }
 }

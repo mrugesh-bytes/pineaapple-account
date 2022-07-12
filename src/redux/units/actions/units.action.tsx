@@ -162,8 +162,8 @@ export const editUnits: any = (unitDetails: any) => {
         return axios
             .put(`/account/unit/${unitDetails.id}`, formData)
             .then((response) => {
-                dispatch(getUnits());
                 dispatch(editUnitsSuccess(response.data.result.unit));
+                dispatch(getUnits());
             })
             .catch((error) => dispatch(editUnitsFailure(error)));
     };
