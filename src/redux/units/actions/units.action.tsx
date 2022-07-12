@@ -16,9 +16,6 @@ import {
     EDIT_UNITS_SUCCESS,
 } from '../constants/units.constants';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-const ACCESS_TOKEN = localStorage.getItem('accessToken');
-
 // Get Units
 const getUnitsRequest = () => {
     return {
@@ -116,7 +113,6 @@ export const getUnits: any = () => {
 
 // Add Units Dispatch
 export const addUnits: any = (unitDetails: any) => {
-    console.log(unitDetails);
     const formData = new FormData();
     formData.append('name', unitDetails.unitName);
     formData.append('baths', unitDetails.bathSize);
@@ -146,7 +142,6 @@ export const addUnits: any = (unitDetails: any) => {
 
 // Edit Units Dispatch
 export const editUnits: any = (unitDetails: any) => {
-    console.log(unitDetails);
     const formData = new FormData();
     formData.append('name', unitDetails.unitName);
     formData.append('baths', unitDetails.bathSize);
@@ -176,15 +171,10 @@ export const editUnits: any = (unitDetails: any) => {
 
 // Delete Staff
 export const deleteUnits: any = (id: string) => {
-    const ACCESS_TOKEN = localStorage.getItem('accessToken');
     return async (dispatch: Dispatch<any>) => {
         dispatch(deleteUnitsRequest());
         await axios
-            .delete(`${BASE_URL}/account/unit/${id}`, {
-                headers: {
-                    Authorization: `Bearer ${ACCESS_TOKEN}`,
-                },
-            })
+            .delete(`/account/unit/${id}`)
             .then((response) => {
                 dispatch(getUnits());
                 dispatch(deleteUnitsSuccess(response.data));

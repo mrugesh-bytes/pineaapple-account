@@ -19,8 +19,6 @@ import {
 } from '../constants/staff.constants';
 import { hideStaffToast, showStaffToast } from '../../toast/actions/addStaffToast.action';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-
 // Get Staff
 const getStaffRequest = () => {
     return {
@@ -118,15 +116,10 @@ const addMultipleStaffFailure = (errMsg: any) => {
 
 // Get Staff Dispatch
 export const getStaff: any = () => {
-    const ACCESS_TOKEN = localStorage.getItem('accessToken');
     return (dispatch: Dispatch<any>) => {
         dispatch(getStaffRequest());
         return axios
-            .get(`${BASE_URL}/account/staff`, {
-                headers: {
-                    Authorization: `Bearer ${ACCESS_TOKEN}`,
-                },
-            })
+            .get(`/account/staff`)
             .then((response) => dispatch(getStaffSuccess(response.data)))
             .catch((error) => dispatch(getStaffFailure(error)));
     };
@@ -134,7 +127,6 @@ export const getStaff: any = () => {
 
 // Add Staff Dispatch
 export const addStaff: any = (staffData: any) => {
-    const ACCESS_TOKEN = localStorage.getItem('accessToken');
     return (dispatch: Dispatch<any>) => {
         const formData = new FormData();
         formData.append('email', staffData.email);
@@ -145,7 +137,7 @@ export const addStaff: any = (staffData: any) => {
         formData.append('phone', '');
         dispatch(addStaffRequest());
         return axios
-            .post(`${BASE_URL}/account/staff/create`, formData)
+            .post(`/account/staff/create`, formData)
             .then((response) => {
                 dispatch(getStaff());
                 dispatch(showStaffToast());
@@ -177,7 +169,7 @@ export const editStaff: any = (staffData: any) => {
         formData.append('phone', '1234567890');
         dispatch(editStaffRequest());
         return axios
-            .put(`${BASE_URL}/account/staff/modify`, formData)
+            .put(`/account/staff/modify`, formData)
             .then((response) => {
                 dispatch(getStaff());
                 dispatch(editStaffSuccess(response.data));
@@ -190,15 +182,10 @@ export const editStaff: any = (staffData: any) => {
 
 // Delete Staff
 export const deleteStaff: any = (id: string) => {
-    const ACCESS_TOKEN = localStorage.getItem('accessToken');
     return async (dispatch: Dispatch<any>) => {
         dispatch(staffDeleteRequest());
         await axios
-            .delete(`${BASE_URL}/account/staff/${id}`, {
-                headers: {
-                    Authorization: `Bearer ${ACCESS_TOKEN}`,
-                },
-            })
+            .delete(`/account/staff/${id}`)
             .then((response) => {
                 dispatch(getStaff());
                 dispatch(staffDeleteSuccess(response.data));
@@ -209,21 +196,16 @@ export const deleteStaff: any = (id: string) => {
 
 // Add Multiple Staff Dispatch
 export const addMultipleStaff: any = (setPercentage: any, csvFile: any) => {
-    console.log(csvFile);
-    const ACCESS_TOKEN = localStorage.getItem('accessToken');
     return (dispatch: Dispatch<any>) => {
         const formData = new FormData();
         formData.append('file', csvFile);
         dispatch(addMultipleStaffRequest());
         return axios
-            .post(`${BASE_URL}/account/staff/upload-csv`, formData, {
+            .post(`/account/staff/upload-csv`, formData, {
                 onUploadProgress: (e: any) => {
                     const percentCompleted = Math.round((e.loaded * 100) / e.total);
                     setPercentage(percentCompleted);
-                },
-                headers: {
-                    Authorization: `Bearer ${ACCESS_TOKEN}`,
-                },
+                }
             })
             .then((response) => {
                 dispatch(getStaff());

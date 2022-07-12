@@ -1,32 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ChatUser.module.css';
 import moment from 'moment';
-import { AnyIfEmpty } from 'react-redux';
+import { AnyIfEmpty, useDispatch } from 'react-redux';
+import { getMessages } from '../../../redux/twilio/actions/twilio.actions';
 
 interface IchatUser {
     chatData: [string] | undefined;
-    setUserId: any;
 }
-const ChatUser = (props: IchatUser) => {
+const ChatUser = (props: any) => {
+    const dispatch = useDispatch();
+    const [userName, setUserName] = useState('');
+    const [lastMessage, setLastMessage] = useState('');
+    const { convo, convoId, key, onClick, userInfo } = props;
+
+    useEffect(() => {
+        const getParticipants = (async () => {
+            const participant = await convo.getParticipants();
+            const user = participant.find((p: any) => p.identity !== userInfo.name);
+            if (user) {
+                setUserName(user.state.identity);
+                const messages = await convo.getMessages();
+                setLastMessage(messages?.items[messages?.items?.length - 1].body);
+                dispatch(getMessages(messages.items, convo.sid));
+            }
+        })();
+    }, []);
     return (
         <>
-            <div>
-                {props.chatData &&
-                    props.chatData.map((item: AnyIfEmpty<object>, index: number) => {
-                        return (
-                            <div className={styles.userCard} key={index} onClick={() => props.setUserId(item?.id)}>
-                                <div className={styles.userAvatar}>
-                                    <img src={item?.Image} alt="User Avatar" />
-                                </div>
-                                <div className={styles.userDetails}>
-                                    <h2 className={styles.userName}>{item?.name}</h2>
-                                    <p className={styles.userMsg}>I want to ask question about</p>
-                                    <span className={styles.msgDate}>{moment(item.updatedAt).format('hh:mm a')}</span>
-                                </div>
-                            </div>
-                        );
-                    })}
-            </div>
+            {userName.length > 0 && (
+                <div className={styles.userCard} key={key} onClick={onClick}>
+                    <div className={styles.userAvatar}>
+                        <img src={convo?.Image} alt="User Avatar" />
+                    </div>
+                    <div className={styles.userDetails}>
+                        <h2 className={styles.userName}>{userName}</h2>
+                        <p className={styles.userMsg}>{lastMessage}</p>
+                        <span className={styles.msgDate}>{moment(convo?.lastMessage?.dateCreated).format('hh:mm a')}</span>
+                    </div>
+                </div>
+            )}
         </>
     );
 };

@@ -6,6 +6,7 @@ import getNotificationListReducer from './notification/reducers/getNotificationL
 import notifyVisitorReducer from './notification/reducers/notifyVisitorReducer';
 import staffReducer from './staff/reducers/staffReducer';
 import { addStaffToastReducer } from './toast/reducers/addStaffToast.reducer';
+import twilioReducer from './twilio/reducers/twilio.reducer';
 import unitByIdReducer from './units/reducers/unitByIdReducer';
 import unitsReducer from './units/reducers/unitsReducer';
 
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
     notifyVisitor: notifyVisitorReducer,
     staff: staffReducer,
     addStaffToast: addStaffToastReducer,
+    twilio: twilioReducer,
 });
 
 export default rootReducer;

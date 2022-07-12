@@ -1,9 +1,7 @@
+import { Conversation } from '@twilio/conversations';
 import axios from 'axios';
 import { Dispatch } from 'react';
 import { GET_CHATLIST_FAILURE, GET_CHATLIST_REQUEST, GET_CHATLIST_SUCCESS } from '../constants/chatList.constant';
-
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-const ACCESS_TOKEN = localStorage.getItem('accessToken');
 
 const getChatListRequest = () => {
     return {
@@ -25,16 +23,9 @@ const getChatListFailure = (chatListError: any) => {
     };
 };
 
-export const getChatList: any = () => {
+export const getChatList: any = (convos: Conversation[]) => {
     return (dispatch: Dispatch<any>) => {
         dispatch(getChatListRequest());
-        return axios
-            .get(`${BASE_URL}/account/chatlist`, {
-                headers: {
-                    Authorization: `Bearer ${ACCESS_TOKEN}`,
-                },
-            })
-            .then((response) => dispatch(getChatListSuccess(response.data)))
-            .catch((error) => dispatch(getChatListFailure(error)));
+        return dispatch(getChatListSuccess(convos))
     };
 };

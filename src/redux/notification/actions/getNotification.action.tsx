@@ -6,9 +6,6 @@ import {
     GET_NOTIFICATION_LIST_SUCCESS,
 } from '../constants/getNotification.constant';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-const ACCESS_TOKEN = localStorage.getItem('accessToken');
-
 const getNotificationListRequest = () => {
     return {
         type: GET_NOTIFICATION_LIST_REQUEST,
@@ -33,11 +30,7 @@ export const getNotificationList: any = () => {
     return (dispatch: Dispatch<any>) => {
         dispatch(getNotificationListRequest());
         axios
-            .get(`${BASE_URL}/notify/messages-template`, {
-                headers: {
-                    Authorization: `Bearer ${ACCESS_TOKEN}`,
-                },
-            })
+            .get(`/notify/messages-template`)
             .then((response) => dispatch(getNotificationListSuccess(response.data)))
             .catch((error) => dispatch(getNotificationListFailure(error)));
     };

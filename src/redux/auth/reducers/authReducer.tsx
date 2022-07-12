@@ -1,4 +1,8 @@
-import { GET_AUTH_FAILURE, GET_AUTH_REQUEST, GET_AUTH_SUCCESS } from '../constants/auth.constant';
+import {
+    GET_AUTH_FAILURE,
+    GET_AUTH_REQUEST,
+    GET_AUTH_SUCCESS,
+} from '../constants/auth.constant';
 
 const initialState = {
     loading: false,

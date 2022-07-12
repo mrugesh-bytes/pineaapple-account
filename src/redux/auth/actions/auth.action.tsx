@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { Dispatch } from 'react';
-import { GET_AUTH_FAILURE, GET_AUTH_REQUEST, GET_AUTH_SUCCESS } from '../constants/auth.constant';
+import {
+    GET_AUTH_FAILURE,
+    GET_AUTH_REQUEST,
+    GET_AUTH_SUCCESS,
+} from '../constants/auth.constant';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -28,7 +32,7 @@ export const getAuth: any = (loginDetails: any, onSuccess: any) => {
     return (dispatch: Dispatch<any>) => {
         dispatch(getAuthRequest());
         axios
-            .post(`${BASE_URL}/public/login`, loginDetails)
+            .post(`/public/login`, loginDetails)
             .then((response) => {
                 dispatch(getAuthSuccess(response.data));
                 localStorage.setItem('accessToken', response.data.result.token);

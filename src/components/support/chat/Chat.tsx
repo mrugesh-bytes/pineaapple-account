@@ -1,8 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './Chat.module.css';
 import userAvatarImg from '../../../images/chat-user-1.svg';
-import axios from 'axios';
-const Chat = () => {
+import moment from 'moment';
+
+
+
+const Chat = ({ divRef, scrollToBottom, convo, messages, userInfo }: any) => {
+    const [text, setText] = useState('');
+
+    const sendMessage = async () => {
+        if (String(text).trim()) {
+            await convo.sendMessage(String(text).trim());
+            setText('');
+            scrollToBottom();
+        }
+    };
+
     return (
         <div>
             <div className={styles.chatHeader}>
@@ -18,20 +31,35 @@ const Chat = () => {
                     </p>
                 </div>
             </div>
-            <div className={styles.chatBody}>
-                <div className={styles.sender}>
-                    <p className={styles.message}>How was the tour? Please insert the key to the locker.</p>
-                    <span className={styles.dateTime}>09:05 AM</span>
+            {messages && (
+                <div ref={divRef} id="chatbody" className={styles.chatBody}>
+                    {messages.map((message: any, index: any) =>
+                        message.author === userInfo.name ? (
+                            <div className={styles.sender} key={index}>
+                                <p className={styles.message}>{message.body}</p>
+                                <span className={styles.dateTime}>{moment(message.dateUpdated).format('hh:mm a')}</span>
+                            </div>
+                        ) : (
+                            <div className={styles.receiver}>
+                                <p className={styles.message}>{message.body}</p>
+                                <span className={styles.dateTime}>{moment(message.dateUpdated).format('hh:mm a')}</span>
+                            </div>
+                        ),
+                    )}
                 </div>
-                <div className={styles.receiver}>
-                    <p className={styles.message}>Key Inserted to the locket but not able to acess</p>
-                    <span className={styles.dateTime}>09:06 AM</span>
-                </div>
-            </div>
+            )}
             <div className={styles.footerMain}>
                 <div className={styles.chatFooter}>
-                    <input type="text" name="send" placeholder="Start To type..." />
-                    <button className={styles.sendBtn}>Send</button>
+                    <input
+                        type="text"
+                        name="send"
+                        value={text}
+                        placeholder="Start To type..."
+                        onChange={(e: any) => setText(e.target.value)}
+                    />
+                    <button className={styles.sendBtn} onClick={sendMessage}>
+                        Send
+                    </button>
                 </div>
             </div>
         </div>

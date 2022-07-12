@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import SearchUser from './searchuser/SearchUser';
 import ChatUser from './chatuser/ChatUser';
 import Chat from './chat/Chat';
@@ -6,17 +6,58 @@ import styles from './Support.module.css';
 import { Link } from 'react-router-dom';
 import { getChatList } from '../../redux/chat/actions/chatList.action';
 import { AnyIfEmpty, useDispatch, useSelector } from 'react-redux';
+import { Client, Conversation, Message, Participant } from '@twilio/conversations';
+
+import { AppContext } from '../context/AppContect';
+import { getParticipants, getToken, updateCurrentConversation, updateMessages } from '../../redux/twilio/actions/twilio.actions';
+
 const Support = () => {
-    const [chatTab, setChatTab] = useState('Active Visit');
-    const [userId, setUserId] = useState();
-
-    const chatListData = useSelector((state: AnyIfEmpty<object>) => state?.chatList?.data?.result?.visitorList);
-
     const dispatch = useDispatch();
+    const divRef:any  = useRef(null)
+    const [chatTab, setChatTab] = useState('Active Visit');
+    const [client, setClient] = useState<Client>();
+    const [convos, setConvos] = useState<Conversation[]>([]);
+    const token = useSelector((state: any) => state.twilio.twilioToken);
+    const sid = useSelector((state: any) => state.twilio.sid);
+    const messages = useSelector((state: any) => state.twilio.messages);
+    console.log("🚀 ~ file: Support.tsx ~ line 23 ~ Support ~ messages", messages)
+    const { userInfo } = useContext(AppContext);
+    // const s = useSelector((state: any) => console.log(state.twilio))
 
     useEffect(() => {
+        dispatch(getToken(userInfo));
         dispatch(getChatList());
     }, []);
+
+    useEffect(() => {
+        
+        scrollToBottom()
+    }, [sid])
+
+    useEffect(() => {
+        if (token) {
+            const client = new Client(token);
+            setClient(client);
+            const getConvos = async () => {
+                const convoList: any = await client.getSubscribedConversations();
+                setConvos(convoList.items);
+                scrollToBottom()
+            };
+            getConvos();
+
+            client.on('messageAdded', (message: Message) => {
+                dispatch(updateMessages(message, sid));
+                scrollToBottom()
+            });
+        }
+    }, [token]);
+
+    const scrollToBottom = () => {
+        const scrollHeight = divRef.current.scrollHeight;
+        const height = divRef.current.clientHeight;
+        const maxScrollTop = scrollHeight - height;
+        divRef.current.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
+     };
 
     return (
         <div className="outletConainer">
@@ -33,10 +74,22 @@ const Support = () => {
                         </ul>
                     </div>
                     <SearchUser />
-                    <ChatUser chatData={chatListData} setUserId={setUserId} />
+                    {convos.map((convo) => (
+                        <ChatUser
+                            convo={convo}
+                            key={convo.sid}
+                            convoId={convo.sid}
+                            userInfo={userInfo}
+                            onClick={async () => {
+                                const participantList = await convo.getParticipants();
+                                dispatch(getParticipants(participantList, convo.sid));
+                                dispatch(updateCurrentConversation(convo.sid));
+                            }}
+                        />
+                    ))}
                 </div>
                 <div className={styles.chatContainer}>
-                    <Chat />
+                    <Chat divRef={divRef} scrollToBottom={scrollToBottom} convo={convos.find((convo) => convo.sid === sid)} userInfo={userInfo} messages={messages[sid] ?? []} />
                 </div>
             </div>
         </div>

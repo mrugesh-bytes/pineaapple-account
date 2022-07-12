@@ -68,6 +68,7 @@
     padding: 24px 0px 0px;
     overflow: scroll;
     max-height: 62vh;
+    overflow-y: auto;
 }
 .chatBody::-webkit-scrollbar {
     display: none;
