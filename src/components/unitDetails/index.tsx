@@ -13,14 +13,17 @@ import iconEdit from '../../../src/images/icon-edit.svg';
 import iconFt from '../../../src/images/icon-ft.svg';
 import { getUnitById } from '../../redux/units/actions/unitById.action';
 import CustModal from '../common/custmodal/CustModal';
-import Loader from '../common/loader/Loader';
 import Slider from '../common/slider/Slider';
 import Map from '../map/Map';
+import AddUnits from '../units/addunits/AddUnits';
+import RemoveUnits from '../units/removeunits/RemoveUnits';
 import styles from './index.module.css';
 import UnitNotification from './UnitNotification';
 
 const UnitDetails = () => {
     const [open, setOpen] = useState(false);
+    const [deletePopup, setDeletePopup] = useState(false);
+    const [editModal, setEditModal] = useState(false);
 
     const { id } = useParams();
 
@@ -28,13 +31,21 @@ const UnitDetails = () => {
     const navigate = useNavigate();
 
     const unitByIdData = useSelector((state: AnyIfEmpty<object>) => state?.unitById?.data?.result?.unit);
-
     useEffect(() => {
         dispatch(getUnitById(id));
     }, []);
 
+    console.log(unitByIdData);
+
     return (
         <>
+            <CustModal
+                open={deletePopup}
+                setOpen={setDeletePopup}
+                bodyData={<RemoveUnits setDeletePopup={setDeletePopup} unitId={unitByIdData?.id} />}
+            />
+
+            <CustModal open={editModal} setOpen={setEditModal} bodyData={<AddUnits setOpen={setEditModal} unitData={unitByIdData} />} />
             <CustModal open={open} setOpen={setOpen} bodyData={<UnitNotification setOpen={setOpen} />} />
             <div className={styles.outletConainer}>
                 <div className={styles.flexWrapper}>
@@ -45,18 +56,21 @@ const UnitDetails = () => {
                                     <img src={iconBack} />
                                 </div>
                                 <div>
-                                    <h2 className={styles.cartDetailsPlace}>Park Towne Place</h2>
+                                    <h2 className={styles.cartDetailsPlace}>{unitByIdData?.name}</h2>
                                     <p>
-                                        Gustavo Daniels <span>Active</span>
+                                        Gustavo Daniels{' '}
+                                        <span className={unitByIdData?.status ? `${styles.active}` : `${styles.inactive}`}>
+                                            {unitByIdData?.status ? 'Active' : 'Inactive'}
+                                        </span>
                                     </p>
                                 </div>
                             </div>
                             <div className={styles.unitDetailsAction}>
                                 <div className={styles.iconedit}>
-                                    <img src={iconEdit} alt="Edit" />
+                                    <img onClick={() => setEditModal(true)} src={iconEdit} alt="Edit" />
                                 </div>
                                 <div className={styles.icondelete}>
-                                    <img src={iconDelete} alt="Delete" />
+                                    <img onClick={() => setDeletePopup(true)} src={iconDelete} alt="Delete" />
                                 </div>
                             </div>
                         </div>
@@ -66,19 +80,19 @@ const UnitDetails = () => {
                                 <div className={styles.facilityicon}>
                                     <img src={iconFt} alt="Ft" />
                                 </div>
-                                <div className={styles.facilityName}>80 ft</div>
+                                <div className={styles.facilityName}>{unitByIdData?.size} ft</div>
                             </div>
                             <div className={styles.facility}>
                                 <div className={styles.facilityicon}>
                                     <img src={iconBed} alt="Beds" />
                                 </div>
-                                <div className={styles.facilityName}>2 Beds</div>
+                                <div className={styles.facilityName}>{unitByIdData?.rooms} Beds</div>
                             </div>
                             <div className={styles.facility}>
                                 <div className={styles.facilityicon}>
                                     <img src={iconBathtub} alt="Bathtubs" />
                                 </div>
-                                <div className={styles.facilityName}>1 Bath</div>
+                                <div className={styles.facilityName}>{unitByIdData?.baths} Bath</div>
                             </div>
                         </div>
                         <div className={styles.btnContainer}>

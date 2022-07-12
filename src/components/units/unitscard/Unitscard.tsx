@@ -52,15 +52,13 @@ const Unitscard = ({ unit }: Iunitcards) => {
                 <div className={styles.unitcard}>
                     <div className={styles.cardBanner}>
                         <div className={styles.bannerMain}>
-                            <Link to={`/unitDetails/${unit.id}`}>
-                                <Slider carouselBanner={unit.imageUrl ? unit.imageUrl : cardImg} price={unit?.price} />
-                                <span className={styles.cost}>{`$ ${unit.price}`}</span>
-                            </Link>
+                            <Slider carouselBanner={unit.imageUrl ? unit.imageUrl : cardImg} price={unit?.price} />
+                            <span className={styles.cost}>{`$ ${unit.price}`}</span>
                         </div>
                     </div>
                     <div className={styles.cardBody}>
                         <div className={styles.cardTitle}>
-                            {unit?.name}
+                            <Link to={`/unitDetails/${unit.id}`}>{unit?.name}</Link>
 
                             <span>
                                 <img onClick={() => setEditModal(true)} src={iconEdit} />

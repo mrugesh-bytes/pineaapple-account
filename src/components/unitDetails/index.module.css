@@ -28,6 +28,12 @@
     padding-left: 31px;
     position: relative;
 }
+.cartDetailsHeader p span.inactive {
+    color: #f5004a;
+}
+.cartDetailsHeader p span.inactive:before {
+    background-color: #f5004a;
+}
 .unitDetails .cartDetailsBack {
     padding: 0 16px 0 0;
 }

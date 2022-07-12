@@ -69,7 +69,11 @@
     font-size: 18px;
     line-height: 30px;
 }
-.cardTitle h4 {
+.cardTitle a {
+    text-decoration: none;
+}
+.cardTitle h4,
+.cardTitle a {
     text-transform: capitalize;
     color: #191c21;
     font-weight: 600;

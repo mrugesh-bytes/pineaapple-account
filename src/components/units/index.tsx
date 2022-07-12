@@ -23,7 +23,6 @@ const index = () => {
 
     return (
         <div className="outletConainer">
-            {/* <Loader /> */}
             <CustModal open={complete} setOpen={setComplete} bodyData={<CompleteProfile setOpen={setComplete} />} />
             <CustModal open={addunit} setOpen={setAddUnit} bodyData={<AddUnits setOpen={setAddUnit} />} />
             <CustModal open={addLocation} setOpen={setAddLocation} bodyData={<AddLocation setOpen={setAddLocation} />} />

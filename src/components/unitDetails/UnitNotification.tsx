@@ -52,36 +52,34 @@ const UnitNotification = ({ setOpen }: any) => {
     };
 
     return (
-        <div>
-            <div className={styles.modalNotification}>
-                <div className={styles.modalHeader}>
-                    <div className={styles.modalTitle}>Notification</div>
-                    <span className={styles.close}>
-                        <img src={iconClose} onClick={closeModal} />
-                    </span>
-                </div>
-                <div className={styles.modalBody}>
-                    {notificationListArrayWithIcons &&
-                        notificationListArrayWithIcons?.map((data: AnyIfEmpty<object>) => (
-                            <div key={data.data.id} className={styles.card}>
-                                <div className={styles.icon}>
-                                    <img src={data?.iconsName} />
-                                </div>
-                                <div className={styles.content}>{data?.data?.body}</div>
-                                <div onClick={() => radioButtonHandler(data.data.id)} className={styles.radioContainer}>
-                                    <input type="radio" name="radio" />
-                                </div>
+        <div className={styles.modalNotification}>
+            <div className={styles.modalHeader}>
+                <div className={styles.modalTitle}>Notification</div>
+                <span className={styles.close}>
+                    <img src={iconClose} onClick={closeModal} />
+                </span>
+            </div>
+            <div className={styles.modalBody}>
+                {notificationListArrayWithIcons &&
+                    notificationListArrayWithIcons?.map((data: AnyIfEmpty<object>) => (
+                        <div key={data.data.id} className={styles.card}>
+                            <div className={styles.icon}>
+                                <img src={data?.iconsName} />
                             </div>
-                        ))}
-                </div>
-                <div className={styles.modalFooter}>
-                    <button onClick={closeModal} className={styles.cancelBtn}>
-                        Cancel
-                    </button>
-                    <button onClick={sendNotificationHandler} className={styles.sendBtn}>
-                        Send Notification
-                    </button>
-                </div>
+                            <div className={styles.content}>{data?.data?.body}</div>
+                            <div onClick={() => radioButtonHandler(data.data.id)} className={styles.radioContainer}>
+                                <input type="radio" name="radio" />
+                            </div>
+                        </div>
+                    ))}
+            </div>
+            <div className={styles.modalFooter}>
+                <button onClick={closeModal} className={styles.cancelBtn}>
+                    Cancel
+                </button>
+                <button onClick={sendNotificationHandler} className={styles.sendBtn}>
+                    Send Notification
+                </button>
             </div>
         </div>
     );
