@@ -26,10 +26,7 @@ export const notifyVisitor: any = (message_id: string, visitor_id: string) => {
     return (dispatch: Dispatch<any>) => {
         dispatch(notifyVisitorRequest());
         axios
-            .post(
-                `/notify/visitor`,
-                { message_id, visitor_id }
-            )
+            .post(`/notify/visitor`, { message_id, visitor_id })
             .then((response) => dispatch(notifyVisitorSuccess(response.data)))
             .catch((errorMsg) => dispatch(notifyVisitorFailure(errorMsg.response)));
     };

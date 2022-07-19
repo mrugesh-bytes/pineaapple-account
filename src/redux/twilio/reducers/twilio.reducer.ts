@@ -1,6 +1,7 @@
 import {
     TWILIO_CONVERSATION_MESSAGE_FETCH,
     TWILIO_CONVERSATION_MESSAGE_UPDATE,
+    TWILIO_CONVERSATION_PUSH_MESSAGES,
     TWILIO_CURRENT_CONVO_SUCCESS,
     TWILIO_PARTICIPANTS_SUCCESS,
     TWILIO_TOKEN_FAILURE,
@@ -55,12 +56,16 @@ const twilioReducer = (state = initialState, action: any) => {
                 ...state,
                 messages: Object.assign({}, state.messages, { [action.payload.sid]: action.payload.messages }),
             };
+        case TWILIO_CONVERSATION_PUSH_MESSAGES: {
+            const { sid, messages } = action.payload;
+            const existingMessages = state.messages[sid] ?? [];
+            return Object.assign({}, state, { messages: { [sid]: [...messages, ...existingMessages] } });
+        }
         case TWILIO_CONVERSATION_MESSAGE_UPDATE: {
             const sid = state.sid;
-            const allMessages = state.messages
             const messages = state.messages[sid];
             const newMessages = [...messages, action.payload.message];
-            return Object.assign({}, state, { messages: {...allMessages, [sid]: newMessages } });
+            return Object.assign({}, state, { messages: { [sid]: newMessages } });
         }
         default:
             return state;

@@ -9,6 +9,7 @@ import {
     TWILIO_PARTICIPANTS_SUCCESS,
     TWILIO_CONVERSATION_MESSAGE_FETCH,
     TWILIO_CONVERSATION_MESSAGE_UPDATE,
+    TWILIO_CONVERSATION_PUSH_MESSAGES,
 } from '../constants/twilio.constants';
 
 const getTwilioTokenRequest = () => {
@@ -52,6 +53,13 @@ const getTwilioMessages = (messages: any, sid: string) => {
     };
 };
 
+const pushNewMessage = (messages: Message[], sid: string) => {
+    return {
+        type: TWILIO_CONVERSATION_PUSH_MESSAGES,
+        payload: { messages, sid },
+    };
+};
+
 const updateTwilioMessages = (message: Message, sid: string) => {
     return {
         type: TWILIO_CONVERSATION_MESSAGE_UPDATE,
@@ -91,6 +99,12 @@ export const getParticipants: any = (participants: any, sid: string) => {
 export const getMessages: any = (messages: Message[], sid: string) => {
     return async (dispatch: Dispatch<any>) => {
         dispatch(getTwilioMessages(messages, sid));
+    };
+};
+
+export const pushMessages: any = (messages: Message[], sid: string) => {
+    return async (dispatch: Dispatch<any>) => {
+        dispatch(pushNewMessage(messages, sid));
     };
 };
 

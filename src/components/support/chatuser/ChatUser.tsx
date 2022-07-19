@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ChatUser.module.css';
 import moment from 'moment';
-import { AnyIfEmpty, useDispatch } from 'react-redux';
-import { getMessages } from '../../../redux/twilio/actions/twilio.actions';
+import { useDispatch } from 'react-redux';
 
-interface IchatUser {
-    chatData: [string] | undefined;
-}
+
 const ChatUser = (props: any) => {
     const dispatch = useDispatch();
     const [userName, setUserName] = useState('');
@@ -21,10 +18,10 @@ const ChatUser = (props: any) => {
                 setUserName(user.state.identity);
                 const messages = await convo.getMessages();
                 setLastMessage(messages?.items[messages?.items?.length - 1].body);
-                dispatch(getMessages(messages.items, convo.sid));
             }
         })();
     }, []);
+
     return (
         <>
             {userName.length > 0 && (

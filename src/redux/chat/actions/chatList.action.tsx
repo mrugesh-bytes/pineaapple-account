@@ -26,6 +26,6 @@ const getChatListFailure = (chatListError: any) => {
 export const getChatList: any = (convos: Conversation[]) => {
     return (dispatch: Dispatch<any>) => {
         dispatch(getChatListRequest());
-        return dispatch(getChatListSuccess(convos))
+        return dispatch(getChatListSuccess(convos));
     };
 };

@@ -107,7 +107,8 @@ const AddStaff = ({ staffData, setOpen }: any) => {
                                 type="text"
                                 placeholder="Enter your name"
                                 defaultValue={name}
-                                onChange={(e) => setName(e.target.value)}></input>
+                                onChange={(e) => setName(e.target.value)}
+                            ></input>
                         </div>
                         <div className={`${styles.field} ${styles.select}`}>
                             <label>Select a Role</label>

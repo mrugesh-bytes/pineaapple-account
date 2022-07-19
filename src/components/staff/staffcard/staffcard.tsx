@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './staffcard.module.css';
 import iconEdit from '../../../images/icon-edit.svg';
 import iconDelete from '../../../images/icon-delete.svg';
-import { Roles } from '../../../constants/staffRole';
+import { Roles } from '../../../constants/constants';
 import RemoveStaff from '../removestaff/RemoveStaff';
 import CustModal from '../../common/custmodal/CustModal';
 import AddStaff from '../addstaff/AddStaff';

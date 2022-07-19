@@ -69,6 +69,8 @@
     overflow: scroll;
     max-height: 62vh;
     overflow-y: auto;
+    display: 'flex';
+    flex-direction: 'column-reverse';
 }
 .chatBody::-webkit-scrollbar {
     display: none;
@@ -134,11 +136,16 @@
     line-height: 28px;
     font-weight: 400;
 }
-.chatFooter .sendBtn {
+.chatFooter .sendBtn.sendBtnDisabled {
     background: #d1d2d3;
+    color: #8c8d90;
+    pointer-events: none;
+}
+.chatFooter .sendBtn {
+    background: #51ab86;
     border-radius: 4px;
     padding: 5px 38px;
-    color: #8c8d90;
+    color: #ffffff;
     font-size: 16px;
     line-height: 28px;
     outline: none;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from '../template/outerlayout/outerlayout.module.css';
 import Select from 'react-select';
 import { useNavigate } from 'react-router-dom';
-import { Roles } from '../constants/staffRole';
+import { Roles } from '../constants/constants';
 
 function Onboarding() {
     const navigate = useNavigate();

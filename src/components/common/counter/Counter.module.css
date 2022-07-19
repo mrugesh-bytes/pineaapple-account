@@ -1,38 +1,38 @@
 .counterWrapper {
-	width: 100%;
-	display: inline-flex;
-	align-items: center;
-	position: relative;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
 
-	font-size: 14px;
-	line-height: 28px;
-	color: #d1d2d3;
+    font-size: 14px;
+    line-height: 28px;
+    color: #d1d2d3;
 }
 .counterWrapper input {
-	width: 100%;
-	border: 1px solid #d1d2d3;
-	border-radius: 8px;
-	height: 48px;
-	padding: 8px 35px;
-	font-size: 14px;
-	line-height: 28px;
-	color: #d1d2d3;
-	font-weight: 600;
+    width: 100%;
+    border: 1px solid #d1d2d3;
+    border-radius: 8px;
+    height: 48px;
+    padding: 8px 35px;
+    font-size: 14px;
+    line-height: 28px;
+    color: #d1d2d3;
+    font-weight: 600;
 
-	text-align: center;
+    text-align: center;
 }
 input::-webkit-inner-spin-button {
-	-webkit-appearance: none;
+    -webkit-appearance: none;
 }
 .iconCounter {
-	color: #d1d2d3;
-	font-size: 30px;
-	position: absolute;
-	cursor: pointer;
+    color: #d1d2d3;
+    font-size: 30px;
+    position: absolute;
+    cursor: pointer;
 }
 .iconCounter.decrement {
-	left: 11px;
+    left: 11px;
 }
 .iconCounter.increment {
-	right: 11px;
+    right: 11px;
 }

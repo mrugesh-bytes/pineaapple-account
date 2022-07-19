@@ -132,7 +132,8 @@ const AddUnits = ({ unitData, setOpen }: any) => {
                                 type="file"
                                 accept="image/jpeg, image/jpg, image/png,  image/webp"
                                 onChange={(e: any) => setUnitFiles(e.target.files)}
-                                multiple></input>
+                                multiple
+                            ></input>
                             <div className={styles.iconUnitUpload}>
                                 <img src={iconUpload} alt="Icon Upload" />
                             </div>

@@ -13,14 +13,12 @@ import { getParticipants, getToken, updateCurrentConversation, updateMessages } 
 
 const Support = () => {
     const dispatch = useDispatch();
-    const divRef:any  = useRef(null)
     const [chatTab, setChatTab] = useState('Active Visit');
     const [client, setClient] = useState<Client>();
     const [convos, setConvos] = useState<Conversation[]>([]);
     const token = useSelector((state: any) => state.twilio.twilioToken);
     const sid = useSelector((state: any) => state.twilio.sid);
     const messages = useSelector((state: any) => state.twilio.messages);
-    console.log("🚀 ~ file: Support.tsx ~ line 23 ~ Support ~ messages", messages)
     const { userInfo } = useContext(AppContext);
     // const s = useSelector((state: any) => console.log(state.twilio))
 
@@ -30,34 +28,20 @@ const Support = () => {
     }, []);
 
     useEffect(() => {
-        
-        scrollToBottom()
-    }, [sid])
-
-    useEffect(() => {
         if (token) {
             const client = new Client(token);
             setClient(client);
             const getConvos = async () => {
                 const convoList: any = await client.getSubscribedConversations();
                 setConvos(convoList.items);
-                scrollToBottom()
             };
             getConvos();
 
             client.on('messageAdded', (message: Message) => {
                 dispatch(updateMessages(message, sid));
-                scrollToBottom()
             });
         }
     }, [token]);
-
-    const scrollToBottom = () => {
-        const scrollHeight = divRef.current.scrollHeight;
-        const height = divRef.current.clientHeight;
-        const maxScrollTop = scrollHeight - height;
-        divRef.current.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
-     };
 
     return (
         <div className="outletConainer">
@@ -89,7 +73,12 @@ const Support = () => {
                     ))}
                 </div>
                 <div className={styles.chatContainer}>
-                    <Chat divRef={divRef} scrollToBottom={scrollToBottom} convo={convos.find((convo) => convo.sid === sid)} userInfo={userInfo} messages={messages[sid] ?? []} />
+                    <Chat
+                        client={client}
+                        convo={convos.find((convo) => convo.sid === sid)}
+                        userInfo={userInfo}
+                        messages={messages[sid] ?? []}
+                    />
                 </div>
             </div>
         </div>

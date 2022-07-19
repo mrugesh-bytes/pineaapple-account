@@ -41,7 +41,8 @@ const sidebar = () => {
                     onClick={() => {
                         navigate('/units');
                     }}
-                    className={path === '/units' || path === `/unitDetails/${id}` ? styles.active : ''}>
+                    className={path === '/units' || path === `/unitDetails/${id}` ? styles.active : ''}
+                >
                     <span className={styles.tooltip}>Units</span>
                     <img src={iconApartment} alt="Apartment Icon" />
                 </li>
@@ -53,7 +54,8 @@ const sidebar = () => {
                     onClick={() => {
                         navigate('/staff');
                     }}
-                    className={path === '/staff' ? styles.active : ''}>
+                    className={path === '/staff' ? styles.active : ''}
+                >
                     <img src={iconStaff} alt="Staff Icon" />
                     <span className={styles.tooltip}>Staff</span>
                 </li>

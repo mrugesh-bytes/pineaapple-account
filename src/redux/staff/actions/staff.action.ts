@@ -205,7 +205,7 @@ export const addMultipleStaff: any = (setPercentage: any, csvFile: any) => {
                 onUploadProgress: (e: any) => {
                     const percentCompleted = Math.round((e.loaded * 100) / e.total);
                     setPercentage(percentCompleted);
-                }
+                },
             })
             .then((response) => {
                 dispatch(getStaff());

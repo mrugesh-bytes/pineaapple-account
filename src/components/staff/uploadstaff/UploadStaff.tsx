@@ -51,7 +51,8 @@ const UploadStaff = ({ setOpen }: any) => {
                                         display: 'block',
                                         borderRadius: '8px',
                                         transition: 'all ease 1s',
-                                    }}></span>
+                                    }}
+                                ></span>
                             </div>
                         </div>
                         <div className={styles.modalCancel}>
